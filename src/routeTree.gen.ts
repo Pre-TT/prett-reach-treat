@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as PipelineRouteImport } from './routes/pipeline'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as TechnologyRouteImport } from './routes/technology'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PipelineRoute = PipelineRouteImport.update({
@@ -44,6 +50,7 @@ const TechnologyRoute = TechnologyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/news': typeof NewsRoute
   '/pipeline': typeof PipelineRoute
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/news': typeof NewsRoute
   '/pipeline': typeof PipelineRoute
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
@@ -59,21 +67,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/news': typeof NewsRoute
   '/pipeline': typeof PipelineRoute
   '/team': typeof TeamRoute
   '/technology': typeof TechnologyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/pipeline' | '/team' | '/technology'
+  fullPaths: '/' | '/about' | '/news' | '/pipeline' | '/team' | '/technology'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/pipeline' | '/team' | '/technology'
-  id: '__root__' | '/' | '/about' | '/pipeline' | '/team' | '/technology'
+  to: '/' | '/about' | '/news' | '/pipeline' | '/team' | '/technology'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/news'
+    | '/pipeline'
+    | '/team'
+    | '/technology'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  NewsRoute: typeof NewsRoute
   PipelineRoute: typeof PipelineRoute
   TeamRoute: typeof TeamRoute
   TechnologyRoute: typeof TechnologyRoute
@@ -93,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pipeline': {
@@ -122,6 +146,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  NewsRoute: NewsRoute,
   PipelineRoute: PipelineRoute,
   TeamRoute: TeamRoute,
   TechnologyRoute: TechnologyRoute,
