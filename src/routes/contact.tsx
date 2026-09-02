@@ -31,7 +31,7 @@ const schema = z.object({
 });
 
 function Contact() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const [sent, setSent] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,9 +43,9 @@ function Contact() {
       message: form.get("message"),
     });
     if (!parsed.success) {
-      const next: Record<string, string> = {};
+      const next: { name?: string; email?: string; message?: string } = {};
       parsed.error.issues.forEach((i) => {
-        next[String(i.path[0])] = i.message;
+        next[String(i.path[0]) as "name" | "email" | "message"] = i.message;
       });
       setErrors(next);
       return;
