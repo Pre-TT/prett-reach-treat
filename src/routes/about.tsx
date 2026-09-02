@@ -42,9 +42,9 @@ function About() {
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">Two barriers. One solution.</h1>
           </Reveal>
           <Reveal delay={150}>
-            <blockquote className="mt-10 max-w-3xl border-l-2 border-accent pl-6 text-xl leading-relaxed text-ink-foreground/85 italic">
-              “{MISSION_QUOTE}”
-            </blockquote>
+            <p className="mt-10 max-w-3xl text-xl leading-relaxed text-ink-foreground/85">
+              {MISSION_QUOTE}
+            </p>
           </Reveal>
         </div>
       </section>
