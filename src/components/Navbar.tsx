@@ -36,7 +36,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="PreTT ApS logo" className="h-9 w-9" />
+          <img src={logo.url} alt="PreTT logo" className="h-9 w-9" />
           <span className="font-display text-xl font-semibold tracking-tight">PreTT</span>
         </Link>
 

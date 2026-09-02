@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Next generation radiotheranostics. High-precision, low-toxicity cancer care from PreTT ApS, Copenhagen.",
+          "Next generation radiotheranostics. High-precision, low-toxicity cancer care from PreTT, Copenhagen.",
       },
     ],
   }),

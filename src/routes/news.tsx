@@ -8,7 +8,7 @@ import type { NewsItem } from "@/lib/content";
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "News — PreTT ApS" },
+      { title: "News — PreTT" },
       {
         name: "description",
         content:

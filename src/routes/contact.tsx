@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
         content:
           "Get in touch with PreTT — Ole Maaløes Vej 3, 2200 Copenhagen, Denmark. Email info@pre-tt.com or connect with us on LinkedIn.",
       },
-      { property: "og:title", content: "Contact — PreTT ApS, Copenhagen" },
+      { property: "og:title", content: "Contact — PreTT, Copenhagen" },
       {
         property: "og:description",
         content: "Reach the PreTT team in Copenhagen for partnering and investment enquiries.",
@@ -152,7 +152,7 @@ function Contact() {
             </ul>
             <div className="mt-8 overflow-hidden rounded-xl border border-border">
               <iframe
-                title="PreTT ApS location on Google Maps"
+                title="PreTT location on Google Maps"
                 src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
                 className="h-[360px] w-full border-0"
                 loading="lazy"

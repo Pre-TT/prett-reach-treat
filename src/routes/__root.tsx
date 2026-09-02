@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PreTT ApS — Next Generation Radiotheranostics" },
+      { title: "PreTT — Next Generation Radiotheranostics" },
       {
         name: "description",
         content:
           "PreTT's target-click-treat pretargeting platform delivers high-precision, low-toxicity radioligand therapy — the first pretargeting platform to cross the blood-brain barrier.",
       },
-      { name: "author", content: "PreTT ApS" },
+      { name: "author", content: "PreTT" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

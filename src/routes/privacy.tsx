@@ -11,10 +11,10 @@ export const Route = createFileRoute("/privacy")({
         content:
           "How PreTT collects, uses and protects personal data in accordance with the EU General Data Protection Regulation (GDPR).",
       },
-      { property: "og:title", content: "Privacy Policy — PreTT ApS" },
+      { property: "og:title", content: "Privacy Policy — PreTT" },
       {
-        property: "og:description",
-        content: "GDPR privacy notice for the PreTT ApS website.",
+        name: "description",
+        content: "GDPR privacy notice for the PreTT website.",
       },
       { name: "robots", content: "noindex" },
     ],
