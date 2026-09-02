@@ -8,16 +8,16 @@ import type { NewsItem } from "@/lib/content";
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "News — PreTT ApS" },
+      { title: "News — PreTT" },
       {
         name: "description",
         content:
-          "Latest news and announcements from PreTT ApS, the Copenhagen-based radiotheranostics company behind the target-click-treat pretargeting platform.",
+          "Latest news and announcements from PreTT, the Copenhagen-based radiotheranostics company behind the target-click-treat pretargeting platform.",
       },
-      { property: "og:title", content: "News — PreTT ApS" },
+      { property: "og:title", content: "News — PreTT" },
       {
         property: "og:description",
-        content: "Announcements, grants and milestones from PreTT ApS.",
+        content: "Announcements, grants and milestones from PreTT.",
       },
     ],
   }),

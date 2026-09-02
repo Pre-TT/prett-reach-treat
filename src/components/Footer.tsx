@@ -9,15 +9,15 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo.url} alt="PreTT ApS logo" className="h-10 w-10" />
-            <span className="font-display text-xl font-semibold">PreTT ApS</span>
+            <img src={logo.url} alt="PreTT logo" className="h-10 w-10" />
+            <span className="font-display text-xl font-semibold">PreTT</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-ink-foreground/70">{COMPANY.tagline}</p>
         </div>
 
         <div className="text-sm text-ink-foreground/80">
           <p className="eyebrow mb-3">Company</p>
-          <p>PreTT ApS</p>
+          <p>PreTT</p>
           <p>CVR: {COMPANY.cvr}</p>
           <p className="mt-1">{COMPANY.address}</p>
           <a
@@ -48,7 +48,7 @@ export function Footer() {
 
       <div className="border-t border-ink-foreground/15">
         <p className="mx-auto max-w-7xl px-5 py-6 text-xs text-ink-foreground/60 sm:px-8">
-          © {new Date().getFullYear()} PreTT ApS · CVR: {COMPANY.cvr} · {COMPANY.address}
+          © {new Date().getFullYear()} PreTT · CVR: {COMPANY.cvr} · {COMPANY.address}
         </p>
       </div>
     </footer>
