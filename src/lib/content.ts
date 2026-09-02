@@ -165,7 +165,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     indication: "HER2+ breast cancer brain metastases \u00B7 OSR 5y <12%",
     target: "HER2",
     isotope: "\u00B2\u00B9\u00B9At",
-    partners: "Innovation Fund Denmark",
+    partners: "",
     stageIndex: 0,
   },
   {
