@@ -173,7 +173,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     indication: "Glioblastoma \u00B7 OSR 5y 5\u201310%",
     target: "uPAR",
     isotope: "\u00B2\u00B9\u00B9At",
-    partners: "K\u00F8benhavns Universitet, Curasight, Innovation Fund Denmark, PanTarg, Rigshospitalet",
+    partners: "University of Copenhagen, Curasight, PanTarg, Rigshospitalet",
     stageIndex: 0,
   },
   {
