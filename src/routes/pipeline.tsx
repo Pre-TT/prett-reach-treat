@@ -155,11 +155,9 @@ function Pipeline() {
           </div>
         </div>
 
-        {usingFallback ? (
+        {usingFallback && isError ? (
           <p className="mt-8 text-xs text-muted-foreground">
-            {isError
-              ? "Live pipeline data is currently unavailable; showing the latest published pipeline."
-              : "Showing the latest published pipeline."}
+            Live pipeline data is currently unavailable.
           </p>
         ) : null}
       </section>
