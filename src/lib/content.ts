@@ -165,7 +165,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     indication: "HER2+ breast cancer brain metastases \u00B7 OSR 5y <12%",
     target: "HER2",
     isotope: "\u00B2\u00B9\u00B9At",
-    partners: "Innovation Fund Denmark",
+    partners: "",
     stageIndex: 0,
   },
   {
@@ -173,7 +173,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     indication: "Glioblastoma \u00B7 OSR 5y 5\u201310%",
     target: "uPAR",
     isotope: "\u00B2\u00B9\u00B9At",
-    partners: "K\u00F8benhavns Universitet, Curasight, Innovation Fund Denmark, PanTarg, Rigshospitalet",
+    partners: "University of Copenhagen, Curasight, PanTarg, Rigshospitalet",
     stageIndex: 0,
   },
   {
@@ -181,7 +181,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     indication: "HNSCC \u00B7 OSR 5y <20%",
     target: "CD44V6",
     isotope: "Radiometals",
-    partners: "Akiram Therapeutics, TetraKit Technologies, Eurostars",
+    partners: "Akiram Therapeutics, TetraKit Technologies",
     stageIndex: 1,
   },
 ];
