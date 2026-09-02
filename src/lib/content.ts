@@ -181,7 +181,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     indication: "HNSCC \u00B7 OSR 5y <20%",
     target: "CD44V6",
     isotope: "Radiometals",
-    partners: "Akiram Therapeutics, TetraKit Technologies, Eurostars",
+    partners: "Akiram Therapeutics, TetraKit Technologies",
     stageIndex: 1,
   },
 ];
