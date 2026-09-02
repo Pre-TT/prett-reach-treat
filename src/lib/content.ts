@@ -20,7 +20,7 @@ export const NUTSHELL =
   "PreTT's \u201Ctarget-click-treat\u201D technology redefines the Therapeutic Index in Radioligand Therapy by decoupling tumour targeting from dose delivery. We first deploy non-radioactive antibodies\u2014exquisitely specific targeting vectors\u2014to find and tag cancer cells. Only when the antibodies are at the tumour site, we introduce a small-molecule carrying the radioactive payload that \u201Cclicks\u201D onto them. This molecular precision ensures radiation is localised at the tumour, sparing healthy tissue.";
 
 export const MISSION_QUOTE =
-  "The wall of the BBB keeps medicines out, while the wall of systemic toxicity keeps patients from receiving the doses they need. At PreTT, we are breaking both.";
+  "The blood-brain barrier keeps medicines out. Systemic toxicity keeps patients from tolerating the doses they need. At PreTT, we're engineering past both.";
 
 export const STEPS = [
   {
