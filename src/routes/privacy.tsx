@@ -37,8 +37,7 @@ function Privacy() {
         <div>
           <h2 className="text-xl font-semibold text-foreground">1. Data controller</h2>
           <p className="mt-3">
-            {COMPANY.name}, CVR {COMPANY.cvr}, {COMPANY.address}, {COMPANY.city},{" "}
-            {COMPANY.country}, is the data controller for personal data processed through this
+            {COMPANY.name}, CVR {COMPANY.cvr}, {COMPANY.address}, is the data controller for personal data processed through this
             website. Contact: {COMPANY.email}.
           </p>
         </div>

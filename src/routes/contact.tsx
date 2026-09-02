@@ -57,7 +57,7 @@ function Contact() {
     setSent(true);
   };
 
-  const mapQuery = encodeURIComponent(`${COMPANY.address}, ${COMPANY.city}, ${COMPANY.country}`);
+  const mapQuery = encodeURIComponent(`${COMPANY.name}, ${COMPANY.address}`);
 
   return (
     <>
@@ -143,8 +143,6 @@ function Contact() {
                 <span>
                   <strong className="block font-semibold">{COMPANY.name}</strong>
                   {COMPANY.address}
-                  <br />
-                  {COMPANY.city}, {COMPANY.country}
                 </span>
               </li>
               <li className="flex gap-3">
