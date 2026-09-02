@@ -5,13 +5,13 @@ import { MILESTONES, MISSION_QUOTE, NUTSHELL } from "@/lib/content";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — PreTT ApS" },
+      { title: "About Us — PreTT" },
       {
         name: "description",
         content:
-          "PreTT ApS was spun out of the University of Copenhagen in 2022 to break two walls: the blood-brain barrier and systemic toxicity in radioligand therapy.",
+          "PreTT was spun out of the University of Copenhagen in 2022 to break two walls: the blood-brain barrier and systemic toxicity in radioligand therapy.",
       },
-      { property: "og:title", content: "About Us — PreTT ApS" },
+      { property: "og:title", content: "About Us — PreTT" },
       {
         property: "og:description",
         content:
@@ -39,9 +39,7 @@ function About() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">About Us</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
-              Breaking two walls at once
-            </h1>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">Breaking two walls at once</h1>
           </Reveal>
           <Reveal delay={150}>
             <blockquote className="mt-10 max-w-3xl border-l-2 border-accent pl-6 text-xl leading-relaxed text-ink-foreground/85 italic">
@@ -56,9 +54,9 @@ function About() {
         <div className="mt-8 grid gap-10 lg:grid-cols-2">
           <Reveal>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              PreTT ApS was founded in 2022 as a spin-out of the University of Copenhagen by
-              renowned experts in radiopharmaceutical translation. Today the company develops
-              pretargeted radiotheranostics designed for high-precision, low-toxicity cancer care.
+              PreTT was founded in 2022 as a spin-out of the University of Copenhagen by renowned experts in
+              radiopharmaceutical translation. Today the company develops pretargeted radiotheranostics designed for
+              high-precision, low-toxicity cancer care.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -69,17 +67,14 @@ function About() {
 
       <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Our mission">
-            Driven by high unmet needs and difficult-to-treat cancers
-          </SectionTitle>
+          <SectionTitle eyebrow="Our mission">Driven by high unmet needs and difficult-to-treat cancers</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              By overcoming the blood-brain barrier, we address patients who currently face a
-              5-year survival rate below 35%. By improving therapeutic efficacy and reducing
-              toxicity, we aim to increase 5-year survival by a relative 20% and reduce inpatient
-              days by 30%. We target 0.5 additional Quality Adjusted Life Year (QALY) with an
-              Incremental Cost-Effectiveness Ratio of €50–70k/QALY, aligning with high-income
-              healthcare thresholds.
+              By overcoming the blood-brain barrier, we address patients who currently face a 5-year survival rate below
+              35%. By improving therapeutic efficacy and reducing toxicity, we aim to increase 5-year survival by a
+              relative 20% and reduce inpatient days by 30%. We target 0.5 additional Quality Adjusted Life Year (QALY)
+              with an Incremental Cost-Effectiveness Ratio of €50–70k/QALY, aligning with high-income healthcare
+              thresholds.
             </p>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

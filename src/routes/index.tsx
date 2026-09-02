@@ -8,13 +8,13 @@ import { COMPANY, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PreTT ApS — See it. Reach it. Treat it." },
+      { title: "PreTT — See it. Reach it. Treat it." },
       {
         name: "description",
         content:
-          "PreTT ApS develops next generation radiotheranostics: a target-click-treat pretargeting platform for high-precision, low-toxicity cancer care across the blood-brain barrier.",
+          "PreTT develops next generation radiotheranostics: a target-click-treat pretargeting platform for high-precision, low-toxicity cancer care across the blood-brain barrier.",
       },
-      { property: "og:title", content: "PreTT ApS — See it. Reach it. Treat it." },
+      { property: "og:title", content: "PreTT — See it. Reach it. Treat it." },
       {
         property: "og:description",
         content:

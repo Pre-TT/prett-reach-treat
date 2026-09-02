@@ -7,24 +7,18 @@ import decay from "@/assets/211At_decay_chain.png.asset.json";
 import mouseDirect from "@/assets/Mouse_directly_labelled.png.asset.json";
 import mousePretarget from "@/assets/Mouse_pretargeting.png.asset.json";
 import stratification from "@/assets/Patient_Stratification.png.asset.json";
-import {
-  AT211_POINTS,
-  CLICK_CHEMISTRY_POINTS,
-  COMPARISON_BENEFITS,
-  PATENTS,
-  STEPS,
-} from "@/lib/content";
+import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, COMPARISON_BENEFITS, PATENTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
     meta: [
-      { title: "Technology — PreTT ApS Pretargeting Platform" },
+      { title: "Technology — PreTT Pretargeting Platform" },
       {
         name: "description",
         content:
           "PreTT's pretargeting platform uses tetrazine ligation click chemistry (IEDDA) and proprietary At-211 chemistry to deliver alpha radioligand therapy across the blood-brain barrier.",
       },
-      { property: "og:title", content: "Technology — PreTT ApS Pretargeting Platform" },
+      { property: "og:title", content: "Technology — PreTT Pretargeting Platform" },
       {
         property: "og:description",
         content:
@@ -48,11 +42,10 @@ function Technology() {
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-8 max-w-3xl text-lg text-ink-foreground/75">
-              Current radioligand therapies are limited by a suboptimal pharmacokinetic profile. The
-              trade-off between binding specificity and off-target clearance creates a “therapeutic
-              ceiling”, where systemic toxicity prevents the delivery of curative doses. Our
-              proprietary pretargeting platform separates tumour targeting from radioactive
-              delivery, ensuring maximum dose to the tumour while sparing healthy tissue.
+              Current radioligand therapies are limited by a suboptimal pharmacokinetic profile. The trade-off between
+              binding specificity and off-target clearance creates a “therapeutic ceiling”, where systemic toxicity
+              prevents the delivery of curative doses. Our proprietary pretargeting platform separates tumour targeting
+              from radioactive delivery, ensuring maximum dose to the tumour while sparing healthy tissue.
             </p>
           </Reveal>
         </div>
@@ -60,9 +53,7 @@ function Technology() {
 
       {/* Modules: target - click - treat */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Pretargeting in action">
-          Decoupling radiotheranostics in three steps
-        </SectionTitle>
+        <SectionTitle eyebrow="Pretargeting in action">Decoupling radiotheranostics in three steps</SectionTitle>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {STEPS.map((s, i) => (
             <Reveal key={s.title} delay={i * 120}>
@@ -122,9 +113,7 @@ function Technology() {
 
       {/* Conventional vs pretargeting */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Conventional vs. pretargeting">
-          Superior signal-to-noise, in vivo
-        </SectionTitle>
+        <SectionTitle eyebrow="Conventional vs. pretargeting">Superior signal-to-noise, in vivo</SectionTitle>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <Reveal>
             <figure className="h-full rounded-xl border border-border bg-card p-5">
@@ -178,9 +167,9 @@ function Technology() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mt-6 max-w-3xl text-ink-foreground/75">
-              Proof of concept study in an Alzheimer model targeting Aβ plaques in collaboration
-              with Roche. PreTT's breakthrough technology delivers high resolution imaging of the
-              CNS and unlocks pretargeted radioligand therapy for oncological targets in the brain.
+              Proof of concept study in an Alzheimer model targeting Aβ plaques in collaboration with Roche. PreTT's
+              breakthrough technology delivers high resolution imaging of the CNS and unlocks pretargeted radioligand
+              therapy for oncological targets in the brain.
             </p>
           </Reveal>
           <Reveal delay={220}>
@@ -198,15 +187,12 @@ function Technology() {
 
       {/* At-211 */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="α-pretargeted RLT in the brain">
-          Unique At-211 chemistry
-        </SectionTitle>
+        <SectionTitle eyebrow="α-pretargeted RLT in the brain">Unique At-211 chemistry</SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            PreTT is currently expanding its technology to a therapeutic oncology pipeline focused
-            on high-unmet-need oncology targets in the brain — primary tumours and brain
-            metastases. Our unique At-211 chemistry enables α-pretargeted RLT across the BBB, for
-            higher therapeutic efficacy through the power of alpha radiation.
+            PreTT is currently expanding its technology to a therapeutic oncology pipeline focused on high-unmet-need
+            oncology targets in the brain — primary tumours and brain metastases. Our unique At-211 chemistry enables
+            α-pretargeted RLT across the BBB, for higher therapeutic efficacy through the power of alpha radiation.
           </p>
         </Reveal>
         <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
@@ -236,15 +222,12 @@ function Technology() {
       {/* Theranostics */}
       <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Radiotheranostics">
-            See what you treat, treat what you see
-          </SectionTitle>
+          <SectionTitle eyebrow="Radiotheranostics">See what you treat, treat what you see</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb,
-              peptide, small molecule), an optional linker, a radionuclide and — for radiometals —
-              an optional chelator. Imaging enables patient stratification and dosimetry; therapy
-              then delivers what imaging revealed.
+              Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb, peptide, small
+              molecule), an optional linker, a radionuclide and — for radiometals — an optional chelator. Imaging
+              enables patient stratification and dosimetry; therapy then delivers what imaging revealed.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -262,9 +245,7 @@ function Technology() {
 
       {/* IP */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Our IP">
-          Unique and strong protection with late expiry
-        </SectionTitle>
+        <SectionTitle eyebrow="Our IP">Unique and strong protection with late expiry</SectionTitle>
         <Reveal delay={120}>
           <div className="mt-12 overflow-x-auto rounded-xl border border-border bg-card">
             <table className="w-full min-w-[720px] text-left text-sm">
@@ -281,9 +262,7 @@ function Technology() {
                   <tr key={p.number} className="border-t border-border align-top">
                     <td className="px-5 py-4 font-medium whitespace-nowrap">{p.number}</td>
                     <td className="px-5 py-4 text-muted-foreground">{p.title}</td>
-                    <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">
-                      {p.priority}
-                    </td>
+                    <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.priority}</td>
                     <td className="px-5 py-4 text-muted-foreground">{p.status}</td>
                   </tr>
                 ))}

@@ -115,10 +115,7 @@ export const PATENTS = [
 export const MILESTONES = [
   {
     year: "2022",
-    items: [
-      "Company inception \u2014 spin out of the University of Copenhagen",
-      "3 patents filed",
-    ],
+    items: ["Company inception \u2014 spin out of the University of Copenhagen", "3 patents filed"],
   },
   {
     year: "2023",
@@ -172,16 +169,15 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     stageIndex: 0,
   },
   {
-    program: "PRECISE",
+    program: "PRE-BREACH",
     indication: "Glioblastoma \u00B7 OSR 5y 5\u201310%",
     target: "uPAR",
     isotope: "\u00B2\u00B9\u00B9At",
-    partners:
-      "K\u00F8benhavns Universitet, Curasight, Innovation Fund Denmark, PanTarg, Rigshospitalet",
+    partners: "K\u00F8benhavns Universitet, Curasight, Innovation Fund Denmark, PanTarg, Rigshospitalet",
     stageIndex: 0,
   },
   {
-    program: "AKITINE",
+    program: "PRECISE",
     indication: "HNSCC \u00B7 OSR 5y <20%",
     target: "CD44V6",
     isotope: "Radiometals",
@@ -216,24 +212,6 @@ export const TEAM_FALLBACK: TeamMember[] = [
     title: "CSO & Co-Founder",
     bio: "20+ years in radiopharma R&D.",
     group: "Management",
-  },
-  {
-    name: "Hans Schambye, MD, PhD",
-    title: "Chairman of the Board",
-    bio: "[PLACEHOLDER]",
-    group: "Expert Board & Advisors",
-  },
-  {
-    name: "Colin Hayward, MD",
-    title: "Scientific Advisor",
-    bio: "Former CMO of TELIX.",
-    group: "Expert Board & Advisors",
-  },
-  {
-    name: "Tore S\u00F8derblom",
-    title: "CMC Advisor",
-    bio: "Former CMC VP at YmAbs.",
-    group: "Expert Board & Advisors",
   },
   {
     name: "Sophie Stotz, PhD",

@@ -7,17 +7,16 @@ import { TEAM_FALLBACK, type TeamMember } from "@/lib/content";
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
-      { title: "Team — PreTT ApS" },
+      { title: "Team — PreTT" },
       {
         name: "description",
         content:
-          "Built by leaders in radiopharma and clinical translation: the management, advisors and research team behind PreTT ApS.",
+          "Built by leaders in radiopharma and clinical translation: the management, advisors and research team behind PreTT.",
       },
-      { property: "og:title", content: "Team — PreTT ApS" },
+      { property: "og:title", content: "Team — PreTT" },
       {
         property: "og:description",
-        content:
-          "Meet the PreTT team — founded in 2022 by renowned experts in radiopharmaceutical translation.",
+        content: "Meet the PreTT team — founded in 2022 by renowned experts in radiopharmaceutical translation.",
       },
     ],
   }),

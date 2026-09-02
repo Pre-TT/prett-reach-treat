@@ -8,13 +8,13 @@ import { PIPELINE_FALLBACK, PIPELINE_STAGES, type PipelineRow } from "@/lib/cont
 export const Route = createFileRoute("/pipeline")({
   head: () => ({
     meta: [
-      { title: "Pipeline — PreTT ApS" },
+      { title: "Pipeline — PreTT" },
       {
         name: "description",
         content:
           "PreTT's oncology pipeline: our roadmap to first-in-human trials across HER2+ breast cancer brain metastases, glioblastoma and HNSCC.",
       },
-      { property: "og:title", content: "Pipeline — PreTT ApS" },
+      { property: "og:title", content: "Pipeline — PreTT" },
       {
         property: "og:description",
         content:
@@ -40,9 +40,7 @@ function pick(row: Row, keys: string[]): string {
 function normalize(rows: Row[]): PipelineRow[] {
   return rows.map((r) => {
     const stageLabel = pick(r, ["stage", "phase", "status"]);
-    const idx = PIPELINE_STAGES.findIndex(
-      (s) => s.toLowerCase() === stageLabel.trim().toLowerCase(),
-    );
+    const idx = PIPELINE_STAGES.findIndex((s) => s.toLowerCase() === stageLabel.trim().toLowerCase());
     const numeric = Number(pick(r, ["stage_index", "stageindex", "progress"]));
     return {
       program: pick(r, ["program", "programme", "asset", "name", "title"]) || "[PLACEHOLDER]",
@@ -113,14 +111,12 @@ function Pipeline() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">Oncology Pipeline</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
-              Our roadmap to first-in-human trials
-            </h1>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">Our roadmap to first-in-human trials</h1>
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-8 max-w-3xl text-lg text-ink-foreground/75">
-              PreTT is expanding its technology to a therapeutic oncology pipeline focused on
-              high-unmet-need oncology targets in the brain — primary tumours and brain metastases.
+              PreTT is expanding its technology to a therapeutic oncology pipeline focused on high-unmet-need oncology
+              targets in the brain — primary tumours and brain metastases.
             </p>
           </Reveal>
         </div>
@@ -148,9 +144,7 @@ function Pipeline() {
                   <div>
                     <p className="font-display text-lg font-semibold">{r.program}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{r.indication}</p>
-                    {r.partners ? (
-                      <p className="mt-2 text-xs text-muted-foreground/80">{r.partners}</p>
-                    ) : null}
+                    {r.partners ? <p className="mt-2 text-xs text-muted-foreground/80">{r.partners}</p> : null}
                   </div>
                   <span className="text-sm font-medium">{r.target}</span>
                   <span className="text-sm font-medium">{r.isotope}</span>

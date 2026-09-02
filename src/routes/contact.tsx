@@ -8,11 +8,11 @@ import { COMPANY } from "@/lib/content";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — PreTT ApS, Copenhagen" },
+      { title: "Contact — PreTT, Copenhagen" },
       {
         name: "description",
         content:
-          "Get in touch with PreTT ApS — Ole Maaløes Vej 3, 2200 Copenhagen, Denmark. Email info@pre-tt.com or connect with us on LinkedIn.",
+          "Get in touch with PreTT — Ole Maaløes Vej 3, 2200 Copenhagen, Denmark. Email info@pre-tt.com or connect with us on LinkedIn.",
       },
       { property: "og:title", content: "Contact — PreTT ApS, Copenhagen" },
       {
@@ -65,9 +65,7 @@ function Contact() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">Contact</p>
-            <h1 className="mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">
-              Let's talk about partnering
-            </h1>
+            <h1 className="mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">Let's talk about partnering</h1>
           </Reveal>
         </div>
       </section>
@@ -87,9 +85,7 @@ function Contact() {
                   maxLength={100}
                   className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 outline-none focus:border-accent"
                 />
-                {errors.name ? (
-                  <p className="mt-1 text-sm text-destructive">{errors.name}</p>
-                ) : null}
+                {errors.name ? <p className="mt-1 text-sm text-destructive">{errors.name}</p> : null}
               </div>
               <div>
                 <label htmlFor="email" className="text-sm font-medium">
@@ -102,9 +98,7 @@ function Contact() {
                   maxLength={255}
                   className="mt-2 w-full rounded-lg border border-border bg-card px-4 py-3 outline-none focus:border-accent"
                 />
-                {errors.email ? (
-                  <p className="mt-1 text-sm text-destructive">{errors.email}</p>
-                ) : null}
+                {errors.email ? <p className="mt-1 text-sm text-destructive">{errors.email}</p> : null}
               </div>
               <div>
                 <label htmlFor="message" className="text-sm font-medium">
@@ -117,9 +111,7 @@ function Contact() {
                   maxLength={1000}
                   className="mt-2 w-full resize-y rounded-lg border border-border bg-card px-4 py-3 outline-none focus:border-accent"
                 />
-                {errors.message ? (
-                  <p className="mt-1 text-sm text-destructive">{errors.message}</p>
-                ) : null}
+                {errors.message ? <p className="mt-1 text-sm text-destructive">{errors.message}</p> : null}
               </div>
               <button
                 type="submit"
@@ -153,12 +145,7 @@ function Contact() {
               </li>
               <li className="flex gap-3">
                 <Linkedin className="mt-0.5 size-5 shrink-0 text-accent" />
-                <a
-                  href={COMPANY.linkedin}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="hover:text-accent"
-                >
+                <a href={COMPANY.linkedin} target="_blank" rel="noreferrer noopener" className="hover:text-accent">
                   PreTT on LinkedIn
                 </a>
               </li>
