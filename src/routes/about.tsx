@@ -1,0 +1,118 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { Reveal, SectionTitle } from "@/components/Reveal";
+import { MILESTONES, MISSION_QUOTE, NUTSHELL } from "@/lib/content";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About Us — PreTT ApS" },
+      {
+        name: "description",
+        content:
+          "PreTT ApS was spun out of the University of Copenhagen in 2022 to break two walls: the blood-brain barrier and systemic toxicity in radioligand therapy.",
+      },
+      { property: "og:title", content: "About Us — PreTT ApS" },
+      {
+        property: "og:description",
+        content:
+          "Founded in 2022 as a spin-out of the University of Copenhagen, PreTT develops pretargeted radiotheranostics for high-unmet-need cancers.",
+      },
+    ],
+  }),
+  component: About,
+});
+
+const IMPACT = [
+  {
+    stat: ">300,000",
+    label: "patients diagnosed with primary brain tumours per year",
+  },
+  { stat: ">2.5M", label: "patients affected by brain metastases" },
+  { stat: "<35%", label: "5-year survival rate for these patients today" },
+  { stat: ">150,000", label: "people affected by glioblastoma globally each year (7% 5-year survival)" },
+];
+
+function About() {
+  return (
+    <>
+      <section className="bg-ink py-24 text-ink-foreground">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal>
+            <p className="eyebrow">About Us</p>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
+              Breaking two walls at once
+            </h1>
+          </Reveal>
+          <Reveal delay={150}>
+            <blockquote className="mt-10 max-w-3xl border-l-2 border-accent pl-6 text-xl leading-relaxed text-ink-foreground/85 italic">
+              “{MISSION_QUOTE}”
+            </blockquote>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <SectionTitle eyebrow="Our story">A spin-out of the University of Copenhagen</SectionTitle>
+        <div className="mt-8 grid gap-10 lg:grid-cols-2">
+          <Reveal>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              PreTT ApS was founded in 2022 as a spin-out of the University of Copenhagen by
+              renowned experts in radiopharmaceutical translation. Today the company develops
+              pretargeted radiotheranostics designed for high-precision, low-toxicity cancer care.
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-secondary py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <SectionTitle eyebrow="Our mission">
+            Driven by high unmet needs and difficult-to-treat cancers
+          </SectionTitle>
+          <Reveal delay={120}>
+            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+              By overcoming the blood-brain barrier, we address patients who currently face a
+              5-year survival rate below 35%. By improving therapeutic efficacy and reducing
+              toxicity, we aim to increase 5-year survival by a relative 20% and reduce inpatient
+              days by 30%. We target 0.5 additional Quality Adjusted Life Year (QALY) with an
+              Incremental Cost-Effectiveness Ratio of €50–70k/QALY, aligning with high-income
+              healthcare thresholds.
+            </p>
+          </Reveal>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {IMPACT.map((i, idx) => (
+              <Reveal key={i.stat} delay={idx * 100}>
+                <div className="h-full rounded-xl border border-border bg-card p-7">
+                  <p className="font-display text-3xl font-semibold text-foreground">{i.stat}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.label}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <SectionTitle eyebrow="Our vision">Process to date</SectionTitle>
+        <ol className="mt-12 space-y-10 border-l border-border pl-8">
+          {MILESTONES.map((m, i) => (
+            <Reveal as="li" key={m.year} delay={i * 80} className="relative">
+              <span className="absolute -left-[41px] mt-2 size-3 rounded-full bg-accent" />
+              <p className="font-display text-2xl font-semibold">{m.year}</p>
+              <ul className="mt-3 space-y-2">
+                {m.items.map((item) => (
+                  <li key={item} className="text-muted-foreground">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </ol>
+      </section>
+    </>
+  );
+}
