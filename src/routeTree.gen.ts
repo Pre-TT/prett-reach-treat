@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as PipelineRouteImport } from './routes/pipeline'
 import { Route as TeamRouteImport } from './routes/team'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsRoute = NewsRouteImport.update({
@@ -50,6 +56,7 @@ const TechnologyRoute = TechnologyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/news': typeof NewsRoute
   '/pipeline': typeof PipelineRoute
   '/team': typeof TeamRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/news': typeof NewsRoute
   '/pipeline': typeof PipelineRoute
   '/team': typeof TeamRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/news': typeof NewsRoute
   '/pipeline': typeof PipelineRoute
   '/team': typeof TeamRoute
@@ -74,13 +83,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/news' | '/pipeline' | '/team' | '/technology'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/news'
+    | '/pipeline'
+    | '/team'
+    | '/technology'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/news' | '/pipeline' | '/team' | '/technology'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/news'
+    | '/pipeline'
+    | '/team'
+    | '/technology'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/contact'
     | '/news'
     | '/pipeline'
     | '/team'
@@ -90,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   NewsRoute: typeof NewsRoute
   PipelineRoute: typeof PipelineRoute
   TeamRoute: typeof TeamRoute
@@ -110,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news': {
@@ -146,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   NewsRoute: NewsRoute,
   PipelineRoute: PipelineRoute,
   TeamRoute: TeamRoute,
