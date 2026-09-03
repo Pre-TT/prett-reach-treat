@@ -240,6 +240,7 @@ export const TEAM_FALLBACK: TeamMember[] = [
 ];
 
 export type NewsItem = {
+  id: string;
   title: string;
   date: string;
   excerpt: string;
