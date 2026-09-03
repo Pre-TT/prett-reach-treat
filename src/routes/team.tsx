@@ -113,6 +113,7 @@ function Team() {
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {members
                 .filter((m) => m.group === g)
+                .sort((a, b) => preferredOrder(a.name) - preferredOrder(b.name))
                 .map((m, i) => (
                   <Reveal key={m.name} delay={i * 90}>
                     <article className="group flex h-full items-center gap-5 rounded-xl border border-border bg-card p-4 transition-colors hover:border-accent">
