@@ -36,12 +36,18 @@ function pick(row: Row, keys: string[]): string {
   return "";
 }
 
+function truncate(text: string, max = 220): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max).replace(/\s+\S*$/, "") + "…";
+}
+
 function normalize(rows: Row[]): NewsItem[] {
   return rows
     .map((r) => ({
       title: pick(r, ["title", "headline", "name"]) || "[PLACEHOLDER]",
       date: pick(r, ["date", "published_at", "created_at", "publishedat"]),
-      excerpt: pick(r, ["excerpt", "summary", "description", "body", "content"]),
+      excerpt: truncate(pick(r, ["excerpt", "summary", "description", "body", "content"])),
       link: pick(r, ["link", "url", "href"]) || null,
     }))
     .sort((a, b) => (a.date < b.date ? 1 : -1));

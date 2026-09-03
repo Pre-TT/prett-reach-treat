@@ -46,10 +46,12 @@ function pick(row: Row, keys: string[]): string {
 
 function normalizePatents(rows: Row[]): Patent[] {
   return rows.map((r) => ({
-    number: pick(r, ["number", "patentnumber", "patentno", "publicationnumber", "id"]) || "[PLACEHOLDER]",
-    title: pick(r, ["title", "name", "description"]) || "[PLACEHOLDER]",
-    priority: pick(r, ["priority", "prioritydate", "date", "filingdate"]) || "[PLACEHOLDER]",
-    status: pick(r, ["status", "state"]) || "[PLACEHOLDER]",
+    number:
+      pick(r, ["number", "patentcode", "patentnumber", "patentno", "publicationnumber", "code", "id"]).trim() ||
+      "[PLACEHOLDER]",
+    title: pick(r, ["title", "name", "description"]).trim() || "[PLACEHOLDER]",
+    priority: pick(r, ["priority", "prioritydate", "filingdate"]).trim(),
+    status: pick(r, ["status", "state"]).trim() || "[PLACEHOLDER]",
   }));
 }
 
@@ -69,6 +71,7 @@ function usePatents() {
 function Technology() {
   const { data: livePatents } = usePatents();
   const patents = livePatents && livePatents.length > 0 ? livePatents : PATENTS;
+  const showPriority = patents.some((p) => p.priority && p.priority !== "[PLACEHOLDER]");
   return (
     <>
       <section className="bg-ink py-24 text-ink-foreground">
@@ -292,7 +295,7 @@ function Technology() {
                 <tr>
                   <th className="px-5 py-4 font-medium">Patent number</th>
                   <th className="px-5 py-4 font-medium">Title</th>
-                  <th className="px-5 py-4 font-medium">Priority date</th>
+                  {showPriority && <th className="px-5 py-4 font-medium">Priority date</th>}
                   <th className="px-5 py-4 font-medium">Status</th>
                 </tr>
               </thead>
@@ -301,7 +304,9 @@ function Technology() {
                   <tr key={p.number} className="border-t border-border align-top">
                     <td className="px-5 py-4 font-medium whitespace-nowrap">{p.number}</td>
                     <td className="px-5 py-4 text-muted-foreground">{p.title}</td>
-                    <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.priority}</td>
+                    {showPriority && (
+                      <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.priority}</td>
+                    )}
                     <td className="px-5 py-4 text-muted-foreground">{p.status}</td>
                   </tr>
                 ))}

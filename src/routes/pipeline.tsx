@@ -43,7 +43,7 @@ function normalize(rows: Row[]): PipelineRow[] {
     const idx = PIPELINE_STAGES.findIndex((s) => s.toLowerCase() === stageLabel.trim().toLowerCase());
     const numeric = Number(pick(r, ["stage_index", "stageindex", "progress"]));
     return {
-      program: pick(r, ["program", "programme", "asset", "name", "title"]) || "[PLACEHOLDER]",
+      program: pick(r, ["program", "programm", "programme", "asset", "name", "title"]) || "[PLACEHOLDER]",
       indication: pick(r, ["indication", "disease", "description"]) || "[PLACEHOLDER]",
       target: pick(r, ["target"]) || "[PLACEHOLDER]",
       isotope: pick(r, ["isotope", "radionuclide", "nuclide"]) || "[PLACEHOLDER]",
