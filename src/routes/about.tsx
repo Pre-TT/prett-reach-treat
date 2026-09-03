@@ -72,9 +72,7 @@ function About() {
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               By overcoming the blood-brain barrier, we address patients who currently face a 5-year survival rate below
               35%. By improving therapeutic efficacy and reducing toxicity, we aim to increase 5-year survival by a
-              relative 20% and reduce inpatient days by 30%. We target 0.5 additional Quality Adjusted Life Year (QALY)
-              with an Incremental Cost-Effectiveness Ratio of €50–70k/QALY, aligning with high-income healthcare
-              thresholds.
+              relative 20% and reduce inpatient days by 30%.&nbsp;
             </p>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
