@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
-import logo from "@/assets/6.png.asset.json";
+import logo from "@/assets/prett-logo.png.asset.json";
 import { COMPANY } from "@/lib/content";
 
 export function Footer() {
@@ -8,9 +8,8 @@ export function Footer() {
     <footer className="mt-24 bg-ink text-ink-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-3">
-            <img src={logo.url} alt="PreTT logo" className="h-10 w-10" />
-            <span className="font-display text-xl font-semibold">PreTT</span>
+          <div className="flex items-center">
+            <img src={logo.url} alt="PreTT logo" className="h-10 w-auto" />
           </div>
           <p className="mt-4 max-w-sm text-sm text-ink-foreground/70">{COMPANY.tagline}</p>
         </div>
