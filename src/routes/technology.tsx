@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { Reveal, SectionTitle } from "@/components/Reveal";
+import { selectTable } from "@/lib/supabase";
 import pretargeting from "@/assets/Pretargeting_in_action.png.asset.json";
 import tetrazine from "@/assets/Tetrazine_Ligation_click_chemistry.png.asset.json";
 import bbb from "@/assets/BBB_crossing_PreTT.png.asset.json";
@@ -29,7 +31,44 @@ export const Route = createFileRoute("/technology")({
   component: Technology,
 });
 
+type Row = Record<string, unknown>;
+type Patent = { number: string; title: string; priority: string; status: string };
+
+function pick(row: Row, keys: string[]): string {
+  const lower: Record<string, unknown> = {};
+  Object.entries(row).forEach(([k, v]) => (lower[k.toLowerCase().replace(/[\s_-]/g, "")] = v));
+  for (const k of keys) {
+    const v = lower[k];
+    if (v !== null && v !== undefined && String(v).trim() !== "") return String(v);
+  }
+  return "";
+}
+
+function normalizePatents(rows: Row[]): Patent[] {
+  return rows.map((r) => ({
+    number: pick(r, ["number", "patentnumber", "patentno", "publicationnumber", "id"]) || "[PLACEHOLDER]",
+    title: pick(r, ["title", "name", "description"]) || "[PLACEHOLDER]",
+    priority: pick(r, ["priority", "prioritydate", "date", "filingdate"]) || "[PLACEHOLDER]",
+    status: pick(r, ["status", "state"]) || "[PLACEHOLDER]",
+  }));
+}
+
+function usePatents() {
+  return useQuery({
+    queryKey: ["patents"],
+    queryFn: async () => {
+      const data = await selectTable<Row>(["patents", "Patents"]);
+      if (!data) throw new Error("unavailable");
+      return normalizePatents(data);
+    },
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
+}
+
 function Technology() {
+  const { data: livePatents } = usePatents();
+  const patents = livePatents && livePatents.length > 0 ? livePatents : PATENTS;
   return (
     <>
       <section className="bg-ink py-24 text-ink-foreground">
@@ -258,7 +297,7 @@ function Technology() {
                 </tr>
               </thead>
               <tbody>
-                {PATENTS.map((p) => (
+                {patents.map((p) => (
                   <tr key={p.number} className="border-t border-border align-top">
                     <td className="px-5 py-4 font-medium whitespace-nowrap">{p.number}</td>
                     <td className="px-5 py-4 text-muted-foreground">{p.title}</td>
