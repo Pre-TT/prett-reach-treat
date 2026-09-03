@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
-import logo from "@/assets/prett-logo.png.asset.json";
+import logo from "@/assets/prett-logo-yellow.png.asset.json";
 import { COMPANY } from "@/lib/content";
 
 export function Footer() {
