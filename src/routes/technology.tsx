@@ -273,7 +273,7 @@ function Technology() {
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <figure className="mt-12 overflow-hidden rounded-xl border border-border bg-card p-4">
+            <figure className="mt-12 mx-auto max-w-3xl overflow-hidden rounded-xl border border-border bg-card p-4">
               <img
                 src={stratification.url}
                 alt="Workflow from cancer patients through PET/SPECT imaging to stratification, dosimetry, treatment and monitoring"
