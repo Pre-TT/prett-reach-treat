@@ -46,10 +46,12 @@ function pick(row: Row, keys: string[]): string {
 
 function normalizePatents(rows: Row[]): Patent[] {
   return rows.map((r) => ({
-    number: pick(r, ["number", "patentcode", "patentnumber", "patentno", "publicationnumber", "code", "id"]) || "[PLACEHOLDER]",
-    title: pick(r, ["title", "name", "description"]) || "[PLACEHOLDER]",
-    priority: pick(r, ["priority", "prioritydate", "date", "filingdate"]) || "[PLACEHOLDER]",
-    status: pick(r, ["status", "state"]) || "[PLACEHOLDER]",
+    number:
+      pick(r, ["number", "patentcode", "patentnumber", "patentno", "publicationnumber", "code", "id"]).trim() ||
+      "[PLACEHOLDER]",
+    title: pick(r, ["title", "name", "description"]).trim() || "[PLACEHOLDER]",
+    priority: pick(r, ["priority", "prioritydate", "filingdate"]).trim(),
+    status: pick(r, ["status", "state"]).trim() || "[PLACEHOLDER]",
   }));
 }
 
