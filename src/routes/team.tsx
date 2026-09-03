@@ -37,11 +37,20 @@ function pick(row: Row, keys: string[]): string {
 
 function normalize(rows: Row[]): TeamMember[] {
   return rows.map((r) => ({
-    name: pick(r, ["name", "full_name", "fullname"]) || "[PLACEHOLDER]",
-    title: pick(r, ["title", "role", "position"]) || "[PLACEHOLDER]",
-    bio: pick(r, ["bio", "description", "short_bio", "summary"]) || "[PLACEHOLDER]",
+    name: pick(r, ["name", "full_name", "fullname"]),
+    title: pick(r, ["title", "role", "position"]),
+    bio: pick(r, ["bio", "description", "short_bio", "summary"]),
     group: pick(r, ["group", "category", "team", "department"]) || "Team",
-    photo_url: pick(r, ["photo_url", "photo", "image_url", "image", "avatar_url"]) || null,
+    photo_url:
+      pick(r, [
+        "picture_url",
+        "picture",
+        "photo_url",
+        "photo",
+        "image_url",
+        "image",
+        "avatar_url",
+      ]) || null,
   }));
 }
 
