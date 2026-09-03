@@ -113,8 +113,12 @@ function Team() {
                         </div>
                       )}
                       <h3 className="mt-5 text-lg font-semibold">{m.name}</h3>
-                      <p className="mt-1 text-sm font-medium text-muted-foreground">{m.title}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+                      {m.title ? (
+                        <p className="mt-1 text-sm font-medium text-muted-foreground">{m.title}</p>
+                      ) : null}
+                      {m.bio ? (
+                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+                      ) : null}
                     </article>
                   </Reveal>
                 ))}
