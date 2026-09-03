@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { supabase, isPublished } from "@/lib/supabase";
 
-export const Route = createFileRoute("/news/$id")({
+export const Route = createFileRoute("/news_/$id")({
   head: () => ({
     meta: [
       { title: "Press Release — PreTT" },
