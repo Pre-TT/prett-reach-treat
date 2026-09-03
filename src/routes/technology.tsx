@@ -215,7 +215,7 @@ function Technology() {
             </p>
           </Reveal>
           <Reveal delay={220}>
-            <figure className="mt-12 overflow-hidden rounded-xl bg-cream p-4">
+            <figure className="mt-10 overflow-hidden rounded-xl bg-cream p-4 sm:max-w-2xl">
               <img
                 src={bbb.url}
                 alt="Illustration of PreTT agents crossing the blood-brain barrier and accumulating in a brain tumour"
