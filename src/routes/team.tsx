@@ -75,7 +75,23 @@ function Team() {
   });
 
   const members = data ?? TEAM_FALLBACK;
-  const groups = Array.from(new Set(members.map((m) => m.group)));
+  const groupOrder = [
+    "Management",
+    "Research & Development",
+    "Business Development",
+    "Advisors",
+    "Team",
+  ];
+  const groups = Array.from(new Set(members.map((m) => m.group))).sort(
+    (a, b) => {
+      const ia = groupOrder.indexOf(a);
+      const ib = groupOrder.indexOf(b);
+      if (ia === -1 && ib === -1) return a.localeCompare(b);
+      if (ia === -1) return 1;
+      if (ib === -1) return -1;
+      return ia - ib;
+    },
+  );
 
   return (
     <>
