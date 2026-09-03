@@ -139,13 +139,19 @@ function Contact() {
               </div>
               <button
                 type="submit"
-                className="rounded-full bg-ink px-7 py-3 text-sm font-semibold text-ink-foreground transition-colors hover:bg-accent hover:text-ink"
+                disabled={status === "sending"}
+                className="rounded-full bg-ink px-7 py-3 text-sm font-semibold text-ink-foreground transition-colors hover:bg-accent hover:text-ink disabled:opacity-60"
               >
-                Send message
+                {status === "sending" ? "Sending…" : "Send message"}
               </button>
-              {sent ? (
+              {status === "sent" ? (
                 <p className="text-sm text-muted-foreground">
-                  Your email client should now open with the message ready to send.
+                  Thank you — your message has been sent. We'll be in touch shortly.
+                </p>
+              ) : null}
+              {status === "error" ? (
+                <p className="text-sm text-destructive">
+                  Something went wrong sending your message. Please email {COMPANY.email} directly.
                 </p>
               ) : null}
             </form>
