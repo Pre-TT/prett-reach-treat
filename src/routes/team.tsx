@@ -64,6 +64,24 @@ function initials(name: string) {
     .join("");
 }
 
+// Explicit within-group ordering (matches the requested display sequence).
+const NAME_ORDER: string[] = [
+  "Andreas",
+  "Natalia",
+  "Matthias",
+  "Sophie",
+  "Mamina",
+  "Lars",
+  "Leo",
+];
+
+function preferredOrder(name: string) {
+  const idx = NAME_ORDER.findIndex((n) =>
+    name.toLowerCase().startsWith(n.toLowerCase()),
+  );
+  return idx === -1 ? 1000 : idx;
+}
+
 function Team() {
   const { data } = useQuery({
     queryKey: ["team"],
