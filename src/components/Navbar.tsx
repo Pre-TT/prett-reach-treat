@@ -34,10 +34,11 @@ export function Navbar() {
           : "border-b border-transparent",
       )}
     >
-      <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex h-22 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="PreTT logo" className="h-9 w-9" />
-          <span className="font-display text-xl font-semibold tracking-tight">PreTT</span>
+          <img src={logo.url} alt="PreTT logo" className="h-13 w-13" />
+          <span className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">PreTT</span>
+
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">
