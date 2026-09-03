@@ -110,30 +110,30 @@ function Team() {
         {groups.map((g, gi) => (
           <div key={g} className={gi > 0 ? "mt-20" : ""}>
             <SectionTitle eyebrow={`0${gi + 1}`}>{g}</SectionTitle>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {members
                 .filter((m) => m.group === g)
                 .map((m, i) => (
                   <Reveal key={m.name} delay={i * 90}>
-                    <article className="group h-full rounded-xl border border-border bg-card p-7 transition-colors hover:border-accent">
+                    <article className="group h-full rounded-xl border border-border bg-card p-5 transition-colors hover:border-accent">
                       {m.photo_url ? (
                         <img
                           src={m.photo_url}
                           alt={m.name}
-                          className="size-20 rounded-full object-cover"
+                          className="size-24 rounded-full object-cover"
                           loading="lazy"
                         />
                       ) : (
-                        <div className="flex size-20 items-center justify-center rounded-full bg-secondary font-display text-xl font-semibold text-foreground">
+                        <div className="flex size-24 items-center justify-center rounded-full bg-secondary font-display text-2xl font-semibold text-foreground">
                           {initials(m.name)}
                         </div>
                       )}
-                      <h3 className="mt-5 text-lg font-semibold">{m.name}</h3>
+                      <h3 className="mt-4 text-xl font-semibold">{m.name}</h3>
                       {m.title ? (
-                        <p className="mt-1 text-sm font-medium text-muted-foreground">{m.title}</p>
+                        <p className="mt-1 text-base font-medium text-muted-foreground">{m.title}</p>
                       ) : null}
                       {m.bio ? (
-                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+                        <p className="mt-2 text-base leading-relaxed text-muted-foreground">{m.bio}</p>
                       ) : null}
                     </article>
                   </Reveal>
