@@ -1,17 +1,9 @@
-import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { selectTable } from "@/lib/supabase";
+import { selectTable, isPublished } from "@/lib/supabase";
 import type { NewsItem } from "@/lib/content";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -55,9 +47,10 @@ function normalize(rows: Row[]): NewsItem[] {
     .map((r) => {
       const full = pick(r, ["body", "content", "excerpt", "summary", "description"]);
       return {
+        id: pick(r, ["id", "slug", "uid"]) || pick(r, ["title"]),
         title: pick(r, ["title", "headline", "name"]) || "[PLACEHOLDER]",
         date: pick(r, ["date", "published_at", "created_at", "publishedat"]),
-        excerpt: truncate(full),
+        excerpt: truncate(pick(r, ["summary", "excerpt", "description"]) || full),
         full,
         link: pick(r, ["link", "url", "href"]) || null,
       };
@@ -88,7 +81,6 @@ function News() {
   });
 
   const items = data ?? [];
-  const [selected, setSelected] = useState<NewsItem | null>(null);
 
   return (
     <>
@@ -114,79 +106,35 @@ function News() {
             database will appear here automatically.
           </p>
         ) : (
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
             {items.map((n, i) => (
-              <Reveal key={`${n.title}-${i}`} delay={i * 90}>
-                <article
-                  className="group flex h-full cursor-pointer flex-col rounded-xl border border-border bg-card p-7 transition-colors hover:border-accent"
-                  onClick={() => setSelected(n)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      setSelected(n);
-                    }
-                  }}
+              <Reveal key={n.id} delay={i * 90}>
+                <Link
+                  to="/news/$id"
+                  params={{ id: n.id }}
+                  className="group flex h-full flex-col rounded-xl border border-border bg-cream p-7 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]"
                 >
                   {n.date ? (
-                    <time className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
+                    <time className="text-xs font-semibold tracking-widest uppercase text-accent">
                       {formatDate(n.date)}
                     </time>
                   ) : null}
-                  <h3 className="mt-3 text-lg font-semibold">{n.title}</h3>
+                  <h3 className="mt-3 text-xl font-semibold text-ink">{n.title}</h3>
                   {n.excerpt ? (
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-3 text-sm leading-relaxed text-ink/70">
                       {n.excerpt}
                     </p>
                   ) : null}
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ink">
                     Read more
                     <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
-                </article>
+                </Link>
               </Reveal>
             ))}
           </div>
         )}
       </section>
-
-      <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
-        <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
-          {selected ? (
-            <>
-              <DialogHeader>
-                {selected.date ? (
-                  <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
-                    {formatDate(selected.date)}
-                  </p>
-                ) : null}
-                <DialogTitle className="text-2xl">{selected.title}</DialogTitle>
-              </DialogHeader>
-              <DialogDescription asChild>
-                <div className="space-y-4 text-base leading-relaxed text-foreground">
-                  {selected.full
-                    ? selected.full.split(/\n{2,}/).map((para, idx) => (
-                        <p key={idx}>{para}</p>
-                      ))
-                    : "[PLACEHOLDER] — full content not available."}
-                </div>
-              </DialogDescription>
-              {selected.link ? (
-                <a
-                  href={selected.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground"
-                >
-                  Open original
-                  <ArrowUpRight className="size-4" />
-                </a>
-              ) : null}
-            </>
-          ) : null}
-        </DialogContent>
-      </Dialog>
     </>
   );
 }
