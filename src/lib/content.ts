@@ -121,7 +121,7 @@ export const MILESTONES = [
     year: "2023",
     items: [
       "Blood-Brain-Barrier crossing \u2014 proof of concept in partnership with Roche",
-      "1 additional patent granted",
+      "Patent filed",
     ],
   },
   {
