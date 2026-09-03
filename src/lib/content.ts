@@ -243,5 +243,6 @@ export type NewsItem = {
   title: string;
   date: string;
   excerpt: string;
+  full: string;
   link?: string | null;
 };

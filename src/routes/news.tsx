@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { selectTable } from "@/lib/supabase";
 import type { NewsItem } from "@/lib/content";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -44,12 +52,16 @@ function truncate(text: string, max = 220): string {
 
 function normalize(rows: Row[]): NewsItem[] {
   return rows
-    .map((r) => ({
-      title: pick(r, ["title", "headline", "name"]) || "[PLACEHOLDER]",
-      date: pick(r, ["date", "published_at", "created_at", "publishedat"]),
-      excerpt: truncate(pick(r, ["excerpt", "summary", "description", "body", "content"])),
-      link: pick(r, ["link", "url", "href"]) || null,
-    }))
+    .map((r) => {
+      const full = pick(r, ["body", "content", "excerpt", "summary", "description"]);
+      return {
+        title: pick(r, ["title", "headline", "name"]) || "[PLACEHOLDER]",
+        date: pick(r, ["date", "published_at", "created_at", "publishedat"]),
+        excerpt: truncate(full),
+        full,
+        link: pick(r, ["link", "url", "href"]) || null,
+      };
+    })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
@@ -76,6 +88,7 @@ function News() {
   });
 
   const items = data ?? [];
+  const [selected, setSelected] = useState<NewsItem | null>(null);
 
   return (
     <>
@@ -104,7 +117,18 @@ function News() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {items.map((n, i) => (
               <Reveal key={`${n.title}-${i}`} delay={i * 90}>
-                <article className="group flex h-full flex-col rounded-xl border border-border bg-card p-7 transition-colors hover:border-accent">
+                <article
+                  className="group flex h-full cursor-pointer flex-col rounded-xl border border-border bg-card p-7 transition-colors hover:border-accent"
+                  onClick={() => setSelected(n)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelected(n);
+                    }
+                  }}
+                >
                   {n.date ? (
                     <time className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
                       {formatDate(n.date)}
@@ -116,23 +140,53 @@ function News() {
                       {n.excerpt}
                     </p>
                   ) : null}
-                  {n.link ? (
-                    <a
-                      href={n.link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground"
-                    >
-                      Read more
-                      <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
-                  ) : null}
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                    Read more
+                    <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
                 </article>
               </Reveal>
             ))}
           </div>
         )}
       </section>
+
+      <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
+        <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
+          {selected ? (
+            <>
+              <DialogHeader>
+                {selected.date ? (
+                  <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
+                    {formatDate(selected.date)}
+                  </p>
+                ) : null}
+                <DialogTitle className="text-2xl">{selected.title}</DialogTitle>
+              </DialogHeader>
+              <DialogDescription asChild>
+                <div className="space-y-4 text-base leading-relaxed text-foreground">
+                  {selected.full
+                    ? selected.full.split(/\n{2,}/).map((para, idx) => (
+                        <p key={idx}>{para}</p>
+                      ))
+                    : "[PLACEHOLDER] — full content not available."}
+                </div>
+              </DialogDescription>
+              {selected.link ? (
+                <a
+                  href={selected.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground"
+                >
+                  Open original
+                  <ArrowUpRight className="size-4" />
+                </a>
+              ) : null}
+            </>
+          ) : null}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
