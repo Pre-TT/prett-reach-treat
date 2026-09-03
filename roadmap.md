@@ -1,5 +1,5 @@
 # Roadmap
 
 ## Done
-- [x] Technology page — BBB_crossing image: cropped whitespace above/below + made smaller (max-w-2xl)
-- [x] Technology page — Patient_Stratification image: replaced AI-generated infographic with the actually-provided upload
+- [x] Technology page — BBB image figure: white background restored (bg-cream -> bg-white)
+- [x] Technology page — Patient_Stratification image: cropped transparent margins + constrained to max-w-3xl, kept card background
