@@ -71,6 +71,7 @@ function usePatents() {
 function Technology() {
   const { data: livePatents } = usePatents();
   const patents = livePatents && livePatents.length > 0 ? livePatents : PATENTS;
+  const showPriority = patents.some((p) => p.priority && p.priority !== "[PLACEHOLDER]");
   return (
     <>
       <section className="bg-ink py-24 text-ink-foreground">
