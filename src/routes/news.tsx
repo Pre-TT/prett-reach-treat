@@ -58,7 +58,12 @@ function News() {
   const { data, isLoading } = useQuery({
     queryKey: ["news"],
     queryFn: async () => {
-      const rows = await selectTable<Row>(["news", "News"]);
+      const rows = await selectTable<Row>([
+        "news",
+        "News",
+        "Press releases",
+        "press_releases",
+      ]);
       if (!rows) return null;
       return normalize(rows);
     },
