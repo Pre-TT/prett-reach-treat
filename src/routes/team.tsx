@@ -120,11 +120,11 @@ function Team() {
                         <img
                           src={m.photo_url}
                           alt={m.name}
-                          className="size-20 shrink-0 rounded-full object-cover"
+                          className="size-24 shrink-0 rounded-full object-cover"
                           loading="lazy"
                         />
                       ) : (
-                        <div className="flex size-20 shrink-0 items-center justify-center rounded-full bg-secondary font-display text-xl font-semibold text-foreground">
+                        <div className="flex size-24 shrink-0 items-center justify-center rounded-full bg-secondary font-display text-2xl font-semibold text-foreground">
                           {initials(m.name)}
                         </div>
                       )}
