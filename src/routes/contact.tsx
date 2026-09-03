@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Linkedin, Mail, MapPin } from "lucide-react";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY } from "@/lib/content";
 
@@ -30,13 +31,18 @@ const schema = z.object({
   message: z.string().trim().min(1, "Please enter a message").max(1000),
 });
 
+const EMAILJS_SERVICE_ID = "service_ops9uew";
+const EMAILJS_TEMPLATE_ID = "template_vwbfl4j";
+const EMAILJS_PUBLIC_KEY = "FwPdzFNWKgCHPQHlw";
+
 function Contact() {
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
     const parsed = schema.safeParse({
       name: form.get("name"),
       email: form.get("email"),
@@ -51,10 +57,28 @@ function Contact() {
       return;
     }
     setErrors({});
-    const subject = encodeURIComponent(`Website enquiry from ${parsed.data.name}`);
-    const body = encodeURIComponent(`${parsed.data.message}\n\n— ${parsed.data.name} (${parsed.data.email})`);
-    window.location.href = `mailto:${COMPANY.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: parsed.data.name,
+          email: parsed.data.email,
+          message: parsed.data.message,
+          from_name: parsed.data.name,
+          from_email: parsed.data.email,
+          reply_to: parsed.data.email,
+          to_email: COMPANY.email,
+          subject: `Website enquiry from ${parsed.data.name}`,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      setStatus("sent");
+      formEl.reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   const mapQuery = encodeURIComponent(`${COMPANY.name}, ${COMPANY.address}`);
