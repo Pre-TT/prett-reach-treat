@@ -37,11 +37,20 @@ function pick(row: Row, keys: string[]): string {
 
 function normalize(rows: Row[]): TeamMember[] {
   return rows.map((r) => ({
-    name: pick(r, ["name", "full_name", "fullname"]) || "[PLACEHOLDER]",
-    title: pick(r, ["title", "role", "position"]) || "[PLACEHOLDER]",
-    bio: pick(r, ["bio", "description", "short_bio", "summary"]) || "[PLACEHOLDER]",
+    name: pick(r, ["name", "full_name", "fullname"]),
+    title: pick(r, ["title", "role", "position"]),
+    bio: pick(r, ["bio", "description", "short_bio", "summary"]),
     group: pick(r, ["group", "category", "team", "department"]) || "Team",
-    photo_url: pick(r, ["photo_url", "photo", "image_url", "image", "avatar_url"]) || null,
+    photo_url:
+      pick(r, [
+        "picture_url",
+        "picture",
+        "photo_url",
+        "photo",
+        "image_url",
+        "image",
+        "avatar_url",
+      ]) || null,
   }));
 }
 
@@ -104,8 +113,12 @@ function Team() {
                         </div>
                       )}
                       <h3 className="mt-5 text-lg font-semibold">{m.name}</h3>
-                      <p className="mt-1 text-sm font-medium text-muted-foreground">{m.title}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+                      {m.title ? (
+                        <p className="mt-1 text-sm font-medium text-muted-foreground">{m.title}</p>
+                      ) : null}
+                      {m.bio ? (
+                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+                      ) : null}
                     </article>
                   </Reveal>
                 ))}
