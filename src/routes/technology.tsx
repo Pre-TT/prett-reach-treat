@@ -295,7 +295,7 @@ function Technology() {
                 <tr>
                   <th className="px-5 py-4 font-medium">Patent number</th>
                   <th className="px-5 py-4 font-medium">Title</th>
-                  <th className="px-5 py-4 font-medium">Priority date</th>
+                  {showPriority && <th className="px-5 py-4 font-medium">Priority date</th>}
                   <th className="px-5 py-4 font-medium">Status</th>
                 </tr>
               </thead>
@@ -304,7 +304,9 @@ function Technology() {
                   <tr key={p.number} className="border-t border-border align-top">
                     <td className="px-5 py-4 font-medium whitespace-nowrap">{p.number}</td>
                     <td className="px-5 py-4 text-muted-foreground">{p.title}</td>
-                    <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.priority}</td>
+                    {showPriority && (
+                      <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.priority}</td>
+                    )}
                     <td className="px-5 py-4 text-muted-foreground">{p.status}</td>
                   </tr>
                 ))}
