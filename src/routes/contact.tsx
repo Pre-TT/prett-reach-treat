@@ -180,15 +180,31 @@ function Contact() {
                 </a>
               </li>
             </ul>
-            <div className="mt-8 overflow-hidden rounded-xl border border-border">
+            <div className="group relative mt-8 overflow-hidden rounded-2xl border border-primary/15 bg-primary shadow-lg">
               <iframe
                 title="PreTT location on Google Maps"
                 src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
-                className="h-[360px] w-full border-0"
+                className="h-[340px] w-full border-0 opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 p-5">
+                <div className="text-primary-foreground">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Headquarters</p>
+                  <p className="mt-1 text-sm font-medium">{COMPANY.address}</p>
+                </div>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="pointer-events-auto rounded-full bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition hover:brightness-110"
+                >
+                  Open in Maps
+                </a>
+              </div>
             </div>
+
           </Reveal>
         </div>
       </section>
