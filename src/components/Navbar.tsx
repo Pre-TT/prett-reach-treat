@@ -47,7 +47,7 @@ export function Navbar() {
               <Link
                 to={l.to}
                 activeOptions={{ exact: l.to === "/" }}
-                className="group relative text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+                className="group relative text-base font-medium text-foreground/80 transition-colors hover:text-foreground"
                 activeProps={{ className: "text-foreground" }}
               >
                 {l.label}
@@ -75,7 +75,7 @@ export function Navbar() {
                 <Link
                   to={l.to}
                   onClick={() => setOpen(false)}
-                  className="block py-2.5 text-sm font-medium text-foreground/80"
+                  className="block py-2.5 text-base font-medium text-foreground/80"
                   activeProps={{ className: "text-accent-foreground" }}
                 >
                   {l.label}
