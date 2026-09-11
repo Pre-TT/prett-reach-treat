@@ -14,7 +14,7 @@ export const COMPANY = {
 };
 
 export const SHORT_DESCRIPTION =
-  "Our target-click-treat tech uses an innocuous 'scout' vector to find and tag cancer cells. Then we introduce a small radioactive 'strike' molecule that clicks onto the tags, releasing the radiation precisely at the tumour while sparing healthy tissue.";
+  "Our technology uses a nontoxic vector to find and tag cancer cells. Then we introduce a small radioactive molecule that clicks onto the tags, releasing the radiation precisely at the tumour while sparing healthy tissue.";
 
 export const NUTSHELL =
   "PreTT's \u201Ctarget-click-treat\u201D technology redefines the Therapeutic Index in Radioligand Therapy by decoupling tumour targeting from dose delivery. We first deploy non-radioactive antibodies\u2014exquisitely specific targeting vectors\u2014to find and tag cancer cells. Only when the antibodies are at the tumour site, we introduce a small-molecule carrying the radioactive payload that \u201Cclicks\u201D onto them. This molecular precision ensures radiation is localised at the tumour, sparing healthy tissue.";
