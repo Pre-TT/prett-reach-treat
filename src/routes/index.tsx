@@ -127,20 +127,30 @@ function Home() {
 
         {/* 1. The therapeutic index */}
         <div className="mt-16">
-          <Reveal>
-            <p className="eyebrow">01 · Systemic toxicity</p>
-            <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Redefining the therapeutic index</h3>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
-          </Reveal>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <Reveal>
+              <p className="eyebrow">01 · Systemic toxicity</p>
+              <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Redefining the therapeutic index</h3>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="overflow-hidden rounded-xl bg-ink shadow-md ring-1 ring-border">
+                <img
+                  src={therapeuticIndex.url}
+                  alt="Therapeutic index: pretargeted radioligand therapy widens the therapeutic window versus conventional radioligand therapy"
+                  loading="lazy"
+                  className="w-full"
+                />
+              </div>
+            </Reveal>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={i * 120}>
-                <div className="h-full rounded-xl border border-border bg-card p-7">
-                  <span className="font-display text-4xl font-semibold text-accent">{s.number}</span>
-                  <h4 className="mt-4 text-xl font-semibold">{s.title}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                <div className="h-full rounded-xl border border-border bg-card p-5">
+                  <span className="font-display text-3xl font-semibold text-accent">{s.number}</span>
+                  <h4 className="mt-3 text-base font-semibold">{s.title}</h4>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.body}</p>
                 </div>
               </Reveal>
             ))}
