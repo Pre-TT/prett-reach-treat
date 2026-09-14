@@ -110,19 +110,19 @@ function Technology() {
               </Reveal>
             ))}
           </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <Reveal>
-              <figure className="h-full overflow-hidden rounded-xl border border-border bg-card p-4">
-                <img
-                  src={pretargeting.url}
-                  alt="Three-step pretargeting: mAb-TCO targets tumour cells, radioactive tetrazine clicks in vivo, radiation treats the tumour"
-                  className="w-full"
-                  loading="lazy"
-                />
-              </figure>
-            </Reveal>
+          <Reveal className="mt-12 block">
+            <figure className="overflow-hidden rounded-xl border border-border bg-card p-4">
+              <img
+                src={pretargeting.url}
+                alt="Three-step pretargeting: mAb-TCO targets tumour cells, radioactive tetrazine clicks in vivo, radiation treats the tumour"
+                className="w-full"
+                loading="lazy"
+              />
+            </figure>
+          </Reveal>
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.5fr]">
             <Reveal delay={140}>
-              <figure className="h-full overflow-hidden rounded-xl border border-border bg-card p-5">
+              <figure className="overflow-hidden rounded-xl border border-border bg-card p-5">
                 <img
                   src={tetrazine.url}
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
@@ -134,17 +134,17 @@ function Technology() {
                 </figcaption>
               </figure>
             </Reveal>
+            <Reveal delay={120}>
+              <ul className="grid gap-4 content-start">
+                {CLICK_CHEMISTRY_POINTS.map((p) => (
+                  <li key={p} className="flex gap-4 rounded-lg border border-border bg-card p-5">
+                    <span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />
+                    <span className="leading-relaxed">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
-          <Reveal delay={120}>
-            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-              {CLICK_CHEMISTRY_POINTS.map((p) => (
-                <li key={p} className="flex gap-4 rounded-lg border border-border bg-card p-5">
-                  <span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />
-                  <span className="leading-relaxed">{p}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
         </div>
       </section>
 
