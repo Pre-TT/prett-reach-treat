@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { MILESTONES, NUTSHELL } from "@/lib/content";
+import { MILESTONES } from "@/lib/content";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
