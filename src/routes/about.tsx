@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { MILESTONES, NUTSHELL } from "@/lib/content";
+import { MILESTONES } from "@/lib/content";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -57,7 +57,11 @@ function About() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <p className="text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Our team is built by leaders in radiopharma and clinical translation, guided by an expert board chaired
+              by Hans Schambye, MD, PhD. PreTT has been incubated at the BioInnovation Institute (BII Venture Lab and
+              Venture House), where it was selected for further funding to develop its platform and assets.
+            </p>
           </Reveal>
         </div>
       </section>
