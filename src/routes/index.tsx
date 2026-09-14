@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/6.png.asset.json";
 import stratification from "@/assets/Patient_Stratification.png.asset.json";
+import bbbCrossing from "@/assets/BBB_crossing_PreTT.png.asset.json";
 
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY, MISSION_QUOTE, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
@@ -146,17 +147,23 @@ function Home() {
         </div>
 
         {/* 2. The BBB crossing */}
-        <div className="mt-20">
+        <div className="mt-20 grid items-center gap-10 lg:grid-cols-2">
           <Reveal>
             <p className="eyebrow">02 · The blood-brain barrier</p>
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Crossing the blood-brain barrier</h3>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               The blood-brain barrier keeps medicines out. Our covalent labeling chemistry supports brain
               penetration — and we have demonstrated blood-brain barrier crossing in a proof of concept in
               partnership with Roche.
             </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <img
+              src={bbbCrossing.url}
+              alt="PreTT pretargeting platform crossing the blood-brain barrier"
+              loading="lazy"
+              className="w-full rounded-2xl bg-white shadow-md ring-1 ring-border"
+            />
           </Reveal>
         </div>
       </section>
