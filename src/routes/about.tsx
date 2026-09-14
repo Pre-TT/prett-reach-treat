@@ -57,6 +57,11 @@ function About() {
               radiopharmaceutical translation. Today the company develops pretargeted radiotheranostics designed for
               high-precision, low-toxicity cancer care.
             </p>
+            <img
+              src={kuLogo.url}
+              alt="University of Copenhagen"
+              className="mt-6 h-16 w-auto opacity-80"
+            />
           </Reveal>
           <Reveal delay={120}>
             <p className="text-lg leading-relaxed text-muted-foreground">
@@ -64,6 +69,11 @@ function About() {
               BioInnovation Institute (BII Venture Lab and
               Venture House), where it was selected for further funding to develop its platform and assets.
             </p>
+            <img
+              src={biiLogo.url}
+              alt="BioInnovation Institute"
+              className="mt-6 h-14 w-auto opacity-80"
+            />
           </Reveal>
         </div>
       </section>
