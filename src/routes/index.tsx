@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/6.png.asset.json";
-import pretargeting from "@/assets/Pretargeting_in_action.png.asset.json";
+
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
 
