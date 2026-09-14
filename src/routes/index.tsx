@@ -127,21 +127,11 @@ function Home() {
 
         {/* 1. The therapeutic index */}
         <div className="mt-16">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <Reveal>
-              <p className="eyebrow">01 · Systemic toxicity</p>
-              <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Redefining the therapeutic index</h3>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
-            </Reveal>
-            <Reveal delay={120}>
-              <img
-                src={therapeuticIndex.url}
-                alt="Therapeutic index: pretargeted radioligand therapy widens the therapeutic window versus conventional radioligand therapy"
-                loading="lazy"
-                className="w-full"
-              />
-            </Reveal>
-          </div>
+          <Reveal>
+            <p className="eyebrow">01 · Systemic toxicity</p>
+            <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Redefining the therapeutic index</h3>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+          </Reveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={i * 120}>
