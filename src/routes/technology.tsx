@@ -4,7 +4,6 @@ import { Reveal, SectionTitle } from "@/components/Reveal";
 import { selectTable } from "@/lib/supabase";
 import pretargeting from "@/assets/Pretargeting_in_action.png.asset.json";
 import tetrazine from "@/assets/Tetrazine_Ligation_click_chemistry.png.asset.json";
-import bbb from "@/assets/BBB_crossing_PreTT.png.asset.json";
 import decay from "@/assets/211At_decay_chain.png.asset.json";
 import mouseDirect from "@/assets/Mouse_directly_labelled.png.asset.json";
 import mousePretarget from "@/assets/Mouse_pretargeting.png.asset.json";
