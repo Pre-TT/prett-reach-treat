@@ -168,21 +168,21 @@ function Technology() {
                 className="mx-auto max-h-[420px] w-auto"
                 loading="lazy"
               />
-              <figcaption className="pt-4 text-xs text-muted-foreground">
+              <figcaption className="pt-4 text-xs text-foreground">
                 Imaging 1 h post injection of a TAG-72 targeting mAb, directly labelled.
               </figcaption>
             </figure>
           </Reveal>
           <Reveal delay={140}>
-            <figure className="h-full rounded-xl border border-accent bg-card p-5">
-              <p className="eyebrow mb-4">Pretargeting</p>
+            <figure className="h-full rounded-xl border border-border bg-card p-5">
+              <p className="eyebrow mb-4 font-bold">Pretargeting</p>
               <img
                 src={mousePretarget.url}
                 alt="PET scan of a mouse 1 hour post injection using PreTT pretargeting, showing strong tumour uptake"
                 className="mx-auto max-h-[420px] w-auto"
                 loading="lazy"
               />
-              <figcaption className="pt-4 text-xs text-muted-foreground">
+              <figcaption className="pt-4 text-xs text-foreground">
                 Imaging 1 h post injection of a TAG-72 targeting mAb using pretargeting.
               </figcaption>
             </figure>
