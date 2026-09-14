@@ -327,6 +327,9 @@ function Technology() {
           </div>
           <Reveal delay={200}>
             <figure className="rounded-xl border border-border bg-card p-5">
+              <figcaption className="mb-3 text-sm font-semibold uppercase text-foreground">
+                At-211 decay chain
+              </figcaption>
               <img
                 src={decay.url}
                 alt="At-211 decay chain diagram showing decay via Po-211 and Bi-207 to stable Pb-207"
