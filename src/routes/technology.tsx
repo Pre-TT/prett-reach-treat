@@ -327,7 +327,7 @@ function Technology() {
           </div>
           <Reveal delay={200}>
             <figure className="rounded-xl border border-border bg-card p-5">
-              <figcaption className="mb-3 text-sm font-semibold uppercase text-foreground">
+              <figcaption className="mb-3 font-display text-2xl font-semibold text-accent">
                 At-211 decay chain
               </figcaption>
               <img
