@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { MILESTONES, MISSION_QUOTE, NUTSHELL } from "@/lib/content";
+import { MILESTONES, NUTSHELL } from "@/lib/content";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -39,18 +39,15 @@ function About() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">About Us</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">Two barriers. One solution.</h1>
-          </Reveal>
-          <Reveal delay={150}>
-            <p className="mt-10 max-w-3xl text-xl leading-relaxed text-ink-foreground/85">
-              {MISSION_QUOTE}
-            </p>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
+              A spin-out of the University of Copenhagen
+            </h1>
           </Reveal>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Our story">A spin-out of the University of Copenhagen</SectionTitle>
+        <SectionTitle eyebrow="Our story">Who we are</SectionTitle>
         <div className="mt-8 grid gap-10 lg:grid-cols-2">
           <Reveal>
             <p className="text-lg leading-relaxed text-muted-foreground">
