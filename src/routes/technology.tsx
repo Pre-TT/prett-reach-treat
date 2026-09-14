@@ -14,7 +14,7 @@ import cortex from "@/assets/cortex.png.asset.json";
 import cerebellum from "@/assets/cerebellum.png.asset.json";
 import alzheimerPet from "@/assets/alzheimer_pet_imaging.png.asset.json";
 import controlPet from "@/assets/control_pet_imaging.png.asset.json";
-import suvScale from "@/assets/SUV_pet_imaging.png.asset.json";
+import suvScale from "@/assets/SUV_line.png.asset.json";
 import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, COMPARISON_BENEFITS, PATENTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
@@ -257,12 +257,19 @@ function Technology() {
                     />
                   </figure>
                 </div>
-                <img
-                  src={suvScale.url}
-                  alt="Standardized uptake value scale from zero to one"
-                  className="mt-3 h-8 w-full object-contain"
-                  loading="lazy"
-                />
+                <div className="mt-3 flex flex-col gap-1">
+                  <span className="text-center text-xs font-medium uppercase text-accent">SUV</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-medium text-ink-foreground/80">0</span>
+                    <img
+                      src={suvScale.url}
+                      alt="Standardized uptake value scale from zero to one"
+                      className="h-8 flex-1 object-contain"
+                      loading="lazy"
+                    />
+                    <span className="text-xs font-medium text-ink-foreground/80">1</span>
+                  </div>
+                </div>
                 <div className="mt-6 grid grid-cols-[1.25fr_1fr] items-center gap-5 border-t border-ink-foreground/20 pt-5">
                   <figure>
                     <figcaption className="mb-2 text-xs font-medium uppercase text-accent">Brain map</figcaption>
