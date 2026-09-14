@@ -134,14 +134,12 @@ function Home() {
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
             </Reveal>
             <Reveal delay={120}>
-              <div className="overflow-hidden rounded-xl bg-ink shadow-md ring-1 ring-border">
-                <img
-                  src={therapeuticIndex.url}
-                  alt="Therapeutic index: pretargeted radioligand therapy widens the therapeutic window versus conventional radioligand therapy"
-                  loading="lazy"
-                  className="w-full"
-                />
-              </div>
+              <img
+                src={therapeuticIndex.url}
+                alt="Therapeutic index: pretargeted radioligand therapy widens the therapeutic window versus conventional radioligand therapy"
+                loading="lazy"
+                className="w-full"
+              />
             </Reveal>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
