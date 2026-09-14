@@ -17,7 +17,7 @@ export const SHORT_DESCRIPTION =
   "Our technology uses a nontoxic vector to find and tag cancer cells. Then we introduce a small radioactive molecule that clicks onto the tags, releasing the radiation precisely at the tumour while sparing healthy tissue.";
 
 export const NUTSHELL =
-  "PreTT's \u201Ctarget-click-treat\u201D technology redefines the Therapeutic Index in Radioligand Therapy by decoupling tumour targeting from dose delivery. We first deploy non-radioactive antibodies\u2014exquisitely specific targeting vectors\u2014to find and tag cancer cells. Only when the antibodies are at the tumour site, we introduce a small-molecule carrying the radioactive payload that \u201Cclicks\u201D onto them. This molecular precision ensures radiation is localised at the tumour, sparing healthy tissue.";
+  'PreTT\'s "target-click-treat" technology redefines the Therapeutic Index in Radioligand Therapy by separating tumour targeting from dose delivery. We first send in non-radioactive antibodies — highly specific targeting molecules — to find and tag cancer cells. Only once they\'ve reached the tumour do we introduce a small molecule carrying the radioactive payload, which clicks onto them. The radiation lands where it should, and healthy tissue is left alone.';
 
 export const MISSION_QUOTE =
   "The blood-brain barrier keeps medicines out. Systemic toxicity keeps patients from tolerating the doses they need. At PreTT, we're engineering past both.";
