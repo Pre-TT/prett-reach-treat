@@ -230,8 +230,8 @@ function Technology() {
               </figure>
             </Reveal>
 
-            <Reveal delay={280}>
-              <div className="border-t-2 border-accent bg-ink p-4 text-ink-foreground sm:p-6">
+            <Reveal delay={280} className="h-full">
+              <div className="h-full rounded-xl border border-border bg-ink p-4 text-ink-foreground sm:p-6">
                 <p className="text-sm font-semibold uppercase text-accent">PET imaging</p>
                 <div className="mt-5 grid grid-cols-2 gap-4">
                   <figure>
