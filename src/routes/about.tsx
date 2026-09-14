@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { MILESTONES } from "@/lib/content";
+import kuLogo from "@/assets/ku_logo.png.asset.json";
+import biiLogo from "@/assets/bii_logo.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
