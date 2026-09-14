@@ -4,7 +4,7 @@ import logo from "@/assets/6.png.asset.json";
 import stratification from "@/assets/Patient_Stratification.png.asset.json";
 
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { COMPANY, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
+import { COMPANY, MISSION_QUOTE, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -116,25 +116,49 @@ function Home() {
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Two barriers. One solution. */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="In a nutshell">Redefining the therapeutic index</SectionTitle>
+        <SectionTitle eyebrow="The challenge">Two barriers. One solution.</SectionTitle>
         <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">{MISSION_QUOTE}</p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {STEPS.map((s, i) => (
-            <Reveal key={s.title} delay={i * 120}>
-              <div className="h-full rounded-xl border border-border bg-card p-7">
-                <span className="font-display text-4xl font-semibold text-accent">{s.number}</span>
-                <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </div>
-            </Reveal>
-          ))}
+        {/* 1. The therapeutic index */}
+        <div className="mt-16">
+          <Reveal>
+            <p className="eyebrow">01 · Systemic toxicity</p>
+            <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Redefining the therapeutic index</h3>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {STEPS.map((s, i) => (
+              <Reveal key={s.title} delay={i * 120}>
+                <div className="h-full rounded-xl border border-border bg-card p-7">
+                  <span className="font-display text-4xl font-semibold text-accent">{s.number}</span>
+                  <h4 className="mt-4 text-xl font-semibold">{s.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
+        {/* 2. The BBB crossing */}
+        <div className="mt-20">
+          <Reveal>
+            <p className="eyebrow">02 · The blood-brain barrier</p>
+            <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Crossing the blood-brain barrier</h3>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+              The blood-brain barrier keeps medicines out. Our covalent labeling chemistry supports brain
+              penetration — and we have demonstrated blood-brain barrier crossing in a proof of concept in
+              partnership with Roche.
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* Teasers */}
