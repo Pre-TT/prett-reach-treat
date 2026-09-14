@@ -215,9 +215,9 @@ function Technology() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,1.65fr)_minmax(320px,0.8fr)]">
-            <Reveal delay={200}>
-              <figure className="border-t-2 border-accent bg-card p-4 sm:p-6">
+          <div className="mt-12 grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.65fr)_minmax(320px,0.8fr)]">
+            <Reveal delay={200} className="h-full">
+              <figure className="h-full rounded-xl border border-border bg-card p-4 sm:p-6">
                 <figcaption className="mb-5 text-sm font-semibold uppercase text-foreground">
                   Pretargeted brain imaging workflow
                 </figcaption>
@@ -230,8 +230,8 @@ function Technology() {
               </figure>
             </Reveal>
 
-            <Reveal delay={280}>
-              <div className="border-t-2 border-accent bg-ink p-4 text-ink-foreground sm:p-6">
+            <Reveal delay={280} className="h-full">
+              <div className="h-full rounded-xl border border-border bg-ink p-4 text-ink-foreground sm:p-6">
                 <p className="text-sm font-semibold uppercase text-accent">PET imaging</p>
                 <div className="mt-5 grid grid-cols-2 gap-4">
                   <figure>
