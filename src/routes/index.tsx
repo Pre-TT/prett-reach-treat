@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import logo from "@/assets/6.png.asset.json";
 import stratification from "@/assets/Patient_Stratification.png.asset.json";
 import bbbCrossing from "@/assets/BBB_crossing_PreTT.png.asset.json";
-import therapeuticIndex from "@/assets/therapeutic_index_illustration.png.asset.json";
+
 
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY, MISSION_QUOTE, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
