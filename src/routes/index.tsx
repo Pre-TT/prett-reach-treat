@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/6.png.asset.json";
-import pretargeting from "@/assets/Pretargeting_in_action.png.asset.json";
+
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
 
@@ -110,19 +110,6 @@ function Home() {
           ))}
         </div>
 
-        <Reveal delay={120}>
-          <figure className="mt-14 overflow-hidden rounded-xl border border-border bg-card p-4">
-            <img
-              src={pretargeting.url}
-              alt="Pretargeting in action: target with mAb-TCO, click with radioactive tetrazine, treat the tumour"
-              className="w-full"
-              loading="lazy"
-            />
-            <figcaption className="px-2 pt-3 pb-1 text-xs text-muted-foreground">
-              Decoupling radiotheranostics — pretargeting in action.
-            </figcaption>
-          </figure>
-        </Reveal>
       </section>
 
       {/* Teasers */}
