@@ -116,8 +116,8 @@ function Technology() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-12 block">
-            <figure className="overflow-hidden rounded-xl border border-border bg-card p-4">
+          <Reveal className="mt-10 block">
+            <figure className="mx-auto max-w-3xl overflow-hidden rounded-xl border border-border bg-card p-4">
               <img
                 src={pretargeting.url}
                 alt="Three-step pretargeting: mAb-TCO targets tumour cells, radioactive tetrazine clicks in vivo, radiation treats the tumour"
