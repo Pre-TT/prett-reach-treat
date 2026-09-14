@@ -93,41 +93,36 @@ function Technology() {
         </div>
       </section>
 
-      {/* Modules: target - click - treat */}
-      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Pretargeting in action">Decoupling radiotheranostics in three steps</SectionTitle>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {STEPS.map((s, i) => (
-            <Reveal key={s.title} delay={i * 120}>
-              <div className="group relative h-full overflow-hidden rounded-xl border border-border bg-card p-8 transition-colors hover:border-accent">
-                <span className="font-display text-5xl font-semibold text-accent/30 transition-colors group-hover:text-accent">
-                  {s.number}
-                </span>
-                <h3 className="mt-4 text-2xl font-semibold">{s.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground">{s.body}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={120}>
-          <figure className="mt-12 overflow-hidden rounded-xl border border-border bg-card p-4">
-            <img
-              src={pretargeting.url}
-              alt="Three-step pretargeting: mAb-TCO targets tumour cells, radioactive tetrazine clicks in vivo, radiation treats the tumour"
-              className="w-full"
-              loading="lazy"
-            />
-          </figure>
-        </Reveal>
-      </section>
-
-      {/* Click chemistry */}
+      {/* Modules: target - click - treat + click chemistry */}
       <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Click it">The engine behind our platform</SectionTitle>
-          <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
+          <SectionTitle eyebrow="Pretargeting in action">Decoupling radiotheranostics in three steps</SectionTitle>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {STEPS.map((s, i) => (
+              <Reveal key={s.title} delay={i * 120}>
+                <div className="group relative h-full overflow-hidden rounded-xl border border-border bg-card p-8 transition-colors hover:border-accent">
+                  <span className="font-display text-5xl font-semibold text-accent/30 transition-colors group-hover:text-accent">
+                    {s.number}
+                  </span>
+                  <h3 className="mt-4 text-2xl font-semibold">{s.title}</h3>
+                  <p className="mt-3 leading-relaxed text-muted-foreground">{s.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <Reveal>
-              <figure className="overflow-hidden rounded-xl border border-border bg-card p-5">
+              <figure className="h-full overflow-hidden rounded-xl border border-border bg-card p-4">
+                <img
+                  src={pretargeting.url}
+                  alt="Three-step pretargeting: mAb-TCO targets tumour cells, radioactive tetrazine clicks in vivo, radiation treats the tumour"
+                  className="w-full"
+                  loading="lazy"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={140}>
+              <figure className="h-full overflow-hidden rounded-xl border border-border bg-card p-5">
                 <img
                   src={tetrazine.url}
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
@@ -139,19 +134,20 @@ function Technology() {
                 </figcaption>
               </figure>
             </Reveal>
-            <Reveal delay={140}>
-              <ul className="space-y-4">
-                {CLICK_CHEMISTRY_POINTS.map((p) => (
-                  <li key={p} className="flex gap-4 rounded-lg border border-border bg-card p-5">
-                    <span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />
-                    <span className="leading-relaxed">{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
           </div>
+          <Reveal delay={120}>
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+              {CLICK_CHEMISTRY_POINTS.map((p) => (
+                <li key={p} className="flex gap-4 rounded-lg border border-border bg-card p-5">
+                  <span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />
+                  <span className="leading-relaxed">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
+
 
       {/* Conventional vs pretargeting */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
