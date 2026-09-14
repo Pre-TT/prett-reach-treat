@@ -75,7 +75,8 @@ function StageBar({ stageIndex }: { stageIndex: number }) {
     return () => io.disconnect();
   }, []);
 
-  const pct = ((Math.min(stageIndex, PIPELINE_STAGES.length - 1) + 1) / PIPELINE_STAGES.length) * 100;
+  // Fill to the middle of the "PoC Preclinical" segment (midpoint of the second of 4 stages)
+  const pct = 37.5;
 
   return (
     <div ref={ref} className="relative h-9 w-full overflow-hidden rounded-full bg-secondary">
