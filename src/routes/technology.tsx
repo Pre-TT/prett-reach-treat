@@ -9,6 +9,13 @@ import decay from "@/assets/211At_decay_chain.png.asset.json";
 import mouseDirect from "@/assets/Mouse_directly_labelled.png.asset.json";
 import mousePretarget from "@/assets/Mouse_pretargeting.png.asset.json";
 import stratification from "@/assets/Patient_Stratification.png.asset.json";
+import proofOfConcept from "@/assets/proof_of_concept_alzheimer.png.asset.json";
+import brainMap from "@/assets/brain_map_1.png.asset.json";
+import cortex from "@/assets/cortex.png.asset.json";
+import cerebellum from "@/assets/cerebellum.png.asset.json";
+import alzheimerPet from "@/assets/alzheimer_pet_imaging.png.asset.json";
+import controlPet from "@/assets/control_pet_imaging.png.asset.json";
+import suvScale from "@/assets/SUV_pet_imaging.png.asset.json";
 import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, COMPARISON_BENEFITS, PATENTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
@@ -194,31 +201,106 @@ function Technology() {
         </div>
       </section>
 
-      {/* BBB */}
-      <section className="bg-ink py-24 text-ink-foreground">
+      {/* BBB proof of concept */}
+      <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow">Innovation</p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold sm:text-4xl">
+            <h2 className="mt-4 max-w-5xl text-3xl font-semibold sm:text-4xl">
               First pretargeting platform to cross the blood-brain barrier
             </h2>
           </Reveal>
           <Reveal delay={140}>
-            <p className="mt-6 max-w-3xl text-ink-foreground/75">
-              Proof of concept study in an Alzheimer model targeting Aβ plaques in collaboration with Roche. PreTT's
-              breakthrough technology delivers high resolution imaging of the CNS and unlocks pretargeted radioligand
-              therapy for oncological targets in the brain.
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+              Proof of concept study in an Alzheimer model targeting Aβ plaques in collaboration with Roche.
             </p>
           </Reveal>
-          <Reveal delay={220}>
-            <figure className="mt-10 overflow-hidden rounded-xl bg-white p-4 sm:max-w-2xl">
-              <img
-                src={bbb.url}
-                alt="Illustration of PreTT agents crossing the blood-brain barrier and accumulating in a brain tumour"
-                className="w-full"
-                loading="lazy"
-              />
-            </figure>
+
+          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,1.65fr)_minmax(320px,0.8fr)]">
+            <Reveal delay={200}>
+              <figure className="border-t-2 border-accent bg-card p-4 sm:p-6">
+                <figcaption className="mb-5 text-sm font-semibold uppercase text-foreground">
+                  Pretargeted brain imaging workflow
+                </figcaption>
+                <img
+                  src={proofOfConcept.url}
+                  alt="Proof-of-concept workflow showing antibody injection, blood-brain barrier accumulation, radiolabelled tetrazine administration and PET imaging"
+                  className="w-full"
+                  loading="lazy"
+                />
+              </figure>
+            </Reveal>
+
+            <Reveal delay={280}>
+              <div className="border-t-2 border-accent bg-ink p-4 text-ink-foreground sm:p-6">
+                <p className="text-sm font-semibold uppercase text-accent">PET imaging</p>
+                <div className="mt-5 grid grid-cols-2 gap-4">
+                  <figure>
+                    <figcaption className="mb-3 text-center text-sm font-medium">
+                      5xFAD<br />(Alzheimer)
+                    </figcaption>
+                    <img
+                      src={alzheimerPet.url}
+                      alt="PET image of the 5xFAD Alzheimer model"
+                      className="aspect-[5/3] w-full object-contain"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure>
+                    <figcaption className="mb-3 text-center text-sm font-medium">
+                      WT<br />(Control)
+                    </figcaption>
+                    <img
+                      src={controlPet.url}
+                      alt="PET image of the wild-type control"
+                      className="aspect-[5/3] w-full object-contain"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
+                <img
+                  src={suvScale.url}
+                  alt="Standardized uptake value scale from zero to one"
+                  className="mt-3 h-8 w-full object-contain"
+                  loading="lazy"
+                />
+                <div className="mt-6 grid grid-cols-[1.25fr_1fr] items-center gap-5 border-t border-ink-foreground/20 pt-5">
+                  <figure>
+                    <figcaption className="mb-2 text-xs font-medium uppercase text-accent">Brain map</figcaption>
+                    <img
+                      src={brainMap.url}
+                      alt="Brain map with cortex and cerebellum regions outlined"
+                      className="w-full bg-card"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <div className="space-y-4 text-xs leading-snug">
+                    <div className="flex items-center gap-3">
+                      <img src={cortex.url} alt="Cortex outline" className="h-8 w-12 object-contain" loading="lazy" />
+                      <span><strong className="block text-sm">Cortex</strong>Aβ-rich region</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={cerebellum.url}
+                        alt="Cerebellum outline"
+                        className="h-8 w-12 object-contain"
+                        loading="lazy"
+                      />
+                      <span><strong className="block text-sm">Cerebellum</strong>Aβ-poor region</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={340}>
+            <div className="mt-8 border-l-4 border-accent bg-card px-6 py-5 sm:px-8">
+              <p className="text-xl leading-relaxed sm:text-2xl">
+                <strong>PreTT breakthrough technology</strong> delivers high resolution imaging of the CNS.
+                <span className="mt-2 block">Unlocks pretargeted RLT in oncological targets in the brain.</span>
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
