@@ -7,7 +7,7 @@ import tetrazine from "@/assets/Tetrazine_Ligation_click_chemistry.png.asset.jso
 import decay from "@/assets/211At_decay_chain.png.asset.json";
 import mouseDirect from "@/assets/Mouse_directly_labelled.png.asset.json";
 import mousePretarget from "@/assets/Mouse_pretargeting.png.asset.json";
-import stratification from "@/assets/Patient_Stratification.png.asset.json";
+
 import proofOfConcept from "@/assets/proof_of_concept_alzheimer.png.asset.json";
 import brainMap from "@/assets/brain_map_1.png.asset.json";
 import cortex from "@/assets/cortex.png.asset.json";
@@ -338,29 +338,6 @@ function Technology() {
         </div>
       </section>
 
-      {/* Theranostics */}
-      <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Radiotheranostics">See what you treat, treat what you see</SectionTitle>
-          <Reveal delay={120}>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb, peptide, small
-              molecule), an optional linker, a radionuclide and — for radiometals — an optional chelator. Imaging
-              enables patient stratification and dosimetry; therapy then delivers what imaging revealed.
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
-            <figure className="mt-12 max-w-3xl overflow-hidden rounded-xl border border-border bg-card p-4">
-              <img
-                src={stratification.url}
-                alt="Workflow from cancer patients through PET/SPECT imaging to stratification, dosimetry, treatment and monitoring"
-                className="w-full"
-                loading="lazy"
-              />
-            </figure>
-          </Reveal>
-        </div>
-      </section>
 
       {/* IP */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
