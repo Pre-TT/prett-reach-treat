@@ -60,7 +60,7 @@ function About() {
             <img
               src={kuLogo.url}
               alt="University of Copenhagen"
-              className="mt-6 h-16 w-auto opacity-80"
+              className="mx-auto mt-6 h-16 w-auto opacity-80"
             />
           </Reveal>
           <Reveal delay={120}>
@@ -72,7 +72,7 @@ function About() {
             <img
               src={biiLogo.url}
               alt="BioInnovation Institute"
-              className="mt-6 h-14 w-auto opacity-80"
+              className="mx-auto mt-6 h-14 w-auto opacity-80"
             />
           </Reveal>
         </div>
