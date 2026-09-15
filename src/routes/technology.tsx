@@ -211,7 +211,7 @@ function Technology() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Proof of concept study in an Alzheimer model targeting αβ plaques in collaboration with Roche.
+              Proof of concept study in an Alzheimer model targeting Amyloid-β plaques in collaboration with Roche.
             </p>
           </Reveal>
 
