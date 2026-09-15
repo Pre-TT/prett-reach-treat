@@ -110,7 +110,7 @@ function Home() {
           <Reveal delay={200}>
             <figure className="mt-12 max-w-5xl">
               <DbImage
-                pictureName="Radiotheranostics"
+                name="Radiotheranostics"
                 page="Home"
                 section="Radiotheranostics"
                 alt="Workflow from cancer patients through PET/SPECT imaging to stratification, dosimetry, treatment and monitoring"
