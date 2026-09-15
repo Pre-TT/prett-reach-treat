@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/prett-logo.png.asset.json";
+import { DbImage } from "@/components/DbImage";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -36,7 +36,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-22 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="PreTT logo" className="h-12 w-auto" />
+          <DbImage name="top logo" page="All" section="Header" alt="PreTT logo" className="h-12 w-auto" loading="eager" />
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">
