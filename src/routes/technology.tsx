@@ -259,7 +259,7 @@ function Technology() {
                 </div>
                 <div className="mt-3 flex flex-col gap-1">
                   <span className="text-center text-xs font-medium uppercase text-accent">SUV</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 px-1">
                     <span className="text-xs font-medium text-ink-foreground/80">0</span>
                     <img
                       src={suvScale.url}
