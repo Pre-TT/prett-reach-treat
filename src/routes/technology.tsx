@@ -283,7 +283,7 @@ function Technology() {
                   <div className="space-y-4 text-xs leading-snug">
                     <div className="flex items-center gap-3">
                       <img src={cortex.url} alt="Cortex outline" className="h-8 w-12 object-contain" loading="lazy" />
-                      <span><strong className="block text-sm">Cortex</strong>αβ-rich region</span>
+                      <span><strong className="block text-sm">Cortex</strong>Aβ-rich region</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <img
@@ -292,7 +292,7 @@ function Technology() {
                         className="h-8 w-12 object-contain"
                         loading="lazy"
                       />
-                      <span><strong className="block text-sm">Cerebellum</strong>αβ-poor region</span>
+                      <span><strong className="block text-sm">Cerebellum</strong>Aβ-poor region</span>
                     </div>
                   </div>
                 </div>
