@@ -20,9 +20,9 @@ export function Navbar() {
     <header
       className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md"
     >
-      <nav className="mx-auto flex h-28 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex h-28 max-w-7xl items-center justify-between gap-6 px-5 py-2 sm:px-8">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <DbImage name="top logo" page="All" section="Header" alt="PreTT logo" className="h-20 w-auto" loading="eager" />
+          <DbImage name="top logo" page="All" section="Header" alt="PreTT logo" className="h-24 w-auto" loading="eager" />
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">
