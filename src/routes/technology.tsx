@@ -1,20 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
+import { DbImage } from "@/components/DbImage";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { selectTable } from "@/lib/supabase";
-import pretargeting from "@/assets/Pretargeting_in_action.png.asset.json";
-import tetrazine from "@/assets/Tetrazine_Ligation_click_chemistry.png.asset.json";
-import decay from "@/assets/211At_decay_chain.png.asset.json";
-import mouseDirect from "@/assets/Mouse_directly_labelled.png.asset.json";
-import mousePretarget from "@/assets/Mouse_pretargeting.png.asset.json";
 
-import proofOfConcept from "@/assets/proof_of_concept_alzheimer.png.asset.json";
-import brainMap from "@/assets/brain_map_1.png.asset.json";
-import cortex from "@/assets/cortex.png.asset.json";
-import cerebellum from "@/assets/cerebellum.png.asset.json";
-import alzheimerPet from "@/assets/alzheimer_pet_imaging.png.asset.json";
-import controlPet from "@/assets/control_pet_imaging.png.asset.json";
-import suvScale from "@/assets/SUV_line.png.asset.json";
 import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, COMPARISON_BENEFITS, PATENTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
@@ -120,22 +109,24 @@ function Technology() {
           </div>
           <Reveal className="mt-10 block">
             <figure className="mx-auto max-w-3xl overflow-hidden rounded-xl border border-border bg-card p-4">
-              <img
-                src={pretargeting.url}
+              <DbImage
+                name="radiotheranostics in three steps"
+                page="Technology"
+                section="Pretargeting in action"
                 alt="Three-step pretargeting: mAb-TCO targets tumour cells, radioactive tetrazine clicks in vivo, radiation treats the tumour"
                 className="w-full"
-                loading="lazy"
               />
             </figure>
           </Reveal>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.5fr]">
             <Reveal delay={140}>
               <figure className="overflow-hidden rounded-xl border border-border bg-card p-5">
-                <img
-                  src={tetrazine.url}
+                <DbImage
+                  name="Tetrazine ligation"
+                  page="Technology"
+                  section="Pretargeting in action"
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
                   className="w-full"
-                  loading="lazy"
                 />
                 <figcaption className="pt-3 text-xs text-muted-foreground">
                   Tetrazine ligation click chemistry (IEDDA).
@@ -164,11 +155,13 @@ function Technology() {
           <Reveal>
             <figure className="h-full rounded-xl border border-border bg-card p-5">
               <p className="eyebrow mb-4">Conventional</p>
-              <img
-                src={mouseDirect.url}
+              <DbImage
+                name="Conventional directly labelled mouse"
+                page="Technology"
+                section="Conventional vs. pretargeting"
+                subSection="Conventional"
                 alt="PET scan of a mouse 1 hour post injection of a directly labelled TAG-72 targeting antibody"
                 className="mx-auto max-h-[420px] w-auto"
-                loading="lazy"
               />
               <figcaption className="pt-4 text-xs text-foreground">
                 Imaging 1 h post injection of a TAG-72 targeting mAb, directly labelled.
@@ -178,11 +171,13 @@ function Technology() {
           <Reveal delay={140}>
             <figure className="h-full rounded-xl border border-border bg-card p-5">
               <p className="eyebrow mb-4 font-bold">Pretargeting</p>
-              <img
-                src={mousePretarget.url}
+              <DbImage
+                name="Pretargeting mouse"
+                page="Technology"
+                section="Conventional vs. pretargeting"
+                subSection="Pretargeting"
                 alt="PET scan of a mouse 1 hour post injection using PreTT pretargeting, showing strong tumour uptake"
                 className="mx-auto max-h-[420px] w-auto"
-                loading="lazy"
               />
               <figcaption className="pt-4 text-xs text-foreground">
                 Imaging 1 h post injection of a TAG-72 targeting mAb using pretargeting.
@@ -226,11 +221,13 @@ function Technology() {
                 <figcaption className="mb-5 text-sm font-semibold uppercase text-foreground">
                   Pretargeted brain imaging workflow
                 </figcaption>
-                <img
-                  src={proofOfConcept.url}
+                <DbImage
+                  name="Pretargeted brain imaging workflow"
+                  page="Technology"
+                  section="Innovation"
+                  subSection="Pretargeted brain imaging workflow"
                   alt="Proof-of-concept workflow showing antibody injection, blood-brain barrier accumulation, radiolabelled tetrazine administration and PET imaging"
                   className="w-full"
-                  loading="lazy"
                 />
               </figure>
             </Reveal>
@@ -243,22 +240,26 @@ function Technology() {
                     <figcaption className="mb-3 text-center text-sm font-medium">
                       5xFAD<br />(Alzheimer)
                     </figcaption>
-                    <img
-                      src={alzheimerPet.url}
+                    <DbImage
+                      name="5xFAD (Alzheimer)"
+                      page="Technology"
+                      section="Innovation"
+                      subSection="PET imaging"
                       alt="PET image of the 5xFAD Alzheimer model"
                       className="aspect-[5/3] w-full object-contain"
-                      loading="lazy"
                     />
                   </figure>
                   <figure>
                     <figcaption className="mb-3 text-center text-sm font-medium">
                       WT<br />(Control)
                     </figcaption>
-                    <img
-                      src={controlPet.url}
+                    <DbImage
+                      name="WT (Control)"
+                      page="Technology"
+                      section="Innovation"
+                      subSection="PET imaging"
                       alt="PET image of the wild-type control"
                       className="aspect-[5/3] w-full object-contain"
-                      loading="lazy"
                     />
                   </figure>
                 </div>
@@ -266,11 +267,13 @@ function Technology() {
                   <span className="text-center text-xs font-medium uppercase text-accent">SUV</span>
                   <div className="flex items-center gap-2 px-1">
                     <span className="text-xs font-medium text-ink-foreground/80">0</span>
-                    <img
-                      src={suvScale.url}
+                    <DbImage
+                      name="SUV"
+                      page="Technology"
+                      section="Innovation"
+                      subSection="PET imaging"
                       alt="Standardized uptake value scale from zero to one"
                       className="h-8 min-w-0 flex-1 object-contain"
-                      loading="lazy"
                     />
                     <span className="text-xs font-medium text-ink-foreground/80">1</span>
                   </div>
@@ -278,24 +281,28 @@ function Technology() {
                 <div className="mt-6 grid grid-cols-[1.25fr_1fr] items-center gap-5 border-t border-ink-foreground/20 pt-5">
                   <figure>
                     <figcaption className="mb-2 text-xs font-medium uppercase text-accent">Brain map</figcaption>
-                    <img
-                      src={brainMap.url}
+                    <DbImage
+                      name="Brain map"
+                      page="Technology"
+                      section="Innovation"
+                      subSection="Brain map"
                       alt="Brain map with cortex and cerebellum regions outlined"
                       className="w-full bg-card"
-                      loading="lazy"
                     />
                   </figure>
                   <div className="space-y-4 text-xs leading-snug">
                     <div className="flex items-center gap-3">
-                      <img src={cortex.url} alt="Cortex outline" className="h-8 w-12 object-contain" loading="lazy" />
+                      <DbImage name="Cortex" page="Technology" section="Innovation" subSection="Brain map" alt="Cortex outline" className="h-8 w-12 object-contain" />
                       <span><strong className="block text-sm">Cortex</strong>Aβ-rich region</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <img
-                        src={cerebellum.url}
+                      <DbImage
+                        name="Cerebellum"
+                        page="Technology"
+                        section="Innovation"
+                        subSection="Brain map"
                         alt="Cerebellum outline"
                         className="h-8 w-12 object-contain"
-                        loading="lazy"
                       />
                       <span><strong className="block text-sm">Cerebellum</strong>Aβ-poor region</span>
                     </div>
@@ -342,11 +349,13 @@ function Technology() {
               <figcaption className="mb-3 font-display text-2xl font-semibold text-accent">
                 At-211 decay chain
               </figcaption>
-              <img
-                src={decay.url}
+              <DbImage
+                name="At-211 decay chain"
+                page="Technology"
+                section="α-pretargeted RLT in the brain"
+                subSection="At-211 decay chain"
                 alt="At-211 decay chain diagram showing decay via Po-211 and Bi-207 to stable Pb-207"
                 className="mx-auto max-h-[420px] w-auto"
-                loading="lazy"
               />
             </figure>
           </Reveal>
