@@ -259,12 +259,12 @@ function Technology() {
                 </div>
                 <div className="mt-3 flex flex-col gap-1">
                   <span className="text-center text-xs font-medium uppercase text-accent">SUV</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 px-1">
                     <span className="text-xs font-medium text-ink-foreground/80">0</span>
                     <img
                       src={suvScale.url}
                       alt="Standardized uptake value scale from zero to one"
-                      className="h-8 flex-1 object-contain"
+                      className="h-8 min-w-0 flex-1 object-contain"
                       loading="lazy"
                     />
                     <span className="text-xs font-medium text-ink-foreground/80">1</span>
