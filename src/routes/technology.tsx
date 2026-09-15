@@ -85,7 +85,9 @@ function Technology() {
           <Reveal>
             <p className="eyebrow">Technology</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
-              High specificity. Rapid clearance.
+              High specificity.
+              <br />
+              Rapid clearance.
             </h1>
           </Reveal>
           <Reveal delay={150}>
