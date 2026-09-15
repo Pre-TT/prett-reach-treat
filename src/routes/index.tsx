@@ -71,7 +71,9 @@ function Home() {
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-8 max-w-2xl text-lg text-ink-foreground/75">
-              High-precision, low-toxicity cancer care. {SHORT_DESCRIPTION}
+              High-precision, low-toxicity cancer care.
+              <br />
+              The promise of radioligand therapy is targeted radiation. The reality has always been a compromise. PreTT changes the equation.
             </p>
           </Reveal>
           <Reveal delay={360}>
