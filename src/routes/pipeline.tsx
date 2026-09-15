@@ -37,6 +37,24 @@ function pick(row: Row, keys: string[]): string {
   return "";
 }
 
+function stageToPct(label: string): number {
+  const key = label.trim().toLowerCase();
+  // Match "PoC Preclinical" / "Preclinical" / "PoC preclinical" etc.
+  if (key.includes("preclinical")) return 35;
+  switch (key) {
+    case "discovery":
+      return 15;
+    case "cmc":
+      return 60;
+    case "ind":
+      return 85;
+    case "approved":
+      return 100;
+    default:
+      return 10;
+  }
+}
+
 function normalize(rows: Row[]): PipelineRow[] {
   return rows.map((r) => {
     const stageLabel = pick(r, ["stage", "phase", "status"]);
@@ -49,11 +67,12 @@ function normalize(rows: Row[]): PipelineRow[] {
       isotope: pick(r, ["isotope", "radionuclide", "nuclide"]) || "[PLACEHOLDER]",
       partners: pick(r, ["partners", "partner", "collaborators", "funding"]),
       stageIndex: Number.isFinite(numeric) && numeric > 0 ? numeric - 1 : idx >= 0 ? idx : 0,
+      stagePct: stageLabel ? stageToPct(stageLabel) : 10,
     };
   });
 }
 
-function StageBar({ stageIndex }: { stageIndex: number }) {
+function StageBar({ stagePct }: { stagePct: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [filled, setFilled] = useState(false);
 
@@ -75,8 +94,7 @@ function StageBar({ stageIndex }: { stageIndex: number }) {
     return () => io.disconnect();
   }, []);
 
-  // Fill to the middle of the "PoC Preclinical" segment (midpoint of the second of 4 stages)
-  const pct = 37.5;
+  const pct = stagePct;
 
   return (
     <div ref={ref} className="relative h-9 w-full overflow-hidden rounded-full bg-secondary">
@@ -144,7 +162,7 @@ function Pipeline() {
                   </div>
                   <span className="text-sm font-medium">{r.target}</span>
                   <span className="text-sm font-medium">{r.isotope}</span>
-                  <StageBar stageIndex={r.stageIndex} />
+                  <StageBar stagePct={r.stagePct} />
                 </div>
               </Reveal>
             ))}
