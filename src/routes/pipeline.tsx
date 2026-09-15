@@ -69,7 +69,7 @@ function normalize(rows: Row[]): PipelineRow[] {
   });
 }
 
-function StageBar({ stageIndex }: { stageIndex: number }) {
+function StageBar({ stagePct }: { stagePct: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [filled, setFilled] = useState(false);
 
@@ -91,8 +91,7 @@ function StageBar({ stageIndex }: { stageIndex: number }) {
     return () => io.disconnect();
   }, []);
 
-  // Fill to the middle of the "PoC Preclinical" segment (midpoint of the second of 4 stages)
-  const pct = 37.5;
+  const pct = stagePct;
 
   return (
     <div ref={ref} className="relative h-9 w-full overflow-hidden rounded-full bg-secondary">
