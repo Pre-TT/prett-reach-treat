@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { COMPANY } from "@/lib/content";
+
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
