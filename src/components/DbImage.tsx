@@ -12,15 +12,17 @@ export type InfographyRow = {
   published: boolean | null;
 };
 
-let cache: Promise<InfographyRow[]> | null = null;
+let cache: Promise<InfographyRow[]> | undefined;
 
 function loadInfography(): Promise<InfographyRow[]> {
   if (!cache) {
-    cache = supabase
-      .from("Infography")
-      .select("*")
-      .eq("published", true)
-      .then(({ data, error }) => (error || !data ? [] : (data as InfographyRow[])));
+    cache = (async () => {
+      const { data, error } = await supabase
+        .from("Infography")
+        .select("*")
+        .eq("published", true);
+      return error || !data ? [] : (data as InfographyRow[]);
+    })();
   }
   return cache;
 }
