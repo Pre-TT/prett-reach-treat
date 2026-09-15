@@ -1,5 +1,8 @@
 # Roadmap
 
-## Open
-- Fix Radiotheranostics picture on Home: crop empty margins from the file in the Infography table (id 1) so it looks as before.
-- Source navbar logo ("top logo") and footer logo ("bottom logo") from the Infography table via DbImage.
+## Done
+- Radiotheranostics picture on Home restored to the tight-cropped version (stored with the site).
+- Navbar logo ("top logo") and footer logo ("bottom logo") now sourced from the Infography table.
+
+## Note
+- The image library's copy of Patient Stratification still has empty margins; your storage doesn't accept my uploads, so the Home page uses the site-stored cropped copy instead. Upload the cropped file (in Files) to the Infography bucket to re-enable table-driven updates for this one image.
