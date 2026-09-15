@@ -190,6 +190,9 @@ function Technology() {
             </figure>
           </Reveal>
         </div>
+        <p className="mt-4 text-xs italic text-muted-foreground">
+          Adapted from Lopes van den Broek et al., “Recent Advances in the Development of Tetrazine Ligation Tools for Pretargeted Nuclear Imaging,” Pharmaceuticals, 2022; and Shao et al., “Development of the First Aliphatic ¹⁸F-Labeled Tetrazine Suitable for Pretargeted PET Imaging,” Journal of Medicinal Chemistry, 2021.
+        </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {COMPARISON_BENEFITS.map((b, i) => (
             <Reveal key={b.title} delay={i * 120}>
