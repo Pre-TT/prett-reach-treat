@@ -48,7 +48,7 @@ const STAGE_PCT: Record<string, number> = {
 function stageToPct(label: string): number {
   const key = label.trim().toLowerCase();
   // Match "PoC Preclinical" / "Preclinical" / "PoC preclinical" etc.
-  if (key.includes("preclinical")) return STAGE_PCT.preclinical;
+  if (key.includes("preclinical")) return STAGE_PCT["preclinical"];
   return STAGE_PCT[key] ?? 10;
 }
 
