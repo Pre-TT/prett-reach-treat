@@ -159,7 +159,7 @@ function Technology() {
 
       {/* Conventional vs pretargeting */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Conventional vs. pretargeting">Superior signal-to-noise, in vivo</SectionTitle>
+        <SectionTitle eyebrow="Conventional vs. pretargeting">Superior signal-to-noise</SectionTitle>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <Reveal>
             <figure className="h-full rounded-xl border border-border bg-card p-5">
