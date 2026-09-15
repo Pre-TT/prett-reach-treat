@@ -172,9 +172,6 @@ function Technology() {
               />
               <figcaption className="pt-4 text-xs text-foreground">
                 Imaging 1 h post injection of a TAG-72 targeting mAb, directly labelled.
-                <span className="mt-1 block text-[11px] italic text-muted-foreground">
-                  Adapted from Lopes van den Broek et al., “Recent Advances in the Development of Tetrazine Ligation Tools for Pretargeted Nuclear Imaging,” Pharmaceuticals, 2022.
-                </span>
               </figcaption>
             </figure>
           </Reveal>
@@ -189,13 +186,13 @@ function Technology() {
               />
               <figcaption className="pt-4 text-xs text-foreground">
                 Imaging 1 h post injection of a TAG-72 targeting mAb using pretargeting.
-                <span className="mt-1 block text-[11px] italic text-muted-foreground">
-                  Adapted from Shao et al., “Development of the First Aliphatic ¹⁸F-Labeled Tetrazine Suitable for Pretargeted PET Imaging,” Journal of Medicinal Chemistry, 2021.
-                </span>
               </figcaption>
             </figure>
           </Reveal>
         </div>
+        <p className="mt-4 text-xs italic text-muted-foreground">
+          Adapted from Lopes van den Broek et al., “Recent Advances in the Development of Tetrazine Ligation Tools for Pretargeted Nuclear Imaging,” Pharmaceuticals, 2022; and Shao et al., “Development of the First Aliphatic ¹⁸F-Labeled Tetrazine Suitable for Pretargeted PET Imaging,” Journal of Medicinal Chemistry, 2021.
+        </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {COMPARISON_BENEFITS.map((b, i) => (
             <Reveal key={b.title} delay={i * 120}>
