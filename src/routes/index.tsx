@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import stratification from "@/assets/radiotheranostics.png.asset.json";
 import { DbImage } from "@/components/DbImage";
 
 
@@ -110,11 +109,12 @@ function Home() {
           </Reveal>
           <Reveal delay={200}>
             <figure className="mt-12 max-w-5xl">
-              <img
-                src={stratification.url}
+              <DbImage
+                name="Radiotheranostics"
+                page="Home"
+                section="Radiotheranostics"
                 alt="Workflow from cancer patients through PET/SPECT imaging to stratification, dosimetry, treatment and monitoring"
                 className="w-full"
-                loading="lazy"
               />
             </figure>
           </Reveal>
