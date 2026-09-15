@@ -84,11 +84,6 @@ function StageBar({ stageIndex }: { stageIndex: number }) {
         className="h-full rounded-full bg-ink transition-[width] duration-[1400ms] ease-out"
         style={{ width: filled ? `${pct}%` : "0%" }}
       />
-      <div className="pointer-events-none absolute inset-0 grid grid-cols-4">
-        {PIPELINE_STAGES.map((_, i) => (
-          <span key={i} className="border-r border-background/60 last:border-r-0" />
-        ))}
-      </div>
     </div>
   );
 }
