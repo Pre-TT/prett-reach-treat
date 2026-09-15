@@ -264,7 +264,7 @@ function Technology() {
                     <img
                       src={suvScale.url}
                       alt="Standardized uptake value scale from zero to one"
-                      className="h-8 flex-1 object-contain"
+                      className="h-8 min-w-0 flex-1 object-contain"
                       loading="lazy"
                     />
                     <span className="text-xs font-medium text-ink-foreground/80">1</span>
