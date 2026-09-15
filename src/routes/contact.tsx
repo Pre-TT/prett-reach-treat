@@ -5,7 +5,7 @@ import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY } from "@/lib/content";
-import mapImage from "@/assets/prett-map.png.asset.json";
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
