@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
-import logo from "@/assets/prett-logo-yellow.png.asset.json";
+import { DbImage } from "@/components/DbImage";
 import { COMPANY } from "@/lib/content";
 
 export function Footer() {
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center">
-            <img src={logo.url} alt="PreTT logo" className="h-10 w-auto" />
+            <DbImage name="bottom logo" page="All" section="Footer" alt="PreTT logo" className="h-10 w-auto" loading="eager" />
           </div>
           <p className="mt-4 max-w-sm text-sm text-ink-foreground/70">{COMPANY.tagline}</p>
         </div>
