@@ -27,12 +27,7 @@ export function Navbar() {
 
   return (
     <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-border/70 bg-background/90 backdrop-blur-md"
-          : "border-b border-transparent",
-      )}
+      className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md"
     >
       <nav className="mx-auto flex h-28 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
