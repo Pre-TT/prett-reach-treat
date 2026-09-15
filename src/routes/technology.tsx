@@ -30,7 +30,7 @@ export const Route = createFileRoute("/technology")({
       {
         property: "og:description",
         content:
-          "Target, click, treat: decoupled kinetics combining high affinity with rapid clearance — the only pretargeting platform capable of crossing the BBB.",
+          "Target, click, treat: high specificity and rapid clearance — the only pretargeting platform capable of crossing the BBB.",
       },
     ],
   }),
@@ -85,7 +85,7 @@ function Technology() {
           <Reveal>
             <p className="eyebrow">Technology</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
-              Decoupled kinetics: high affinity + rapid clearance
+              High specificity. Rapid clearance.
             </h1>
           </Reveal>
           <Reveal delay={150}>
