@@ -159,7 +159,7 @@ function Pipeline() {
                   </div>
                   <span className="text-sm font-medium">{r.target}</span>
                   <span className="text-sm font-medium">{r.isotope}</span>
-                  <StageBar stageIndex={r.stageIndex} />
+                  <StageBar stagePct={r.stagePct} />
                 </div>
               </Reveal>
             ))}
