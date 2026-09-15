@@ -1,6 +1,5 @@
 # Roadmap
 
-## Done
-- [x] Technology page — Innovation section rebuilt from the supplied Alzheimer proof-of-concept slide assets
-- [x] Technology page — BBB image figure: white background restored (bg-cream -> bg-white)
-- [x] Technology page — Patient_Stratification image: cropped transparent margins + constrained to max-w-3xl, kept card background
+## Open
+- Fix Radiotheranostics picture on Home: crop empty margins from the file in the Infography table (id 1) so it looks as before.
+- Source navbar logo ("top logo") and footer logo ("bottom logo") from the Infography table via DbImage.
