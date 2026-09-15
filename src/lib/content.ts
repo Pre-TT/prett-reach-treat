@@ -167,6 +167,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     isotope: "\u00B2\u00B9\u00B9At",
     partners: "",
     stageIndex: 0,
+    stagePct: 15,
   },
   {
     program: "PRE-BREACH",
@@ -175,6 +176,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     isotope: "\u00B2\u00B9\u00B9At",
     partners: "University of Copenhagen, Curasight, PanTarg, Rigshospitalet",
     stageIndex: 0,
+    stagePct: 15,
   },
   {
     program: "PRECISE",
@@ -183,6 +185,7 @@ export const PIPELINE_FALLBACK: PipelineRow[] = [
     isotope: "Radiometals",
     partners: "Akiram Therapeutics, TetraKit Technologies",
     stageIndex: 1,
+    stagePct: 35,
   },
 ];
 
