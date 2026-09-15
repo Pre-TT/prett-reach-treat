@@ -5,7 +5,7 @@ import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { COMPANY } from "@/lib/content";
-import mapImage from "@/assets/prett-map.png.asset.json";
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -164,10 +164,10 @@ function Contact() {
             <ul className="mt-8 space-y-5 text-sm">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 size-5 shrink-0 text-accent" />
-                <span>
+                <a href={mapHref} target="_blank" rel="noreferrer noopener" className="hover:text-accent">
                   <strong className="block font-semibold">{COMPANY.name}</strong>
                   {COMPANY.address}
-                </span>
+                </a>
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 size-5 shrink-0 text-accent" />
@@ -182,29 +182,6 @@ function Contact() {
                 </a>
               </li>
             </ul>
-            <a
-              href={mapHref}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="group relative mt-8 block overflow-hidden rounded-2xl border border-primary/15 bg-primary shadow-lg"
-            >
-              <img
-                src={mapImage.url}
-                alt="Map showing PreTT headquarters at Ole Maaløes Vej 3, 2200 Copenhagen, Denmark"
-                className="h-[340px] w-full object-cover opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
-                loading="lazy"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 p-5">
-                <div className="text-primary-foreground">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Headquarters</p>
-                  <p className="mt-1 text-sm font-medium">{COMPANY.address}</p>
-                </div>
-                <span className="rounded-full bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition group-hover:brightness-110">
-                  Open in Maps
-                </span>
-              </div>
-            </a>
 
           </Reveal>
         </div>
