@@ -157,8 +157,7 @@ function Home() {
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Crossing the blood-brain barrier</h3>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               The blood-brain barrier keeps medicines out. Our covalent labeling chemistry supports brain
-              penetration — and we have demonstrated blood-brain barrier crossing in a proof of concept in
-              partnership with Roche.
+              penetration — and we have demonstrated blood-brain barrier crossing in a proof of concept.&nbsp;
             </p>
           </Reveal>
           <Reveal delay={120}>
