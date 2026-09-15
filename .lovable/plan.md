@@ -1,27 +1,23 @@
-# Fix the Radiotheranostics picture on the Home page
+# Make the navbar & footer logos larger
 
-## What happened
+## Problem
+Both logos load from the Infography table (navbar "top logo", footer "bottom logo") via `DbImage`. Their size is controlled only by the Tailwind height class passed in:
 
-The picture is now loaded from your image table instead of the version stored in the site. The two files are not the same:
+- `Navbar.tsx:39` → `h-12 w-auto` (48px)
+- `Footer.tsx:12` → `h-10 w-auto` (40px)
 
-- Old version (used before): tightly cropped, 1643 x 312 — the artwork filled the whole image.
-- New version (in your image library): 6000 x 4200, but the artwork only occupies a narrow band in the middle; the rest is empty transparent space.
+The navbar also caps height at `h-22` (88px, `Navbar.tsx:37`), so a navbar logo taller than ~88px would overflow the bar.
 
-Nothing changed in the layout or styling. Because the new file carries so much empty space around the artwork, the same on-page width now makes the drawing look small and vertically off-centre.
+## Plan
+Pure styling change — no layout, no Supabase, no `DbImage` logic touched.
 
-## Options
+1. **Navbar logo** — bump `h-12` → `h-16` (64px). Increase the bar height `h-22` → `h-24` (96px) so the larger logo breathes. Keep links vertically centered (they already are via `items-center`).
+2. **Footer logo** — bump `h-10` → `h-16` (64px) to match the navbar.
+3. Both keep `w-auto` so aspect ratio is preserved; only height scales.
 
-1. Replace the file in your image library with a tightly cropped copy (recommended). I prepare a cropped version of the exact same artwork and upload it in place of the current one, so everything stays driven by your table and the picture looks as it did before. If uploading into your storage isn't permitted for me, I hand you the cropped file to upload yourself.
-2. Keep this one picture as the stored site version, and let the table drive all the others. Fastest, but this image then no longer updates from your table.
-3. Leave the file as is and adjust only how it is displayed, cropping the empty space away visually. No change to your library, but it fixes the symptom rather than the file.
+That's it — two files, four class values. No new components, no image processing.
 
-## Recommendation
-
-Option 1: same artwork, same table-driven setup, and the picture looks exactly as before.
-
-## Technical notes
-
-- Row: Infography id 1, Home / Radiotheranostics, `picture_link` -> `Infography/Patient Stratification.webp`.
-- Alpha bounding box of the current file: (776, 1780) to (5732, 2578) on a 6000 x 4200 canvas — roughly 19 % of the canvas height is artwork.
-- Option 1 crops to the alpha bounding box and re-uploads under the same object name so `picture_link` stays valid.
-- Option 3 would add wrapper styling in `src/routes/index.tsx` only; no table or file changes.
+## Technical details
+- `Navbar.tsx`: `h-22`→`h-24` on the `<nav>`, `h-12`→`h-16` on the `DbImage`.
+- `Footer.tsx`: `h-10`→`h-16` on the `DbImage`.
+- `DbImage.tsx` unchanged — it just forwards `className` to the `<img>`.
