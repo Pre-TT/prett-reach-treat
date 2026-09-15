@@ -34,9 +34,9 @@ export function Navbar() {
           : "border-b border-transparent",
       )}
     >
-      <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex h-26 max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <DbImage name="top logo" page="All" section="Header" alt="PreTT logo" className="h-16 w-auto" loading="eager" />
+          <DbImage name="top logo" page="All" section="Header" alt="PreTT logo" className="h-20 w-auto" loading="eager" />
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">
