@@ -37,19 +37,22 @@ function pick(row: Row, keys: string[]): string {
   return "";
 }
 
-const STAGE_PCT: Record<string, number> = {
-  discovery: 15,
-  preclinical: 35,
-  cmc: 60,
-  ind: 85,
-  approved: 100,
-};
-
 function stageToPct(label: string): number {
   const key = label.trim().toLowerCase();
   // Match "PoC Preclinical" / "Preclinical" / "PoC preclinical" etc.
-  if (key.includes("preclinical")) return STAGE_PCT["preclinical"];
-  return STAGE_PCT[key] ?? 10;
+  if (key.includes("preclinical")) return 35;
+  switch (key) {
+    case "discovery":
+      return 15;
+    case "cmc":
+      return 60;
+    case "ind":
+      return 85;
+    case "approved":
+      return 100;
+    default:
+      return 10;
+  }
 }
 
 function normalize(rows: Row[]): PipelineRow[] {
