@@ -83,6 +83,7 @@ function Contact() {
   };
 
   const mapQuery = encodeURIComponent(`${COMPANY.name}, ${COMPANY.address}`);
+  const mapHref = "https://maps.google.com/?q=Ole+Maaløes+Vej+3,+2200+Copenhagen,+Denmark";
 
   return (
     <>
