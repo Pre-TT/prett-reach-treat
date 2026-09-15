@@ -37,6 +37,21 @@ function pick(row: Row, keys: string[]): string {
   return "";
 }
 
+const STAGE_PCT: Record<string, number> = {
+  discovery: 15,
+  preclinical: 35,
+  cmc: 60,
+  ind: 85,
+  approved: 100,
+};
+
+function stageToPct(label: string): number {
+  const key = label.trim().toLowerCase();
+  // Match "PoC Preclinical" / "Preclinical" / "PoC preclinical" etc.
+  if (key.includes("preclinical")) return STAGE_PCT.preclinical;
+  return STAGE_PCT[key] ?? 10;
+}
+
 function normalize(rows: Row[]): PipelineRow[] {
   return rows.map((r) => {
     const stageLabel = pick(r, ["stage", "phase", "status"]);
@@ -49,6 +64,7 @@ function normalize(rows: Row[]): PipelineRow[] {
       isotope: pick(r, ["isotope", "radionuclide", "nuclide"]) || "[PLACEHOLDER]",
       partners: pick(r, ["partners", "partner", "collaborators", "funding"]),
       stageIndex: Number.isFinite(numeric) && numeric > 0 ? numeric - 1 : idx >= 0 ? idx : 0,
+      stagePct: stageLabel ? stageToPct(stageLabel) : 10,
     };
   });
 }
