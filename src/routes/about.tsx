@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { MILESTONES } from "@/lib/content";
-import kuLogo from "@/assets/ku_logo.png.asset.json";
-import biiLogo from "@/assets/bii_logo.png.asset.json";
+import { DbImage } from "@/components/DbImage";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -57,8 +56,10 @@ function About() {
               radiopharmaceutical translation. Today the company develops pretargeted radiotheranostics designed for
               high-precision, low-toxicity cancer care.
             </p>
-            <img
-              src={kuLogo.url}
+            <DbImage
+              name="KU_logo"
+              page="About"
+              section="Our story"
               alt="University of Copenhagen"
               className="mx-auto mt-6 h-16 w-auto opacity-80"
             />
@@ -69,8 +70,10 @@ function About() {
               BioInnovation Institute (BII Venture Lab and
               Venture House), where it was selected for further funding to develop its platform and assets.
             </p>
-            <img
-              src={biiLogo.url}
+            <DbImage
+              name="BII_logo"
+              page="About"
+              section="Our story"
               alt="BioInnovation Institute"
               className="mx-auto mt-6 h-14 w-auto opacity-80"
             />

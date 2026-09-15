@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/6.png.asset.json";
-import stratification from "@/assets/Patient_Stratification.png.asset.json";
-import bbbCrossing from "@/assets/BBB_crossing_PreTT.png.asset.json";
+import { DbImage } from "@/components/DbImage";
 
 
 import { Reveal, SectionTitle } from "@/components/Reveal";
@@ -54,10 +52,12 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[calc(100vh-4.5rem)] items-center overflow-hidden bg-ink text-ink-foreground">
-        <img
-          src={logo.url}
-          alt=""
-          aria-hidden="true"
+        <DbImage
+          name="Background logo"
+          page="Home"
+          section="Next Generation Radiotheranostics"
+          ariaHidden
+          loading="eager"
           className="pointer-events-none absolute -right-24 top-1/2 w-[min(120vw,900px)] -translate-y-1/2 opacity-[0.07] select-none"
         />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-24 sm:px-8">
@@ -109,11 +109,12 @@ function Home() {
           </Reveal>
           <Reveal delay={200}>
             <figure className="mt-12 max-w-5xl">
-              <img
-                src={stratification.url}
+              <DbImage
+                name="Radiotheranostics"
+                page="Home"
+                section="Radiotheranostics"
                 alt="Workflow from cancer patients through PET/SPECT imaging to stratification, dosimetry, treatment and monitoring"
                 className="w-full"
-                loading="lazy"
               />
             </figure>
           </Reveal>
@@ -163,10 +164,11 @@ function Home() {
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <img
-              src={bbbCrossing.url}
+            <DbImage
+              name="BBB_crossing"
+              page="Home"
+              section="The Challenge"
               alt="PreTT pretargeting platform crossing the blood-brain barrier"
-              loading="lazy"
               className="w-full rounded-2xl bg-white shadow-md ring-1 ring-border"
             />
           </Reveal>
