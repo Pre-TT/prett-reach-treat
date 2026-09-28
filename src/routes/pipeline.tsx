@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
+import { loadInfography, type InfographyRow } from "@/components/DbImage";
 import { selectTable } from "@/lib/supabase";
 import { PIPELINE_FALLBACK, PIPELINE_STAGES, type PipelineRow } from "@/lib/content";
 
