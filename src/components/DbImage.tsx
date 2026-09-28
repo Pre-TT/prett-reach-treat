@@ -14,7 +14,7 @@ export type InfographyRow = {
 
 let cache: Promise<InfographyRow[]> | undefined;
 
-function loadInfography(): Promise<InfographyRow[]> {
+export function loadInfography(): Promise<InfographyRow[]> {
   if (!cache) {
     cache = (async () => {
       const { data, error } = await supabase
