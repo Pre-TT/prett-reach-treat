@@ -66,7 +66,7 @@ function Home() {
           </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-6 max-w-4xl text-5xl leading-[1.05] font-semibold sm:text-7xl">
-              See it. <span className="text-accent">Reach it.</span> Treat it.
+              Target. <span className="text-accent">Click.</span> Treat.
             </h1>
           </Reveal>
           <Reveal delay={240}>
