@@ -5,7 +5,7 @@
 
 export const COMPANY = {
   name: "PreTT",
-  tagline: "See it. Reach it. Treat it.",
+  tagline: "Target. Click. Treat.",
   address: "Ole Maaløes Vej 3, 2200 Copenhagen, Denmark",
   email: "info@pre-tt.com",
   cvr: "DK43121618",
