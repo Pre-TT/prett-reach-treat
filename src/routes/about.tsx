@@ -83,7 +83,7 @@ function About() {
 
       <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Our mission">Driven by high unmet needs and difficult-to-treat cancers</SectionTitle>
+          <SectionTitle eyebrow="Our mission">Where treatment runs out, we begin</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               By overcoming the blood-brain barrier, we address patients who currently face a 5-year survival rate below
