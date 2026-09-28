@@ -107,6 +107,49 @@ function StageBar({ stagePct }: { stagePct: number }) {
   );
 }
 
+const normName = (v: string | null | undefined) => (v ?? "").trim().toLowerCase();
+
+function PartnerLogos({ partners }: { partners: string }) {
+  const [logos, setLogos] = useState<InfographyRow[]>([]);
+
+  const names = partners
+    .split(/\r?\n|,/)
+    .map((n) => n.trim())
+    .filter(Boolean);
+
+  useEffect(() => {
+    let active = true;
+    loadInfography().then((all) => {
+      if (!active) return;
+      const matched = names
+        .map((n) => all.find((r) => normName(r.description) === normName(n) && r.picture_link))
+        .filter((r): r is InfographyRow => Boolean(r));
+      setLogos(matched);
+    });
+    return () => {
+      active = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [partners]);
+
+  if (logos.length === 0) return null;
+
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {logos.map((l) => (
+        <img
+          key={l.id}
+          src={l.picture_link as string}
+          alt={l.description ?? ""}
+          title={l.description ?? ""}
+          loading="lazy"
+          className="h-7 max-h-7 w-auto max-w-[95px] object-contain"
+        />
+      ))}
+    </div>
+  );
+}
+
 function Pipeline() {
   const { data, isError } = useQuery({
     queryKey: ["pipeline"],
