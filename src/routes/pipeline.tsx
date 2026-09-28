@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
+import { loadInfography, type InfographyRow } from "@/components/DbImage";
 import { selectTable } from "@/lib/supabase";
 import { PIPELINE_FALLBACK, PIPELINE_STAGES, type PipelineRow } from "@/lib/content";
 
@@ -106,6 +107,49 @@ function StageBar({ stagePct }: { stagePct: number }) {
   );
 }
 
+const normName = (v: string | null | undefined) => (v ?? "").trim().toLowerCase();
+
+function PartnerLogos({ partners }: { partners: string }) {
+  const [logos, setLogos] = useState<InfographyRow[]>([]);
+
+  const names = partners
+    .split(/\r?\n|,/)
+    .map((n) => n.trim())
+    .filter(Boolean);
+
+  useEffect(() => {
+    let active = true;
+    loadInfography().then((all) => {
+      if (!active) return;
+      const matched = names
+        .map((n) => all.find((r) => normName(r.description) === normName(n) && r.picture_link))
+        .filter((r): r is InfographyRow => Boolean(r));
+      setLogos(matched);
+    });
+    return () => {
+      active = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [partners]);
+
+  if (logos.length === 0) return null;
+
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {logos.map((l) => (
+        <img
+          key={l.id}
+          src={l.picture_link as string}
+          alt={l.description ?? ""}
+          title={l.description ?? ""}
+          loading="lazy"
+          className="h-7 max-h-7 w-auto max-w-[95px] object-contain"
+        />
+      ))}
+    </div>
+  );
+}
+
 function Pipeline() {
   const { data, isError } = useQuery({
     queryKey: ["pipeline"],
@@ -140,8 +184,8 @@ function Pipeline() {
         <SectionTitle eyebrow="Programmes">Development status</SectionTitle>
 
         <div className="mt-12 overflow-x-auto">
-          <div className="min-w-[900px]">
-            <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr_2.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
+          <div className="min-w-[1050px]">
+            <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
               <span>Programme / Indication</span>
               <span>Target</span>
               <span>Isotope</span>
@@ -150,19 +194,20 @@ function Pipeline() {
                   <span key={s}>{s}</span>
                 ))}
               </div>
+              <span>Partners</span>
             </div>
 
             {rows.map((r, i) => (
               <Reveal key={`${r.program}-${i}`} delay={i * 100}>
-                <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr_2.4fr] items-center gap-6 border-b border-border py-6">
+                <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] items-center gap-6 border-b border-border py-6">
                   <div>
                     <p className="font-display text-lg font-semibold">{r.program}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{r.indication}</p>
-                    {r.partners ? <p className="mt-2 text-xs text-muted-foreground/80">{r.partners}</p> : null}
                   </div>
                   <span className="text-sm font-medium">{r.target}</span>
                   <span className="text-sm font-medium">{r.isotope}</span>
                   <StageBar stagePct={r.stagePct} />
+                  {r.partners ? <PartnerLogos partners={r.partners} /> : <span />}
                 </div>
               </Reveal>
             ))}
