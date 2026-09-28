@@ -4,7 +4,7 @@ import { DbImage } from "@/components/DbImage";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 import { selectTable } from "@/lib/supabase";
 
-import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, COMPARISON_BENEFITS, PATENTS, STEPS } from "@/lib/content";
+import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, PATENTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
