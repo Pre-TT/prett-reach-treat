@@ -184,8 +184,8 @@ function Pipeline() {
         <SectionTitle eyebrow="Programmes">Development status</SectionTitle>
 
         <div className="mt-12 overflow-x-auto">
-          <div className="min-w-[900px]">
-            <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr_2.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
+          <div className="min-w-[1050px]">
+            <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
               <span>Programme / Indication</span>
               <span>Target</span>
               <span>Isotope</span>
@@ -194,19 +194,20 @@ function Pipeline() {
                   <span key={s}>{s}</span>
                 ))}
               </div>
+              <span>Partners</span>
             </div>
 
             {rows.map((r, i) => (
               <Reveal key={`${r.program}-${i}`} delay={i * 100}>
-                <div className="grid grid-cols-[1.5fr_0.7fr_0.7fr_2.4fr] items-center gap-6 border-b border-border py-6">
+                <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] items-center gap-6 border-b border-border py-6">
                   <div>
                     <p className="font-display text-lg font-semibold">{r.program}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{r.indication}</p>
-                    {r.partners ? <p className="mt-2 text-xs text-muted-foreground/80">{r.partners}</p> : null}
                   </div>
                   <span className="text-sm font-medium">{r.target}</span>
                   <span className="text-sm font-medium">{r.isotope}</span>
                   <StageBar stagePct={r.stagePct} />
+                  {r.partners ? <PartnerLogos partners={r.partners} /> : <span />}
                 </div>
               </Reveal>
             ))}
