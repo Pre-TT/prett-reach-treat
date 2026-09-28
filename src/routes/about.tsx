@@ -86,9 +86,9 @@ function About() {
           <SectionTitle eyebrow="Our mission">Where treatment runs out, we begin</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              By overcoming the blood-brain barrier, we address patients who currently face a 5-year survival rate below
-              35%. By improving therapeutic efficacy and reducing toxicity, we aim to increase 5-year survival by a
-              relative 20% and reduce inpatient days by 30%.&nbsp;
+              Brain tumours and metastases remain among the hardest cancers to treat, not because the science isn't there, but because existing therapies simply can't get there.&nbsp;
+              <br />
+              PreTT is built for these patients.
             </p>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
