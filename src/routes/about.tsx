@@ -23,16 +23,6 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const IMPACT = [
-  {
-    stat: ">300,000",
-    label: "patients diagnosed with primary brain tumours per year",
-  },
-  { stat: ">2.5M", label: "patients affected by brain metastases" },
-  { stat: "<35%", label: "5-year survival rate for these patients today" },
-  { stat: ">150,000", label: "people affected by glioblastoma globally each year (7% 5-year survival)" },
-];
-
 function About() {
   return (
     <>
@@ -78,29 +68,6 @@ function About() {
               className="mx-auto mt-6 h-14 w-auto opacity-80"
             />
           </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Our mission">Where treatment runs out, we begin</SectionTitle>
-          <Reveal delay={120}>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Brain tumours and metastases remain among the hardest cancers to treat, not because the science isn't there, but because existing therapies simply can't get there.&nbsp;
-              <br />
-              PreTT is built for these patients.
-            </p>
-          </Reveal>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {IMPACT.map((i, idx) => (
-              <Reveal key={i.stat} delay={idx * 100}>
-                <div className="h-full rounded-xl border border-border bg-card p-7">
-                  <p className="font-display text-3xl font-semibold text-foreground">{i.stat}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
