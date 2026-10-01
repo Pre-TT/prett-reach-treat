@@ -153,9 +153,8 @@ function Technology() {
         <SectionTitle eyebrow="α-pretargeted RLT in the brain">Unique At-211 chemistry</SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            PreTT is currently expanding its technology to a therapeutic oncology pipeline focused on high-unmet-need
-            oncology targets in the brain — primary tumours and brain metastases. Our unique At-211 chemistry enables
-            α-pretargeted RLT across the BBB, for higher therapeutic efficacy through the power of alpha radiation.
+            Our unique At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
+            alpha radiation.
           </p>
         </Reveal>
         <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
