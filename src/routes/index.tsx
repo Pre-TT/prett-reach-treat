@@ -4,7 +4,7 @@ import { DbImage } from "@/components/DbImage";
 
 
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { COMPANY, MISSION_QUOTE, NUTSHELL, SHORT_DESCRIPTION, STEPS } from "@/lib/content";
+import { COMPANY, MISSION_QUOTE, NUTSHELL, SHORT_DESCRIPTION } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -140,17 +140,16 @@ function Home() {
               <sup className="text-accent">1</sup> The therapeutic index is a ratio that compares the dose of a drug that causes toxicity to the dose that produces a desired therapeutic effect.
             </p>
           </Reveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {STEPS.map((s, i) => (
-              <Reveal key={s.title} delay={i * 120}>
-                <div className="h-full rounded-xl border border-border bg-card p-5">
-                  <span className="font-display text-3xl font-semibold text-accent">{s.number}</span>
-                  <h4 className="mt-3 text-base font-semibold">{s.title}</h4>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{s.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={120}>
+            <DbImage
+              name="target click treat"
+              page="Home"
+              section="Systemic toxcicity"
+              subSection="Redefining the therapeutic index"
+              alt="Target. Click. Treat."
+              className="mt-10 w-full"
+            />
+          </Reveal>
         </div>
 
         {/* 2. The BBB crossing */}
