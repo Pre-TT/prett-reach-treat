@@ -81,29 +81,6 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-secondary py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Our mission">Where treatment runs out, we begin</SectionTitle>
-          <Reveal delay={120}>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Brain tumours and metastases remain among the hardest cancers to treat, not because the science isn't there, but because existing therapies simply can't get there.&nbsp;
-              <br />
-              PreTT is built for these patients.
-            </p>
-          </Reveal>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {IMPACT.map((i, idx) => (
-              <Reveal key={i.stat} delay={idx * 100}>
-                <div className="h-full rounded-xl border border-border bg-card p-7">
-                  <p className="font-display text-3xl font-semibold text-foreground">{i.stat}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
         <SectionTitle eyebrow="Our vision">Process to date</SectionTitle>
         <ol className="mt-12 space-y-10 border-l border-border pl-8">
