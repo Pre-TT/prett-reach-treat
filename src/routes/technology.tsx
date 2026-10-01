@@ -1,10 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
 import { DbImage } from "@/components/DbImage";
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { selectTable } from "@/lib/supabase";
 
-import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, PATENTS, STEPS } from "@/lib/content";
+import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
@@ -26,47 +24,7 @@ export const Route = createFileRoute("/technology")({
   component: Technology,
 });
 
-type Row = Record<string, unknown>;
-type Patent = { number: string; title: string; priority: string; status: string };
-
-function pick(row: Row, keys: string[]): string {
-  const lower: Record<string, unknown> = {};
-  Object.entries(row).forEach(([k, v]) => (lower[k.toLowerCase().replace(/[\s_-]/g, "")] = v));
-  for (const k of keys) {
-    const v = lower[k];
-    if (v !== null && v !== undefined && String(v).trim() !== "") return String(v);
-  }
-  return "";
-}
-
-function normalizePatents(rows: Row[]): Patent[] {
-  return rows.map((r) => ({
-    number:
-      pick(r, ["number", "patentcode", "patentnumber", "patentno", "publicationnumber", "code", "id"]).trim() ||
-      "[PLACEHOLDER]",
-    title: pick(r, ["title", "name", "description"]).trim() || "[PLACEHOLDER]",
-    priority: pick(r, ["priority", "prioritydate", "filingdate"]).trim(),
-    status: pick(r, ["status", "state"]).trim() || "[PLACEHOLDER]",
-  }));
-}
-
-function usePatents() {
-  return useQuery({
-    queryKey: ["patents"],
-    queryFn: async () => {
-      const data = await selectTable<Row>(["patents", "Patents"]);
-      if (!data) throw new Error("unavailable");
-      return normalizePatents(data);
-    },
-    staleTime: 5 * 60 * 1000,
-    retry: 1,
-  });
-}
-
 function Technology() {
-  const { data: livePatents } = usePatents();
-  const patents = livePatents && livePatents.length > 0 ? livePatents : PATENTS;
-  const showPriority = patents.some((p) => p.priority && p.priority !== "[PLACEHOLDER]");
   return (
     <>
       <section className="bg-ink py-24 text-ink-foreground">
@@ -187,36 +145,6 @@ function Technology() {
       </section>
 
 
-      {/* IP */}
-      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Our IP">Unique and strong protection with late expiry</SectionTitle>
-        <Reveal delay={120}>
-          <div className="mt-12 overflow-x-auto rounded-xl border border-border bg-card">
-            <table className="w-full min-w-[720px] text-left text-sm">
-              <thead className="bg-ink text-ink-foreground">
-                <tr>
-                  <th className="px-5 py-4 font-medium">Patent number</th>
-                  <th className="px-5 py-4 font-medium">Title</th>
-                  {showPriority && <th className="px-5 py-4 font-medium">Priority date</th>}
-                  <th className="px-5 py-4 font-medium">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {patents.map((p) => (
-                  <tr key={p.number} className="border-t border-border align-top">
-                    <td className="px-5 py-4 font-medium whitespace-nowrap">{p.number}</td>
-                    <td className="px-5 py-4 text-muted-foreground">{p.title}</td>
-                    {showPriority && (
-                      <td className="px-5 py-4 whitespace-nowrap text-muted-foreground">{p.priority}</td>
-                    )}
-                    <td className="px-5 py-4 text-muted-foreground">{p.status}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Reveal>
-      </section>
     </>
   );
 }
