@@ -147,7 +147,7 @@ function Home() {
               section="Systemic toxcicity"
               subSection="Redefining the therapeutic index"
               alt="Target. Click. Treat."
-              className="mt-10 w-full"
+              className="mx-auto mt-10 w-[70%]"
             />
           </Reveal>
         </div>
