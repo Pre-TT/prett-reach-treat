@@ -20,7 +20,7 @@ export const NUTSHELL =
   'PreTT\'s "target-click-treat" technology redefines the Therapeutic Index in Radioligand Therapy by separating tumour targeting from dose delivery. We first send in non-radioactive antibodies — highly specific targeting molecules — to find and tag cancer cells. Only once they\'ve reached the tumour do we introduce a small molecule carrying the radioactive payload, which clicks onto them. The radiation lands where it should, and healthy tissue is left alone.';
 
 export const MISSION_QUOTE =
-  "The blood-brain barrier keeps medicines out. Systemic toxicity keeps patients from tolerating the doses they need. At PreTT, we're engineering past both.";
+  "The blood-brain barrier keeps medicines out. Systemic toxicity keeps patients from tolerating the doses they need. Pretargeting is the solution.";
 
 export const STEPS = [
   {
