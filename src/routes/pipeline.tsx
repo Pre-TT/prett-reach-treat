@@ -40,14 +40,16 @@ function pick(row: Row, keys: string[]): string {
 
 function stageToPct(label: string): number {
   const key = label.trim().toLowerCase();
-  // Match "PoC Preclinical" / "Preclinical" / "PoC preclinical" etc.
+  // Match "PoC Preclinical" / "Preclinical" etc.
   if (key.includes("preclinical")) return 35;
   switch (key) {
     case "discovery":
       return 15;
     case "cmc":
+    case "phase 1":
       return 60;
     case "ind":
+    case "phase 2":
       return 85;
     case "approved":
       return 100;
@@ -98,7 +100,7 @@ function StageBar({ stagePct }: { stagePct: number }) {
   const pct = stagePct;
 
   return (
-    <div ref={ref} className="relative h-9 w-full overflow-hidden rounded-full bg-secondary">
+    <div ref={ref} className="relative h-7 w-full overflow-hidden rounded-full bg-secondary">
       <div
         className="h-full rounded-full bg-ink transition-[width] duration-[1400ms] ease-out"
         style={{ width: filled ? `${pct}%` : "0%" }}
@@ -186,8 +188,8 @@ function Pipeline() {
         <div className="mt-12 overflow-x-auto">
           <div className="min-w-[1050px]">
             <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
-              <span>Programme / Indication</span>
-              <span>Target</span>
+              <span>Programme</span>
+              <span>Indication</span>
               <span>Isotope</span>
               <div className="grid grid-cols-4 gap-0 text-center">
                 {PIPELINE_STAGES.map((s) => (
@@ -202,9 +204,8 @@ function Pipeline() {
                 <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] items-center gap-6 border-b border-border py-6">
                   <div>
                     <p className="font-display text-lg font-semibold">{r.program}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{r.indication}</p>
                   </div>
-                  <span className="text-sm font-medium">{r.target}</span>
+                  <span className="text-sm font-medium">{r.indication}</span>
                   <span className="text-sm font-medium">{r.isotope}</span>
                   <StageBar stagePct={r.stagePct} />
                   {r.partners ? <PartnerLogos partners={r.partners} /> : <span />}

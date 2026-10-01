@@ -153,11 +153,11 @@ export type PipelineRow = {
   target: string;
   isotope: string;
   partners: string;
-  stageIndex: number; // 0..3 -> Discovery, PoC Preclinical, CMC, IND
+  stageIndex: number; // 0..3 -> Discovery, Preclinical, Phase 1, Phase 2
   stagePct: number; // bar fill width derived from the Supabase stage value
 };
 
-export const PIPELINE_STAGES = ["Discovery", "PoC Preclinical", "CMC", "IND"];
+export const PIPELINE_STAGES = ["Discovery", "Preclinical", "Phase 1", "Phase 2"];
 
 export const PIPELINE_FALLBACK: PipelineRow[] = [
   {
