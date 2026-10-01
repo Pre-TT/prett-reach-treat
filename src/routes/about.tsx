@@ -23,16 +23,6 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const IMPACT = [
-  {
-    stat: ">300,000",
-    label: "patients diagnosed with primary brain tumours per year",
-  },
-  { stat: ">2.5M", label: "patients affected by brain metastases" },
-  { stat: "<35%", label: "5-year survival rate for these patients today" },
-  { stat: ">150,000", label: "people affected by glioblastoma globally each year (7% 5-year survival)" },
-];
-
 function About() {
   return (
     <>
