@@ -40,14 +40,16 @@ function pick(row: Row, keys: string[]): string {
 
 function stageToPct(label: string): number {
   const key = label.trim().toLowerCase();
-  // Match "PoC Preclinical" / "Preclinical" / "PoC preclinical" etc.
+  // Match "PoC Preclinical" / "Preclinical" etc.
   if (key.includes("preclinical")) return 35;
   switch (key) {
     case "discovery":
       return 15;
     case "cmc":
+    case "phase 1":
       return 60;
     case "ind":
+    case "phase 2":
       return 85;
     case "approved":
       return 100;
