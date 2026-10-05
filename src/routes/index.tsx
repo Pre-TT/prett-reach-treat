@@ -4,7 +4,7 @@ import { DbImage } from "@/components/DbImage";
 
 
 import { Reveal, SectionTitle } from "@/components/Reveal";
-import { COMPANY, MISSION_QUOTE, NUTSHELL, SHORT_DESCRIPTION } from "@/lib/content";
+import { COMPANY, MISSION_QUOTE, NUTSHELL, NUTSHELL_BBB, SHORT_DESCRIPTION } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -136,6 +136,7 @@ function Home() {
               Redefining the therapeutic index<sup className="ml-0.5 text-sm align-super text-accent">1</sup>
             </h3>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL_BBB}</p>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
               <sup className="text-accent">1</sup> The therapeutic index is a ratio that compares the dose of a drug that causes toxicity to the dose that produces a desired therapeutic effect.
             </p>
