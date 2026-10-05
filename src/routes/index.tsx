@@ -123,7 +123,7 @@ function Home() {
 
       {/* Two barriers. One solution. */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="The challenge">Two barriers. One solution.</SectionTitle>
+        <SectionTitle eyebrow="The challenge">Systemic toxicity</SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">{MISSION_QUOTE}</p>
         </Reveal>
@@ -131,7 +131,7 @@ function Home() {
         {/* 1. The therapeutic index */}
         <div className="mt-16">
           <Reveal>
-            <p className="eyebrow">01 · Systemic toxicity</p>
+            <p className="eyebrow">{"\n"}</p>
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
               Redefining the therapeutic index<sup className="ml-0.5 text-sm align-super text-accent">1</sup>
             </h3>
@@ -155,7 +155,7 @@ function Home() {
         {/* 2. The BBB crossing */}
         <div className="mt-20 grid items-center gap-10 lg:grid-cols-2">
           <Reveal>
-            <p className="eyebrow">02 · The blood-brain barrier</p>
+            <p className="eyebrow">{"\n"}</p>
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Crossing the blood-brain barrier</h3>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               The blood-brain barrier keeps medicines out. Our covalent labeling chemistry supports brain
