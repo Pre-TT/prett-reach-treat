@@ -152,26 +152,6 @@ function Home() {
           </Reveal>
         </div>
 
-        {/* 2. The BBB crossing */}
-        <div className="mt-20 grid items-center gap-10 lg:grid-cols-2">
-          <Reveal>
-            <p className="eyebrow">{"\n"}</p>
-            <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">Crossing the blood-brain barrier</h3>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              The blood-brain barrier keeps medicines out. Our covalent labeling chemistry supports brain
-              penetration — and we have demonstrated blood-brain barrier crossing in a proof of concept.&nbsp;
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <DbImage
-              name="BBB_crossing"
-              page="Home"
-              section="The Challenge"
-              alt="PreTT pretargeting platform crossing the blood-brain barrier"
-              className="w-full rounded-2xl bg-white shadow-md ring-1 ring-border"
-            />
-          </Reveal>
-        </div>
       </section>
 
       {/* Teasers */}
