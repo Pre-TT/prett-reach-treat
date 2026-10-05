@@ -17,10 +17,10 @@ export const SHORT_DESCRIPTION =
   "Our technology uses a nontoxic vector to find and tag cancer cells. Then we introduce a small radioactive molecule that clicks onto the tags, releasing the radiation precisely at the tumour while sparing healthy tissue.";
 
 export const NUTSHELL =
-  'PreTT\'s "target-click-treat" technology redefines the Therapeutic Index in Radioligand Therapy by separating tumour targeting from dose delivery. We first send in non-radioactive antibodies — highly specific targeting molecules — to find and tag cancer cells. Only once they\'ve reached the tumour do we introduce a small molecule carrying the radioactive payload, which clicks onto them. The radiation lands where it should, and healthy tissue is left alone.';
+  'PreTT\'s "target-click-treat" technology redefines the Therapeutic Index in Radioligand Therapy by separating tumour targeting from dose delivery. We first send in non-radioactive antibodies — highly specific targeting molecules — to find and tag cancer cells. Only once they\'ve reached the tumour do we introduce a small molecule carrying the radioactive payload, which clicks onto them. The radiation lands where it should, and healthy tissue is left alone.\nAnd because our proprietary click molecule is the only one of its kind to cross the blood-brain barrier, we can reach primary brain tumours and metastases that remain inaccessible to every other systemic therapy.';
 
 export const MISSION_QUOTE =
-  "The blood-brain barrier keeps medicines out. Systemic toxicity keeps patients from tolerating the doses they need. Pretargeting is the solution.";
+  "Systemic toxicity keeps patients from tolerating the doses they need. Pretargeting is the solution.";
 
 export const STEPS = [
   {
