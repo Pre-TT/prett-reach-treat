@@ -76,21 +76,19 @@ function Technology() {
               />
             </figure>
           </Reveal>
-          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1.25fr_1fr]">
             <Reveal delay={140}>
-              <figure className="h-full">
-                <div className="rounded-xl border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
-                  <DbImage
-                    name="Tetrazine ligation"
-                    page="Technology"
-                    section="Pretargeting in action"
-                    alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
-                    className="w-full"
-                  />
-                </div>
-                <figcaption className="pt-3 text-xs text-muted-foreground">
+              <figure className="flex h-full flex-col rounded-xl border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
+                <figcaption className="pb-3 text-xs text-muted-foreground">
                   Inverse electron-demand Diels–Alder reaction (IEDDA).
                 </figcaption>
+                <DbImage
+                  name="Tetrazine ligation"
+                  page="Technology"
+                  section="Pretargeting in action"
+                  alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
+                  className="w-full"
+                />
               </figure>
             </Reveal>
             <Reveal delay={120}>
