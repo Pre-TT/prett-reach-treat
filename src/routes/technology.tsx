@@ -78,23 +78,25 @@ function Technology() {
           </Reveal>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
             <Reveal delay={140}>
-              <figure className="flex h-full flex-col overflow-hidden rounded-xl border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
-                <DbImage
-                  name="Tetrazine ligation"
-                  page="Technology"
-                  section="Pretargeting in action"
-                  alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
-                  className="min-h-0 w-full flex-1 object-contain"
-                />
+              <figure className="h-full">
+                <div className="rounded-xl border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
+                  <DbImage
+                    name="Tetrazine ligation"
+                    page="Technology"
+                    section="Pretargeting in action"
+                    alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
+                    className="w-full"
+                  />
+                </div>
                 <figcaption className="pt-3 text-xs text-muted-foreground">
                   Inverse electron-demand Diels–Alder reaction (IEDDA).
                 </figcaption>
               </figure>
             </Reveal>
             <Reveal delay={120}>
-              <ul className="grid h-full grid-rows-4 gap-4 pb-[150px] lg:pb-[115px] xl:pb-[80px]">
+              <ul className="grid h-full grid-rows-4 gap-3">
                 {CLICK_CHEMISTRY_POINTS.map((p) => (
-                  <li key={p} className="flex items-center gap-4 rounded-lg border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
+                  <li key={p} className="flex items-center gap-4 rounded-lg border border-border p-4 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
                     <span className="size-2 shrink-0 rounded-full bg-accent" />
                     <span className="leading-relaxed">{p}</span>
                   </li>
