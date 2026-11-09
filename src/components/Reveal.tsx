@@ -51,7 +51,7 @@ export function SectionTitle({
   children,
   className,
 }: {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   children: ReactNode;
   className?: string;
 }) {

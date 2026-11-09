@@ -108,7 +108,9 @@ function Technology() {
 
       {/* At-211 */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="α-pretargeted RLT in the brain">Unique At-211 chemistry</SectionTitle>
+        <SectionTitle eyebrow={<><span className="normal-case">α</span>-pretargeted RLT in the brain</>}>
+          Unique At-211 chemistry
+        </SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             Our unique At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
