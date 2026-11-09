@@ -92,7 +92,7 @@ function Technology() {
               </figure>
             </Reveal>
             <Reveal delay={120}>
-              <ul className="grid h-full grid-rows-4 gap-4">
+              <ul className="grid h-full grid-rows-4 gap-4 pb-[28px]">
                 {CLICK_CHEMISTRY_POINTS.map((p) => (
                   <li key={p} className="flex items-center gap-4">
                     <span className="size-2 shrink-0 rounded-full bg-accent" />
