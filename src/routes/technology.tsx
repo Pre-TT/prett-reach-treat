@@ -84,7 +84,7 @@ function Technology() {
                   page="Technology"
                   section="Pretargeting in action"
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
-                  className="min-h-0 w-full flex-1 object-contain"
+                  className="w-full"
                 />
                 <figcaption className="pt-3 text-xs text-muted-foreground">
                   Tetrazine ligation click chemistry (IEDDA).
