@@ -66,7 +66,7 @@ function Technology() {
             ))}
           </div>
           <Reveal className="mt-10 block">
-            <figure className="mx-auto max-w-3xl overflow-hidden rounded-xl border border-border bg-card p-4">
+            <figure className="mx-auto max-w-3xl">
               <DbImage
                 name="radiotheranostics in three steps"
                 page="Technology"
