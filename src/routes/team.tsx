@@ -127,7 +127,7 @@ function Team() {
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
         {groups.map((g, gi) => (
           <div key={g} className={gi > 0 ? "mt-20" : ""}>
-            <SectionTitle eyebrow={`0${gi + 1}`}>{g}</SectionTitle>
+            <SectionTitle>{g}</SectionTitle>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {members
                 .filter((m) => m.group === g)
