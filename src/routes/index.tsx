@@ -102,7 +102,7 @@ function Home() {
           <SectionTitle eyebrow="RADIOTHERANOSTICS: PRECISION IMAGING AND TARGETED THERAPY">See what you treat, treat what you see</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb, peptide, small molecule), an optional linker, a radionuclide and — for radiometals — a chelator. Imaging enables patient stratification and dosimetry; therapy then delivers what imaging revealed.
+              Radiotheranostics combine imaging and therapy using radioactive molecules composed of a targeting molecule (such as an antibody, peptide, or small molecule), a radionuclide, and, when needed, a linker or chelator. Imaging radionuclides enable tumor visualization, patient stratification, radiation dosimetry, and monitoring of treatment response, while therapeutic radionuclides deliver cell-killing radiation to cancer cells. This combination of imaging and therapy enable a more precise and personalized approach to cancer treatment.
             </p>
           </Reveal>
           <Reveal delay={200}>
