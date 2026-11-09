@@ -78,7 +78,7 @@ function Technology() {
           </Reveal>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
             <Reveal delay={140}>
-              <figure className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card p-5">
+              <figure className="flex h-full flex-col">
                 <DbImage
                   name="Tetrazine ligation"
                   page="Technology"
@@ -94,7 +94,7 @@ function Technology() {
             <Reveal delay={120}>
               <ul className="grid h-full grid-rows-4 gap-4">
                 {CLICK_CHEMISTRY_POINTS.map((p) => (
-                  <li key={p} className="flex items-center gap-4 rounded-lg border border-border bg-card p-5">
+                  <li key={p} className="flex items-center gap-4">
                     <span className="size-2 shrink-0 rounded-full bg-accent" />
                     <span className="leading-relaxed">{p}</span>
                   </li>
