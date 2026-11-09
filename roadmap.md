@@ -1,6 +1,11 @@
 # Roadmap
 
+## To do
+- (none)
+
 ## Done
+- Technology page, At-211 section: frames kept on the "At-211 decay chain" figure and the three cards (BBB, α-emission, 7.2 h); white background removed.
+- Technology page, click-chemistry section: frames added to the diagram and the four bullets with no white fill; the last bullet's bottom text line aligned to the rectangle's bottom line in the diagram (exact at 1160 and 1280+ window widths).
 - Technology page: Click step says "Clearance of unclicked Tz via the kidneys"; Treat step says "with considerably reduced systemic toxicity"; written-out "alpha" replaced by α on this page.
 - Technology page: diagram card and the four bullet boxes redesigned so their tops and bottoms line up.
 - Radiotheranostics picture on Home restored to the tight-cropped version (stored with the site).
