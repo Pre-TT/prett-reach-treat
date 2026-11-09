@@ -78,13 +78,13 @@ function Technology() {
           </Reveal>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.5fr]">
             <Reveal delay={140}>
-              <figure className="h-full overflow-hidden rounded-xl border border-border bg-card p-5">
+              <figure className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card p-5">
                 <DbImage
                   name="Tetrazine ligation"
                   page="Technology"
                   section="Pretargeting in action"
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
-                  className="w-full"
+                  className="min-h-0 w-full flex-1 object-contain"
                 />
                 <figcaption className="pt-3 text-xs text-muted-foreground">
                   Tetrazine ligation click chemistry (IEDDA).
