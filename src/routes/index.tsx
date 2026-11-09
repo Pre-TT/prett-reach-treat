@@ -99,12 +99,14 @@ function Home() {
       {/* Radiotheranostics */}
       <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Radiotheranostics">See what you treat, treat what you see</SectionTitle>
+          <SectionTitle eyebrow="Radioligand Therapy">See what you treat, treat what you see</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb, peptide, small
-              molecule), an optional linker, a radionuclide and — for radiometals — an optional chelator. Imaging
-              enables patient stratification and dosimetry; therapy then delivers what imaging revealed.
+              A radiotheranostic couples a targeting vector — a monoclonal antibody, peptide or small molecule — to a
+              radionuclide, through a linker where required and, for radiometals, a chelator that holds the metal in
+              stable coordination. The vector sets biodistribution and pharmacokinetics; the radionuclide decides
+              whether the construct reports as a PET or SPECT signal or delivers cytotoxic dose. Imaging thus supports
+              patient stratification and dosimetry ahead of treatment, and therapy delivers what imaging revealed.
             </p>
           </Reveal>
           <Reveal delay={200}>
@@ -123,9 +125,14 @@ function Home() {
 
       {/* Two barriers. One solution. */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="The challenge">Systemic toxicity</SectionTitle>
+        <SectionTitle eyebrow="The challenge">The challenge of conventional Radioligand Therapy</SectionTitle>
         <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">{MISSION_QUOTE}</p>
+          <p className="mt-8 max-w-3xl text-xl leading-relaxed font-medium text-foreground italic">
+            What if the targeting molecule did not have to carry the radioactive payload while searching for the tumour?
+          </p>
+        </Reveal>
+        <Reveal delay={200}>
+          <p className="mt-6 max-w-3xl text-xl leading-relaxed text-muted-foreground">{MISSION_QUOTE}</p>
         </Reveal>
 
         {/* 1. The therapeutic index */}
