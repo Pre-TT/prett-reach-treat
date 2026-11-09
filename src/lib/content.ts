@@ -34,12 +34,12 @@ export const STEPS = [
   {
     number: "2",
     title: "Click",
-    body: 'Administration of radioactive Tz. Ultrafast in vivo "click" reaction with mAb-TCO. Fast clearance of unclicked Tz.',
+    body: 'Administration of radioactive Tz. Ultrafast in vivo "click" reaction with mAb-TCO. Clearance of unclicked Tz via the kidneys.',
   },
   {
     number: "3",
     title: "Treat",
-    body: "Therapeutic radiation delivered at tumour without systemic toxicity.",
+    body: "Therapeutic radiation delivered at tumour with considerably reduced systemic toxicity.",
   },
 ];
 
