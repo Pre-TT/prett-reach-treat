@@ -102,11 +102,7 @@ function Home() {
           <SectionTitle eyebrow="Radioligand Therapy">See what you treat, treat what you see</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              A radiotheranostic couples a targeting vector — a monoclonal antibody, peptide or small molecule — to a
-              radionuclide, through a linker where required and, for radiometals, a chelator that holds the metal in
-              stable coordination. The vector sets biodistribution and pharmacokinetics; the radionuclide decides
-              whether the construct reports as a PET or SPECT signal or delivers cytotoxic dose. Imaging thus supports
-              patient stratification and dosimetry ahead of treatment, and therapy delivers what imaging revealed.
+              Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb, peptide, small molecule), an optional linker, a radionuclide and — for radiometals — a chelator. Imaging enables patient stratification and dosimetry; therapy then delivers what imaging revealed.
             </p>
           </Reveal>
           <Reveal delay={200}>
