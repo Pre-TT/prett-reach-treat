@@ -99,7 +99,7 @@ function Home() {
       {/* Radiotheranostics */}
       <section className="bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionTitle eyebrow="Radioligand Therapy">See what you treat, treat what you see</SectionTitle>
+          <SectionTitle eyebrow="RADIOTHERANOSTICS: PRECISION IMAGING AND TARGETED THERAPY">See what you treat, treat what you see</SectionTitle>
           <Reveal delay={120}>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Radiotheranostics are radioactive molecules that consist of a targeting vector (mAb, peptide, small molecule), an optional linker, a radionuclide and — for radiometals — a chelator. Imaging enables patient stratification and dosimetry; therapy then delivers what imaging revealed.
