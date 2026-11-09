@@ -55,7 +55,7 @@ function Technology() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={i * 120}>
-                <div className="group relative h-full overflow-hidden rounded-xl border border-border bg-card p-8 transition-colors hover:border-accent">
+                <div className="group relative h-full">
                   <span className="font-display text-5xl font-semibold text-accent/30 transition-colors group-hover:text-accent">
                     {s.number}
                   </span>
