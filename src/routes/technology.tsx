@@ -56,7 +56,7 @@ function Technology() {
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={i * 120}>
                 <div className="group relative h-full">
-                  <span className="font-display text-5xl font-semibold text-ink/15 transition-colors group-hover:text-ink/40">
+                  <span className="font-display text-5xl font-semibold text-ink/30 transition-colors group-hover:text-ink/60">
                     {s.number}
                   </span>
                   <h3 className="mt-4 text-2xl font-semibold">{s.title}</h3>
