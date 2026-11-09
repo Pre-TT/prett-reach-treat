@@ -79,9 +79,6 @@ function Technology() {
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.25fr_1fr]">
             <Reveal delay={140}>
               <figure className="flex h-full flex-col rounded-xl border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
-                <figcaption className="pb-3 text-xs text-muted-foreground">
-                  Inverse electron-demand Diels–Alder reaction (IEDDA).
-                </figcaption>
                 <DbImage
                   name="Tetrazine ligation"
                   page="Technology"
@@ -89,6 +86,9 @@ function Technology() {
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
                   className="w-full"
                 />
+                <figcaption className="pt-3 text-xs text-muted-foreground">
+                  Inverse electron-demand Diels–Alder reaction (IEDDA).
+                </figcaption>
               </figure>
             </Reveal>
             <Reveal delay={120}>
