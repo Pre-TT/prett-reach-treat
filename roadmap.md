@@ -1,5 +1,8 @@
 # Roadmap
 
+## To do
+- Technology page, At-211 section: keep the frames on the "At-211 decay chain" figure and the three cards (BBB, α-emission, 7.2 h) but remove their white background.
+
 ## Done
 - Technology page: Click step says "Clearance of unclicked Tz via the kidneys"; Treat step says "with considerably reduced systemic toxicity"; written-out "alpha" replaced by α on this page.
 - Technology page: diagram card and the four bullet boxes redesigned so their tops and bottoms line up.
