@@ -78,7 +78,7 @@ function Technology() {
           </Reveal>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.25fr_1fr]">
             <Reveal delay={140}>
-              <figure className="flex h-full flex-col rounded-xl border border-border p-5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
+              <figure className="flex h-full flex-col rounded-xl border border-accent p-5">
                 <DbImage
                   name="Tetrazine ligation"
                   page="Technology"
@@ -94,7 +94,7 @@ function Technology() {
             <Reveal delay={120}>
               <ul className="grid h-full grid-rows-4 gap-3">
                 {CLICK_CHEMISTRY_POINTS.map((p) => (
-                  <li key={p} className="flex items-center gap-4 rounded-lg border border-border p-3.5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
+                  <li key={p} className="flex items-center gap-4 rounded-lg border border-accent p-3.5">
                     <span className="size-2 shrink-0 rounded-full bg-accent" />
                     <span className="text-sm leading-relaxed">{p}</span>
                   </li>
@@ -121,7 +121,7 @@ function Technology() {
           <div className="grid gap-6 sm:grid-cols-3">
             {AT211_POINTS.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
-                <div className="h-full rounded-xl border border-border p-7">
+                <div className="h-full rounded-xl border border-accent p-7">
                   <p className="font-display text-2xl font-semibold text-ink">{p.title}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
@@ -129,7 +129,7 @@ function Technology() {
             ))}
           </div>
           <Reveal delay={200}>
-            <figure className="rounded-xl border border-border p-5">
+            <figure className="rounded-xl border border-accent p-5">
               <figcaption className="mb-3 font-display text-2xl font-semibold text-ink">
                 At-211 decay chain
               </figcaption>
