@@ -17,7 +17,7 @@ export const SHORT_DESCRIPTION =
   "Our technology uses a nontoxic vector to find and tag cancer cells. Then we introduce a small radioactive molecule that clicks onto the tags, releasing the radiation precisely at the tumour while sparing healthy tissue.";
 
 export const NUTSHELL =
-  'PreTT separates tumour targeting from radioactive payload delivery. Using our Target.Click.Treat approach non-radioactive antibodies—exquisitely specific targeting molecules—first find and mark cancer cells. Only then a small-molecule carrying the radioactive payload is introduced and "clicks" onto them. This molecular precision ensures radiation is localised at the tumour, sparing healthy tissue and redifining the therapeutic index.';
+  'PreTT\'s "target-click-treat" technology redefines the Therapeutic Index in Radioligand Therapy by separating tumour targeting from dose delivery. We first send in non-radioactive antibodies — highly specific targeting molecules — to find and tag cancer cells. Only once they\'ve reached the tumour do we introduce a small molecule carrying the radioactive payload, which clicks onto them. The radiation lands where it should, and healthy tissue is left alone.';
 
 export const NUTSHELL_BBB =
   "And because our proprietary click molecule is the only one of its kind to cross the blood-brain barrier, we can reach primary brain tumours and metastases that remain inaccessible to every other systemic therapy.";
