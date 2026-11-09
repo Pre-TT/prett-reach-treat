@@ -129,24 +129,15 @@ export const MILESTONES = [
   },
   {
     year: "2024",
-    items: [
-      "BII Venture Lab \u2014 selected & funded to develop our platform",
-      "1 additional patent granted",
-      "Innobooster Grant \u2014 development of pretargeted radioligand therapy for brain metastasis in breast cancer (Innovationsfonden)",
-    ],
+    items: ["BII Venture Lab", "Patent granted", "Innobooster Grant \u2014 EUR 190k"],
   },
   {
     year: "2025",
-    items: [
-      "BII Venture House \u2014 selected for further funding to develop our platform & assets",
-      "Eurostars Grant \u2014 development of pretargeted radiotheranostic for precision treatment of highly metastatic, recurrent and advanced cancer",
-    ],
+    items: ["BII Venture House", "Eurostars Grant \u2014 EUR 1M (consortium)"],
   },
   {
     year: "2026",
-    items: [
-      "Grand Solutions Grant \u2014 development of a pretargeted bispecific antibody alpha radioligand therapy to address glioblastoma (Innovationsfonden)",
-    ],
+    items: ["Grand Solutions Grant \u2014 EUR 4.2M (consortium)"],
   },
 ];
 
