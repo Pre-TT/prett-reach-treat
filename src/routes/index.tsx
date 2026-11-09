@@ -128,7 +128,7 @@ function Home() {
         <SectionTitle eyebrow="The challenge">The challenge of conventional Radioligand Therapy</SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-xl leading-relaxed font-medium text-foreground italic">
-            What if the targeting molecule did not have to carry the radioactive payload while searching for the tumour?
+            {"\n"}
           </p>
         </Reveal>
         <Reveal delay={200}>
