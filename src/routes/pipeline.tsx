@@ -170,8 +170,8 @@ function Pipeline() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">Oncology Pipeline</p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">Our roadmap to first-in-human trials</h1>
+            <p className="eyebrow">From Platform to Pipeline</p>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">One Platform. Multiple Opportunities.</h1>
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-8 max-w-3xl text-lg text-ink-foreground/75">
@@ -183,12 +183,12 @@ function Pipeline() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Programmes">Development status</SectionTitle>
+        <SectionTitle eyebrow="Oncology Pipeline">Development Roadmap</SectionTitle>
 
         <div className="mt-12 overflow-x-auto">
           <div className="min-w-[1050px]">
             <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
-              <span>Programme</span>
+              <span>Oncology Pipeline</span>
               <span>Indication</span>
               <span>Isotope</span>
               <div className="grid grid-cols-4 gap-0 text-center">
