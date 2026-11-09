@@ -11,7 +11,7 @@ export const Route = createFileRoute("/technology")({
       {
         name: "description",
         content:
-          "PreTT's pretargeting platform uses tetrazine ligation click chemistry (IEDDA) and proprietary At-211 chemistry to deliver alpha radioligand therapy across the blood-brain barrier.",
+          "PreTT's pretargeting platform uses tetrazine ligation click chemistry (IEDDA) and proprietary At-211 chemistry to deliver α radioligand therapy across the blood-brain barrier.",
       },
       { property: "og:title", content: "Technology — PreTT Pretargeting Platform" },
       {
@@ -112,7 +112,7 @@ function Technology() {
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             Our unique At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
-            alpha radiation.
+            α radiation.
           </p>
         </Reveal>
         <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
