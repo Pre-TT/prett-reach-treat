@@ -96,7 +96,7 @@ function Technology() {
                 {CLICK_CHEMISTRY_POINTS.map((p) => (
                   <li key={p} className="flex items-center gap-4 rounded-lg border border-border p-3.5 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]">
                     <span className="size-2 shrink-0 rounded-full bg-accent" />
-                    <span className="leading-relaxed">{p}</span>
+                    <span className="text-sm leading-relaxed">{p}</span>
                   </li>
                 ))}
               </ul>
