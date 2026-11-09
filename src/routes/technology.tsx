@@ -87,7 +87,7 @@ function Technology() {
                   className="min-h-0 w-full flex-1 object-contain"
                 />
                 <figcaption className="pt-3 text-xs text-muted-foreground">
-                  Tetrazine ligation click chemistry (IEDDA).
+                  Inverse electron-demand Diels–Alder reaction (IEDDA).
                 </figcaption>
               </figure>
             </Reveal>
