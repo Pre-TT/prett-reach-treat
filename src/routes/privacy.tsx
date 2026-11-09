@@ -26,7 +26,7 @@ function Privacy() {
   return (
     <section className="mx-auto max-w-3xl px-5 py-24 sm:px-8">
       <Reveal>
-        <p className="eyebrow">Legal</p>
+        <p className="eyebrow text-ink">Legal</p>
         <h1 className="mt-4 text-4xl font-semibold">Privacy Policy</h1>
         <p className="mt-3 text-sm text-muted-foreground">Last updated: September 2026</p>
       </Reveal>
@@ -109,7 +109,7 @@ function Privacy() {
           </ul>
           <p className="mt-3">
             To exercise any of these rights, email us at{" "}
-            <a href="mailto:info@pre-tt.com" className="text-foreground underline hover:text-accent">
+            <a href="mailto:info@pre-tt.com" className="text-foreground underline hover:text-ink/70">
               info@pre-tt.com
             </a>
             . We will respond within 30 days.
@@ -123,7 +123,7 @@ function Privacy() {
               href="https://www.datatilsynet.dk"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-foreground underline hover:text-accent"
+              className="text-foreground underline hover:text-ink/70"
             >
               www.datatilsynet.dk
             </a>

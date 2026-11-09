@@ -15,7 +15,7 @@ export function Footer() {
         </div>
 
         <div className="text-sm text-ink-foreground/80">
-          <p className="eyebrow mb-3">Company</p>
+          <p className="eyebrow mb-3 text-accent">Company</p>
           <p>PreTT</p>
           <p>CVR: {COMPANY.cvr}</p>
           <p className="mt-1">{COMPANY.address}</p>
@@ -28,7 +28,7 @@ export function Footer() {
         </div>
 
         <div className="text-sm text-ink-foreground/80">
-          <p className="eyebrow mb-3">Elsewhere</p>
+          <p className="eyebrow mb-3 text-accent">Elsewhere</p>
           <a
             href={COMPANY.linkedin}
             target="_blank"

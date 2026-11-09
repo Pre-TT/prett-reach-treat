@@ -170,7 +170,7 @@ function Pipeline() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">From Platform to Pipeline</p>
+            <p className="eyebrow text-accent">From Platform to Pipeline</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">One Platform. Multiple Opportunities.</h1>
           </Reveal>
           <Reveal delay={150}>

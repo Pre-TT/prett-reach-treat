@@ -31,7 +31,7 @@ function Contact() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">Contact</p>
+            <p className="eyebrow text-accent">Contact</p>
             <h1 className="mt-5 max-w-3xl text-4xl font-semibold sm:text-6xl">Let's talk!</h1>
           </Reveal>
         </div>
@@ -42,21 +42,21 @@ function Contact() {
           <SectionTitle eyebrow="Find us">Copenhagen, Denmark</SectionTitle>
           <ul className="mt-8 space-y-5 text-sm">
             <li className="flex gap-3">
-              <MapPin className="mt-0.5 size-5 shrink-0 text-accent" />
-              <a href={mapHref} target="_blank" rel="noreferrer noopener" className="hover:text-accent">
+              <MapPin className="mt-0.5 size-5 shrink-0 text-ink" />
+              <a href={mapHref} target="_blank" rel="noreferrer noopener" className="hover:text-ink/70">
                 <strong className="block font-semibold">{COMPANY.name}</strong>
                 {COMPANY.address}
               </a>
             </li>
             <li className="flex gap-3">
-              <Mail className="mt-0.5 size-5 shrink-0 text-accent" />
-              <a href={`mailto:${COMPANY.email}`} className="hover:text-accent">
+              <Mail className="mt-0.5 size-5 shrink-0 text-ink" />
+              <a href={`mailto:${COMPANY.email}`} className="hover:text-ink/70">
                 {COMPANY.email}
               </a>
             </li>
             <li className="flex gap-3">
-              <Linkedin className="mt-0.5 size-5 shrink-0 text-accent" />
-              <a href={COMPANY.linkedin} target="_blank" rel="noreferrer noopener" className="hover:text-accent">
+              <Linkedin className="mt-0.5 size-5 shrink-0 text-ink" />
+              <a href={COMPANY.linkedin} target="_blank" rel="noreferrer noopener" className="hover:text-ink/70">
                 PreTT on LinkedIn
               </a>
             </li>

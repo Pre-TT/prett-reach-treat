@@ -29,7 +29,7 @@ function About() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">About Us</p>
+            <p className="eyebrow text-accent">About Us</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
               A spin-out of the University of Copenhagen
             </h1>

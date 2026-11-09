@@ -62,7 +62,7 @@ function Home() {
         />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-24 sm:px-8">
           <Reveal>
-            <p className="eyebrow">Next Generation Radiotheranostics</p>
+            <p className="eyebrow text-accent">Next Generation Radiotheranostics</p>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-6 max-w-4xl text-5xl leading-[1.05] font-semibold sm:text-7xl">
@@ -138,14 +138,14 @@ function Home() {
         {/* 1. The therapeutic index */}
         <div className="mt-16">
           <Reveal>
-            <p className="eyebrow">{"\n"}</p>
+            <p className="eyebrow text-ink">{"\n"}</p>
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
-              Redefining the therapeutic index<sup className="ml-0.5 text-sm align-super text-accent">1</sup>
+              Redefining the therapeutic index<sup className="ml-0.5 text-sm align-super text-ink">1</sup>
             </h3>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL_BBB}</p>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-              <sup className="text-accent">1</sup> The therapeutic index is a ratio that compares the dose of a drug that causes toxicity to the dose that produces a desired therapeutic effect.
+              <sup className="text-ink">1</sup> The therapeutic index is a ratio that compares the dose of a drug that causes toxicity to the dose that produces a desired therapeutic effect.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -166,7 +166,7 @@ function Home() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Explore {COMPANY.name}</h2>
+            <h2 className="text-4xl font-semibold sm:text-5xl">Explore {COMPANY.name}</h2>
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {TEASERS.map((t, i) => (
@@ -175,7 +175,7 @@ function Home() {
                   to={t.to}
                   className="group flex h-full flex-col rounded-xl border border-ink-foreground/15 p-7 transition-colors hover:border-accent"
                 >
-                  <p className="eyebrow">{t.eyebrow}</p>
+                  <p className="eyebrow text-accent">{t.eyebrow}</p>
                   <h3 className="mt-4 text-xl font-semibold">{t.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-ink-foreground/70">{t.body}</p>
                   <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
