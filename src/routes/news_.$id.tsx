@@ -95,7 +95,7 @@ function PressRelease() {
     <section className="mx-auto max-w-3xl px-5 py-24 sm:px-8">
       <Reveal>
         {date ? (
-          <p className="text-sm font-semibold tracking-widest uppercase text-accent">
+          <p className="text-sm font-semibold tracking-widest uppercase text-ink">
             {formatDate(date)}
           </p>
         ) : null}

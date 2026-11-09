@@ -30,7 +30,7 @@ function Technology() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">Technology</p>
+            <p className="eyebrow text-accent">Technology</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
               Long enough in the tumour.
               <br />
@@ -56,7 +56,7 @@ function Technology() {
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={i * 120}>
                 <div className="group relative h-full">
-                  <span className="font-display text-5xl font-semibold text-accent/30 transition-colors group-hover:text-accent">
+                  <span className="font-display text-5xl font-semibold text-ink/15 transition-colors group-hover:text-ink/40">
                     {s.number}
                   </span>
                   <h3 className="mt-4 text-2xl font-semibold">{s.title}</h3>
@@ -122,7 +122,7 @@ function Technology() {
             {AT211_POINTS.map((p, i) => (
               <Reveal key={p.title} delay={i * 120}>
                 <div className="h-full rounded-xl border border-border bg-card p-7">
-                  <p className="font-display text-2xl font-semibold text-accent">{p.title}</p>
+                  <p className="font-display text-2xl font-semibold text-ink">{p.title}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               </Reveal>
@@ -130,7 +130,7 @@ function Technology() {
           </div>
           <Reveal delay={200}>
             <figure className="rounded-xl border border-border bg-card p-5">
-              <figcaption className="mb-3 font-display text-2xl font-semibold text-accent">
+              <figcaption className="mb-3 font-display text-2xl font-semibold text-ink">
                 At-211 decay chain
               </figcaption>
               <DbImage

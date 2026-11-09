@@ -57,8 +57,8 @@ export function SectionTitle({
 }) {
   return (
     <Reveal className={cn("group", className)}>
-      {eyebrow ? <p className="eyebrow mb-3">{eyebrow}</p> : null}
-      <h2 className="title-underline text-3xl font-semibold sm:text-4xl">
+      {eyebrow ? <p className="eyebrow mb-3 text-ink">{eyebrow}</p> : null}
+      <h2 className="title-underline text-4xl font-semibold sm:text-5xl">
         {children}
         <span className="absolute -bottom-2 left-0 h-[3px] w-full origin-left scale-x-0 bg-accent transition-transform duration-700 ease-out group-hover:scale-x-100 group-[.reveal-in]:scale-x-100" />
       </h2>

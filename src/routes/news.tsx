@@ -87,7 +87,7 @@ function News() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">News</p>
+            <p className="eyebrow text-accent">News</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
               Latest from PreTT
             </h1>
@@ -115,7 +115,7 @@ function News() {
                   className="group flex h-full flex-col rounded-xl border border-border bg-cream p-7 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]"
                 >
                   {n.date ? (
-                    <time className="text-xs font-semibold tracking-widest uppercase text-accent">
+                    <time className="text-xs font-semibold tracking-widest uppercase text-ink">
                       {formatDate(n.date)}
                     </time>
                   ) : null}

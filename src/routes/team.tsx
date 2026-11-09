@@ -116,7 +116,7 @@ function Team() {
       <section className="bg-ink py-24 text-ink-foreground">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
-            <p className="eyebrow">The Team of PreTT</p>
+            <p className="eyebrow text-accent">The Team of PreTT</p>
             <h1 className="mt-5 max-w-4xl text-4xl font-semibold sm:text-6xl">
               Built by leaders in radiopharma and clinical translation
             </h1>
