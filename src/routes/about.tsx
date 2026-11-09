@@ -72,7 +72,7 @@ function About() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow="Our vision">Process to date</SectionTitle>
+        <SectionTitle eyebrow="Milestones">Process to date</SectionTitle>
         <ol className="mt-12 space-y-10 border-l border-border pl-8">
           {MILESTONES.map((m, i) => (
             <Reveal as="li" key={m.year} delay={i * 80} className="relative">
