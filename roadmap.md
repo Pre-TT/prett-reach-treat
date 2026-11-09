@@ -1,6 +1,8 @@
 # Roadmap
 
 ## Done
+- Technology page: Click step says "Clearance of unclicked Tz via the kidneys"; Treat step says "with considerably reduced systemic toxicity"; written-out "alpha" replaced by α on this page.
+- Technology page: diagram card and the four bullet boxes redesigned so their tops and bottoms line up.
 - Radiotheranostics picture on Home restored to the tight-cropped version (stored with the site).
 - Navbar logo ("top logo") and footer logo ("bottom logo") now sourced from the Infography table.
 

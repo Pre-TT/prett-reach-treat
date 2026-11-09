@@ -11,7 +11,7 @@ export const Route = createFileRoute("/technology")({
       {
         name: "description",
         content:
-          "PreTT's pretargeting platform uses tetrazine ligation click chemistry (IEDDA) and proprietary At-211 chemistry to deliver alpha radioligand therapy across the blood-brain barrier.",
+          "PreTT's pretargeting platform uses tetrazine ligation click chemistry (IEDDA) and proprietary At-211 chemistry to deliver α radioligand therapy across the blood-brain barrier.",
       },
       { property: "og:title", content: "Technology — PreTT Pretargeting Platform" },
       {
@@ -76,15 +76,15 @@ function Technology() {
               />
             </figure>
           </Reveal>
-          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.5fr]">
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
             <Reveal delay={140}>
-              <figure className="overflow-hidden rounded-xl border border-border bg-card p-5">
+              <figure className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card p-5">
                 <DbImage
                   name="Tetrazine ligation"
                   page="Technology"
                   section="Pretargeting in action"
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
-                  className="w-full"
+                  className="min-h-0 w-full flex-1 object-contain"
                 />
                 <figcaption className="pt-3 text-xs text-muted-foreground">
                   Tetrazine ligation click chemistry (IEDDA).
@@ -92,10 +92,10 @@ function Technology() {
               </figure>
             </Reveal>
             <Reveal delay={120}>
-              <ul className="grid gap-4 content-start">
+              <ul className="grid h-full grid-rows-4 gap-4">
                 {CLICK_CHEMISTRY_POINTS.map((p) => (
-                  <li key={p} className="flex gap-4 rounded-lg border border-border bg-card p-5">
-                    <span className="mt-2 size-2 shrink-0 rounded-full bg-accent" />
+                  <li key={p} className="flex items-center gap-4 rounded-lg border border-border bg-card p-5">
+                    <span className="size-2 shrink-0 rounded-full bg-accent" />
                     <span className="leading-relaxed">{p}</span>
                   </li>
                 ))}
@@ -112,7 +112,7 @@ function Technology() {
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             Our unique At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
-            alpha radiation.
+            α radiation.
           </p>
         </Reveal>
         <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
