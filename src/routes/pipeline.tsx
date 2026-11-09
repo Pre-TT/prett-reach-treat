@@ -188,7 +188,7 @@ function Pipeline() {
         <div className="mt-12 overflow-x-auto">
           <div className="min-w-[1050px]">
             <div className="grid grid-cols-[1.4fr_0.6fr_0.6fr_2fr_1.4fr] gap-6 border-b border-border pb-4 text-xs font-medium tracking-widest uppercase text-muted-foreground">
-              <span>Oncology Pipeline</span>
+              <span>Programme</span>
               <span>Indication</span>
               <span>Isotope</span>
               <div className="grid grid-cols-4 gap-0 text-center">
