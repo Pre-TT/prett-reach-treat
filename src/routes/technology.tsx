@@ -138,7 +138,7 @@ function Technology() {
             ))}
           </div>
           <Reveal delay={200} className="h-full">
-            <figure className="flex h-full flex-col justify-center rounded-xl border border-accent p-5">
+            <figure className="flex h-full flex-col justify-center">
               <figcaption className="mb-3 font-display text-2xl font-semibold text-ink">
                 At-211 decay chain
               </figcaption>
