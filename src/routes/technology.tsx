@@ -84,7 +84,7 @@ function Technology() {
                   page="Technology"
                   section="Pretargeting in action"
                   alt="Tetrazine ligation click chemistry (IEDDA) reaction scheme between tetrazine and trans-cyclooctene"
-                  className="mx-auto my-auto w-[85%]"
+                  className="mx-auto my-auto w-[64%]"
                 />
                 <figcaption className="pt-3 text-xs text-muted-foreground">
                   Inverse electron-demand Diels–Alder reaction (IEDDA).
