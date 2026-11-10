@@ -123,12 +123,12 @@ function Home() {
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
         <SectionTitle eyebrow="The challenge">The challenge of conventional Radioligand Therapy</SectionTitle>
         <Reveal delay={120}>
-          <p className="mt-8 max-w-3xl text-xl leading-relaxed font-medium text-foreground italic">
-            What if the targeting molecule did not have to carry the radioactive payload while searching for the tumour?
-          </p>
+          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">{MISSION_QUOTE}</p>
         </Reveal>
         <Reveal delay={200}>
-          <p className="mt-6 max-w-3xl text-xl leading-relaxed text-muted-foreground">{MISSION_QUOTE}</p>
+          <p className="mt-6 max-w-3xl text-xl leading-relaxed font-medium text-foreground italic">
+            What if the targeting molecule did not have to carry the radioactive payload while searching for the tumour?
+          </p>
         </Reveal>
 
         {/* 1. The therapeutic index */}
