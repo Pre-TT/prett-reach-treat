@@ -136,12 +136,12 @@ function Home() {
           <Reveal>
             <p className="eyebrow text-ink">{"\n"}</p>
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
-              Redefining the therapeutic index<sup className="ml-0.5 text-sm align-super text-ink">1</sup>
+              {"\n"}
             </h3>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL_BBB}</p>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-              <sup className="text-ink">1</sup> The therapeutic index is a ratio that compares the dose of a drug that causes toxicity to the dose that produces a desired therapeutic effect.
+              {"\n"}
             </p>
           </Reveal>
           <Reveal delay={120}>
