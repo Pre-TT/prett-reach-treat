@@ -23,7 +23,7 @@ export const NUTSHELL_BBB =
   "Additionally, our portfolio includes proprietary molecules capable of crossing the blood–brain barrier, opening new opportunities for treating primary brain tumors and brain metastases.";
 
 export const MISSION_QUOTE =
-  "In conventional RLT, radiation is delivered not only to tumors but also to healthy organs, where toxicity limits the dose that can be safely administered. This creates a therapeutic ceiling, preventing patients from receiving the radiation needed for optimal treatment efficacy.";
+  "In conventional RLT, radiation is delivered not only to tumours but also to healthy organs, where toxicity limits the dose that can be safely administered. This creates a therapeutic ceiling, preventing patients from receiving the radiation needed for optimal treatment efficacy.";
 
 export const STEPS = [
   {
