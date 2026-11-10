@@ -132,7 +132,7 @@ function Home() {
         </Reveal>
 
         {/* 1. The therapeutic index */}
-        <div className="mt-16">
+        <div className="mt-6">
           <Reveal>
             <p className="eyebrow text-ink">{"\n"}</p>
             <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
