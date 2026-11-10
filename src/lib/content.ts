@@ -20,7 +20,7 @@ export const NUTSHELL =
   'PreTT separates tumour targeting from radioactive payload delivery. Using our Target.Click.Treat approach non-radioactive antibodies—exquisitely specific targeting molecules—first find and mark cancer cells. Only then a small-molecule carrying the radioactive payload is introduced and "clicks" onto them. This molecular precision ensures radiation is localised at the tumour, sparing healthy tissue and redifining the therapeutic index.';
 
 export const NUTSHELL_BBB =
-  "And because our proprietary click molecule is the only one of its kind to cross the blood-brain barrier, we can reach primary brain tumours and metastases that remain inaccessible to every other systemic therapy.";
+  "Additionally, our portfolio includes proprietary molecules capable of crossing the blood–brain barrier, opening new opportunities for treating primary brain tumors and brain metastases.";
 
 export const MISSION_QUOTE =
   "Systemic toxicity keeps patients from tolerating the doses they need. Pretargeting is the solution.";
