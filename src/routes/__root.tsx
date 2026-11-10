@@ -37,11 +37,31 @@ function NotFoundComponent() {
   );
 }
 
+const DOM_DESYNC_RELOAD_KEY = "prett-dom-desync-reloaded";
+
+/**
+ * A DOM-desync error (React removing a node a browser extension or an
+ * overlay already moved) leaves the live DOM out of step with React's
+ * tree, so re-rendering cannot fix it — only a fresh document can.
+ */
+function isDomDesyncError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error ?? "");
+  return /removeChild|not a child of this node/i.test(message);
+}
+
 function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    if (!isDomDesyncError(error)) return;
+    try {
+      if (sessionStorage.getItem(DOM_DESYNC_RELOAD_KEY)) return;
+      sessionStorage.setItem(DOM_DESYNC_RELOAD_KEY, "1");
+    } catch {
+      /* storage unavailable */
+    }
+    window.location.reload();
   }, [error]);
 
   return (
@@ -123,6 +143,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  // A clean render means the one-shot reload budget is unused again.
+  useEffect(() => {
+    try {
+      sessionStorage.removeItem(DOM_DESYNC_RELOAD_KEY);
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

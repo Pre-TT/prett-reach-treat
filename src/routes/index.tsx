@@ -132,17 +132,10 @@ function Home() {
         </Reveal>
 
         {/* 1. The therapeutic index */}
-        <div className="mt-16">
+        <div className="mt-6">
           <Reveal>
-            <p className="eyebrow text-ink">{"\n"}</p>
-            <h3 className="mt-4 text-2xl font-semibold sm:text-3xl">
-              {"\n"}
-            </h3>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL_BBB}</p>
-            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-              {"\n"}
-            </p>
           </Reveal>
           <Reveal delay={120}>
             <DbImage
