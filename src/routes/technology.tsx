@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DbImage } from "@/components/DbImage";
 import { Reveal, SectionTitle } from "@/components/Reveal";
 
-import { AT211_POINTS, CLICK_CHEMISTRY_POINTS, STEPS } from "@/lib/content";
+import { AT211_GROUPS, CLICK_CHEMISTRY_POINTS, STEPS } from "@/lib/content";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
@@ -108,24 +108,31 @@ function Technology() {
 
       {/* At-211 */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle eyebrow={<><span className="normal-case">α</span>-pretargeted RLT in the brain</>}>
-          Unique At-211 chemistry
-        </SectionTitle>
+        <SectionTitle>Astatine-211: The Ideal Properties</SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
-            α radiation.
+            Astatine-211 combines favorable nuclear and chemical properties for pretargeted alpha radioligand therapy,
+            with the potential to improve therapeutic efficacy while reducing healthy-tissue exposure.
           </p>
         </Reveal>
         <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <div className="grid gap-6 sm:grid-cols-3">
-            {AT211_POINTS.map((p, i) => (
-              <Reveal key={p.title} delay={i * 120}>
-                <div className="h-full rounded-xl border border-accent p-7">
-                  <p className="font-display text-2xl font-semibold text-ink">{p.title}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+          <div className="grid gap-10">
+            {AT211_GROUPS.map((g, gi) => (
+              <div key={g.label}>
+                <Reveal>
+                  <p className="eyebrow mb-4 text-ink">{g.label}</p>
+                </Reveal>
+                <div className="grid gap-6 sm:grid-cols-3">
+                  {g.cards.map((p, i) => (
+                    <Reveal key={p.title} delay={(gi * 3 + i) * 100}>
+                      <div className="h-full rounded-xl border border-accent p-6">
+                        <p className="font-display text-lg font-semibold text-ink">{p.title}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                      </div>
+                    </Reveal>
+                  ))}
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
           <Reveal delay={200}>
