@@ -113,7 +113,7 @@ function Technology() {
         </SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Our unique At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
+            At-211 chemistry enables α-pretargeted RLT, for higher therapeutic efficacy through the power of
             α radiation.
           </p>
         </Reveal>
