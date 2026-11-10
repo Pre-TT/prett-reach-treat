@@ -117,38 +117,24 @@ function Technology() {
             with the potential to improve therapeutic efficacy while reducing healthy-tissue exposure.
           </p>
         </Reveal>
-        <div className="mt-12 grid items-stretch gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <div className="grid gap-10">
-            {AT211_GROUPS.map((g, gi) => (
-              <div key={g.label}>
-                <Reveal>
-                  <p className="eyebrow mb-4 text-ink">{g.label}</p>
-                </Reveal>
-                <div className="grid gap-6 sm:grid-cols-3">
-                  {g.cards.map((p, i) => (
-                    <Reveal key={p.title} delay={(gi * 3 + i) * 100}>
-                      <div className="h-full rounded-xl border border-accent p-6">
-                        <p className="font-display text-lg font-semibold text-ink">{p.title}</p>
-                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                      </div>
-                    </Reveal>
-                  ))}
-                </div>
+        <div className="mt-12 grid gap-10">
+          {AT211_GROUPS.map((g, gi) => (
+            <div key={g.label}>
+              <Reveal>
+                <p className="eyebrow mb-4 text-ink">{g.label}</p>
+              </Reveal>
+              <div className="grid gap-6 sm:grid-cols-3">
+                {g.cards.map((p, i) => (
+                  <Reveal key={p.title} delay={(gi * 3 + i) * 100}>
+                    <div className="h-full rounded-xl border border-accent p-6">
+                      <p className="font-display text-lg font-semibold text-ink">{p.title}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
-            ))}
-          </div>
-          <Reveal delay={200} className="h-full">
-            <figure className="flex h-full flex-col justify-center">
-              <DbImage
-                name="alpha DNA damage"
-                page="Technology"
-                section="α-pretargeted RLT in the brain"
-                subSection="At-211 decay chain"
-                alt="Alpha particle irradiation causing DNA damage in a cancer cell"
-                className="mx-auto max-h-[420px] w-auto"
-              />
-            </figure>
-          </Reveal>
+            </div>
+          ))}
         </div>
       </section>
 
