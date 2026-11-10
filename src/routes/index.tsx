@@ -134,7 +134,6 @@ function Home() {
         {/* 1. The therapeutic index */}
         <div className="mt-6">
           <Reveal>
-            <p className="eyebrow text-ink">{"\n"}</p>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL}</p>
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{NUTSHELL_BBB}</p>
           </Reveal>
