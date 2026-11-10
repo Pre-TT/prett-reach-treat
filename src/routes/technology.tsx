@@ -108,14 +108,16 @@ function Technology() {
 
       {/* At-211 */}
       <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
-        <SectionTitle>Astatine-211: The Ideal Properties</SectionTitle>
+        <SectionTitle eyebrow={<><span className="normal-case">α</span>-pretargeted RLT in the brain</>}>
+          Astatine-211: The Ideal Properties
+        </SectionTitle>
         <Reveal delay={120}>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             Astatine-211 combines favorable nuclear and chemical properties for pretargeted alpha radioligand therapy,
             with the potential to improve therapeutic efficacy while reducing healthy-tissue exposure.
           </p>
         </Reveal>
-        <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
+        <div className="mt-12 grid items-stretch gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div className="grid gap-10">
             {AT211_GROUPS.map((g, gi) => (
               <div key={g.label}>
@@ -135,8 +137,8 @@ function Technology() {
               </div>
             ))}
           </div>
-          <Reveal delay={200}>
-            <figure className="rounded-xl border border-accent p-5">
+          <Reveal delay={200} className="h-full">
+            <figure className="flex h-full flex-col justify-center rounded-xl border border-accent p-5">
               <figcaption className="mb-3 font-display text-2xl font-semibold text-ink">
                 At-211 decay chain
               </figcaption>
