@@ -140,11 +140,11 @@ function Technology() {
           <Reveal delay={200} className="h-full">
             <figure className="flex h-full flex-col justify-center">
               <DbImage
-                name="At-211 decay chain"
+                name="alpha DNA damage"
                 page="Technology"
                 section="α-pretargeted RLT in the brain"
                 subSection="At-211 decay chain"
-                alt="At-211 decay chain diagram showing decay via Po-211 and Bi-207 to stable Pb-207"
+                alt="Alpha particle irradiation causing DNA damage in a cancer cell"
                 className="mx-auto max-h-[420px] w-auto"
               />
             </figure>
