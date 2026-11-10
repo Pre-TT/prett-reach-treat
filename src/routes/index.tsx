@@ -47,9 +47,32 @@ const TEASERS = [
   },
 ];
 
+function DomDesyncProbe() {
+  useEffect(() => {
+    let seen = false;
+    try {
+      seen = !!sessionStorage.getItem("probe-seen");
+    } catch {
+      /* storage unavailable */
+    }
+    if (!seen) {
+      try {
+        sessionStorage.setItem("probe-seen", "1");
+      } catch {
+        /* storage unavailable */
+      }
+      throw new Error(
+        "Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.",
+      );
+    }
+  }, []);
+  return null;
+}
+
 function Home() {
   return (
     <>
+      <DomDesyncProbe />
       {/* Hero */}
       <section className="relative flex min-h-[calc(100vh-4.5rem)] items-center overflow-hidden bg-ink text-ink-foreground">
         <DbImage
