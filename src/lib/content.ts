@@ -50,18 +50,40 @@ export const CLICK_CHEMISTRY_POINTS = [
   "Standard medicinal chemistry approaches to influence the pharmacokinetics of the click reagents",
 ];
 
-export const AT211_POINTS = [
+export const AT211_GROUPS = [
   {
-    title: "7.2 h",
-    body: "Optimal half-life for the pretargeting approach.",
+    label: "Nuclear & Chemical Properties",
+    cards: [
+      {
+        title: "7.2 h Half-Life",
+        body: "Long enough for radiolabeling and administration, yet short enough to limit prolonged radiation exposure. Perfectly matched to pretargeting pharmacokinetics.",
+      },
+      {
+        title: "Clean Decay Path",
+        body: "Two short decay branches ultimately lead to stable lead-207, avoiding long radioactive decay chains with redistributing daughters.",
+      },
+      {
+        title: "BBB Penetration",
+        body: "Its covalent chemistry enables the design of radiopharmaceuticals with the potential to cross the blood–brain barrier.",
+      },
+    ],
   },
   {
-    title: "\u03B1-emission",
-    body: "One \u03B1-particle per decay, short pathlength, high linear energy transfer, highly localized DNA damage.",
-  },
-  {
-    title: "BBB",
-    body: "Covalent labeling supports brain penetration.",
+    label: "Clinical Advantages",
+    cards: [
+      {
+        title: "High-Energy Precision",
+        body: "Alpha particles deposit high energy over a short distance, causing highly localized DNA damage and potent cytotoxicity against cancer cells.",
+      },
+      {
+        title: "Microscopic Range",
+        body: "Alpha particles travel only a few cell diameters, limiting irradiation of surrounding tissue. Particularly valuable in the brain, where preserving healthy cells is critical to neurological function.",
+      },
+      {
+        title: "Outpatient Friendly",
+        body: "Its short half-life and low-energy secondary photon emissions may facilitate outpatient treatment.",
+      },
+    ],
   },
 ];
 
