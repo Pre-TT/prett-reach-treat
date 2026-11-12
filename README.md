@@ -1,6 +1,6 @@
 # PreTT Insights
 
-### BRAND
+### BRAND  
 
 - **Company name:** PreTT ApS
 - **Tagline:** *See it. Reach it. Treat it.*
