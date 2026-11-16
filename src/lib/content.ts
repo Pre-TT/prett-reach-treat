@@ -265,4 +265,6 @@ export type NewsItem = {
   excerpt: string;
   full: string;
   link?: string | null;
+  /** Public image URL from the picture column; empty when the row has none. */
+  picture?: string;
 };
