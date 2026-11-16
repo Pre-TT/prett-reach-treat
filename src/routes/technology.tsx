@@ -139,6 +139,36 @@ function Technology() {
       </section>
 
 
+      {/* BioRender attribution footnote */}
+      <div className="mx-auto max-w-7xl px-5 pt-6 pb-2 text-xs leading-relaxed text-muted-foreground sm:px-8">
+        {"Created in BioRender. Herrero Alvarez, N. (2026) "}
+        <a
+          href="https://BioRender.com/d84toez"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          https://BioRender.com/d84toez
+        </a>
+        {" · "}
+        <a
+          href="https://BioRender.com/ls77dra"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          https://BioRender.com/ls77dra
+        </a>
+        {" · "}
+        <a
+          href="https://BioRender.com/wvd7vzk"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          https://BioRender.com/wvd7vzk
+        </a>
+      </div>
     </>
   );
 }
