@@ -5,6 +5,8 @@ export type ArticlePictureProps = {
   src: string | null | undefined;
   alt: string;
   className?: string;
+  /** Optional wrapper, rendered only when an image is actually shown. */
+  wrapperClassName?: string;
   loading?: "lazy" | "eager";
 };
 
@@ -17,6 +19,7 @@ export function ArticlePicture({
   src,
   alt,
   className = "aspect-video w-full object-cover",
+  wrapperClassName,
   loading = "lazy",
 }: ArticlePictureProps) {
   const url = (src ?? "").trim();
@@ -24,7 +27,7 @@ export function ArticlePicture({
 
   if (!url || failedUrl === url) return null;
 
-  return (
+  const img = (
     <img
       src={url}
       alt={alt}
@@ -33,4 +36,6 @@ export function ArticlePicture({
       className={className}
     />
   );
+
+  return wrapperClassName ? <div className={wrapperClassName}>{img}</div> : img;
 }

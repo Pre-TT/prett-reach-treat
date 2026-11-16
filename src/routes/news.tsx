@@ -119,7 +119,8 @@ function News() {
                   <ArticlePicture
                     src={n.picture}
                     alt={n.title}
-                    className="-mx-7 -mt-7 aspect-video w-full object-cover"
+                    wrapperClassName="-mx-7 -mt-7"
+                    className="aspect-video w-full object-cover"
                   />
                   {n.date ? (
                     <time className="text-xs font-semibold tracking-widest uppercase text-ink">
