@@ -35,12 +35,23 @@ function formatDate(value: string) {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
 
-/** A paragraph that reads as an executive quote: wrapped in quotation marks. */
+/** A paragraph that reads as an executive quote: starts with a quotation mark. */
 function isQuote(text: string): boolean {
   const t = text.trim();
-  return (
-    (t.startsWith("\u201c") || t.startsWith('"')) &&
-    (t.endsWith("\u201d") || t.endsWith('"'))
+  return t.startsWith("\u201c") || t.startsWith('"');
+}
+
+/** Render inline **bold** segments as <strong>. */
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={i} className="font-semibold text-ink">
+        {part.slice(2, -2)}
+      </strong>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
   );
 }
 
@@ -109,16 +120,20 @@ function PressRelease() {
           <p className="text-muted-foreground">[PLACEHOLDER] — full content not available.</p>
         ) : (
           paragraphs.map((para, i) =>
-            isQuote(para) ? (
+            para.startsWith("##") ? (
+              <h2 key={i} className="pt-4 text-xl font-semibold text-ink">
+                {renderInline(para.replace(/^##\s*/, ""))}
+              </h2>
+            ) : isQuote(para) ? (
               <blockquote
                 key={i}
                 className="border-l-2 border-accent pl-6 italic text-ink/85 leading-relaxed"
               >
-                {para}
+                {renderInline(para)}
               </blockquote>
             ) : (
               <p key={i} className="text-lg leading-relaxed text-ink/80">
-                {para}
+                {renderInline(para)}
               </p>
             ),
           )
