@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { ArticlePicture } from "@/components/ArticlePicture";
 import { supabase, isPublished } from "@/lib/supabase";
 
 export const Route = createFileRoute("/news_/$id")({
@@ -100,6 +101,7 @@ function PressRelease() {
   const title = pick(data, ["title", "headline", "name"]) || "[PLACEHOLDER]";
   const date = pick(data, ["date", "published_at", "created_at", "publishedat"]);
   const body = pick(data, ["body", "content", "excerpt", "summary", "description"]);
+  const picture = pick(data, ["picture"]);
   const paragraphs = body.split(/\n+/).map((p) => p.trim()).filter(Boolean);
 
   return (
@@ -114,6 +116,13 @@ function PressRelease() {
           {title}
         </h1>
       </Reveal>
+
+      <ArticlePicture
+        src={picture}
+        alt={title}
+        loading="eager"
+        className="mt-8 aspect-video w-full object-cover rounded-xl"
+      />
 
       <div className="mt-10 space-y-6">
         {paragraphs.length === 0 ? (

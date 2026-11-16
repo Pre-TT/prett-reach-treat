@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal, SectionTitle } from "@/components/Reveal";
+import { ArticlePicture } from "@/components/ArticlePicture";
 import { selectTable, isPublished } from "@/lib/supabase";
 import type { NewsItem } from "@/lib/content";
 
@@ -53,6 +54,7 @@ function normalize(rows: Row[]): NewsItem[] {
         excerpt: truncate(pick(r, ["summary", "excerpt", "description"]) || full),
         full,
         link: pick(r, ["link", "url", "href"]) || null,
+        picture: pick(r, ["picture"]),
       };
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -112,8 +114,13 @@ function News() {
                 <Link
                   to="/news/$id"
                   params={{ id: n.id }}
-                  className="group flex h-full flex-col rounded-xl border border-border bg-cream p-7 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-cream p-7 transition-all hover:border-accent hover:shadow-[0_12px_32px_-12px_rgba(2,48,71,0.25)]"
                 >
+                  <ArticlePicture
+                    src={n.picture}
+                    alt={n.title}
+                    className="-mx-7 -mt-7 aspect-video w-full object-cover"
+                  />
                   {n.date ? (
                     <time className="text-xs font-semibold tracking-widest uppercase text-ink">
                       {formatDate(n.date)}
