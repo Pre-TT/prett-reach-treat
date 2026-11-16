@@ -177,6 +177,28 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* BioRender attribution footnote */}
+      <div className="mx-auto max-w-7xl px-5 pt-6 pb-2 text-xs leading-relaxed text-muted-foreground sm:px-8">
+        {"Created in BioRender. Herrero Alvarez, N. (2026) "}
+        <a
+          href="https://BioRender.com/uahk06s"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          https://BioRender.com/uahk06s
+        </a>
+        {" · "}
+        <a
+          href="https://BioRender.com/0afbrwp"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          https://BioRender.com/0afbrwp
+        </a>
+      </div>
     </>
   );
 }
